@@ -5,7 +5,7 @@ import { ImgAndTitle } from "./img&title";
 
 export default function AlbumComponents() {
   return (
-    <div>
+    <div className="bg-black ">
       <ImgAndTitle />
       <ListOfSongs />
       <SmallShowPlaySong />

@@ -1,4 +1,5 @@
-import { IoHeart } from "react-icons/io5";
+
+import { HeartIconBtn } from "../../../common/icons/heartIconBtn";
 
 
 export function ListOfSongs() {
@@ -9,7 +10,7 @@ export function ListOfSongs() {
               <p className="ml-7 mt-5 text-white">Song Name</p>
               <p className="ml-7 text-sm text-white">Artist Name</p>
             </div>
-            <IoHeart className=" absolute right-5 mt-7 text text-white hover:text-green-500" />
+            <HeartIconBtn/>
           </div>
     </section>
   )

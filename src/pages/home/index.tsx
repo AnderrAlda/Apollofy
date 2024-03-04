@@ -1,6 +1,7 @@
 import { AvatarGenerator } from "random-avatar-generator";
 import HorizontalScrollLayout from "../../layouts/horizontalScroll";
 import VerticalScrollLayout from "../../layouts/verticalScroll";
+import { MusicProfile } from "../../common/musicProfile";
 
 const HomePage = () => {
   const generator = new AvatarGenerator();
@@ -37,88 +38,21 @@ const HomePage = () => {
         <div className="mt-5 ml-5">
           <h2 className="text-2xl mb-5">Top Playlists</h2>
           <HorizontalScrollLayout>
-            <div className="w-40">
-              <img
-                className="rounded-2xl"
-                src="src/assets/album1.png"
-                alt="album1"
-              />
-              <p>HIP-HIP HITS</p>
-            </div>
-            <div className="w-40">
-              <img
-                className="rounded-2xl"
-                src="src/assets/album1.png"
-                alt="album1"
-              />
-              <p>HIP-HIP HITS</p>
-            </div>
-            <div className="w-40">
-              <img
-                className="rounded-2xl"
-                src="src/assets/album1.png"
-                alt="album1"
-              />
-              <p>HIP-HIP HITS</p>
-            </div>
+          <MusicProfile/>
+         
           </HorizontalScrollLayout>
         </div>
         <div className="mt-5 ml-5 ">
           <h2 className="text-2xl mb-5">Top Artists</h2>
           <HorizontalScrollLayout>
-            <div className="w-40">
-              <img
-                className="rounded-2xl"
-                src="src/assets/album1.png"
-                alt="album1"
-              />
-              <p>HIP-HIP HITS</p>
-            </div>
-            <div className="w-40">
-              <img
-                className="rounded-2xl"
-                src="src/assets/album1.png"
-                alt="album1"
-              />
-              <p>HIP-HIP HITS</p>
-            </div>
-            <div className="w-40">
-              <img
-                className="rounded-2xl"
-                src="src/assets/album1.png"
-                alt="album1"
-              />
-              <p>HIP-HIP HITS</p>
-            </div>
+          <MusicProfile/>
+            
           </HorizontalScrollLayout>
         </div>
         <div className="mt-5 ml-5 ">
           <h2 className="text-2xl mb-5">Top Albums</h2>
           <HorizontalScrollLayout>
-            <div className="w-40">
-              <img
-                className="rounded-2xl"
-                src="src/assets/album1.png"
-                alt="album1"
-              />
-              <p>HIP-HIP HITS</p>
-            </div>
-            <div className="w-40">
-              <img
-                className="rounded-2xl"
-                src="src/assets/album1.png"
-                alt="album1"
-              />
-              <p>HIP-HIP HITS</p>
-            </div>
-            <div className="w-40">
-              <img
-                className="rounded-2xl"
-                src="src/assets/album1.png"
-                alt="album1"
-              />
-              <p>HIP-HIP HITS</p>
-            </div>
+          <MusicProfile/>
           </HorizontalScrollLayout>
         </div>
       </VerticalScrollLayout>
