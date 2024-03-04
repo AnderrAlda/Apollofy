@@ -20,6 +20,7 @@ export interface Tracks {
     name: string;
     artist: string;
     url: boolean;
+    img: string;
     genre: string;
     liked: string;
 }
