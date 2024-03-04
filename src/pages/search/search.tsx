@@ -1,34 +1,22 @@
-import "./search.css";
+import { NavBar } from "../../components/navbar";
 
-export default function SearchBar() {
+export default function SearchBarPage() {
   return (
-    <div className="search-container">
-      <Searchbar />
+    <div className="flex flex-col bg-black h-screen">
+      <form className="mt-10 ml-10">
+        <label className="text-white text-4xl">Search</label>
+        <br />
+        <input
+          className="input"
+          type="text"
+          placeholder="Artist, song or podcast"
+        />
+      </form>
       <button className="search-btn">Search</button>
-      <YourTopGeneres />
-      <SongPlayer />
+      <p className="text-white text-2xl ml-12">Your top Genres</p>
+      <div className="absolute bottom-0 w-screen">
+        <NavBar />
+      </div>
     </div>
   );
-}
-
-function Searchbar() {
-  return (
-    <form className="search-box">
-      <label className="search-word">Search</label>
-      <br />
-      <input
-        className="input"
-        type="text"
-        placeholder="Artist, song or podcast"
-      />
-    </form>
-  );
-}
-
-function YourTopGeneres() {
-  return <p className="generes">Your top Genres</p>;
-}
-
-function SongPlayer() {
-  return <p className="song-player">SongPlayer</p>;
 }

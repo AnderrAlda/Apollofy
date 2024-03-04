@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { SongPage } from "../pages/SongPage";
-import AlbumComponents from "../pages/AlbumPage";
+import { SongPage } from "../pages/songPage";
+import AlbumComponents from "../pages/albumPage";
 
 export function AppRouter() {
   return (

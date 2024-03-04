@@ -1,4 +1,4 @@
-import { NavBar } from "../../layouts/navbar";
+import { NavBar } from "../../components/navbar";
 import { SmallShowPlaySong } from "./SmallShowPlaySong";
 import { ListOfSongs } from "./ListOfSongs";
 import { ImgAndTitle } from "./img&title";

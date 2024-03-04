@@ -1,6 +1,7 @@
 import { AvatarGenerator } from "random-avatar-generator";
 import HorizontalScrollLayout from "../../layouts/horizontalScroll";
 import VerticalScrollLayout from "../../layouts/verticalScroll";
+import { NavBar } from "../../components/navbar";
 
 const HomePage = () => {
   const generator = new AvatarGenerator();
@@ -122,8 +123,8 @@ const HomePage = () => {
           </HorizontalScrollLayout>
         </div>
       </VerticalScrollLayout>
-      <div className=" absolute bottom-20 w-full">
-        <div className=" flex gap-5 mt-5 relative ">
+      <div className=" w-full">
+        <div className=" flex gap-5 mt-9 relative ">
           <img
             className="rounded-2xl h-16"
             src="src/assets/album1.png"
@@ -156,6 +157,9 @@ const HomePage = () => {
             ></path>
           </svg>
         </div>
+      </div>
+      <div className="">
+        <NavBar />
       </div>
     </div>
   );
