@@ -1,9 +1,10 @@
 import "./App.css";
+import SearchBar from "./pages/search/search";
 
 function App() {
   return (
     <>
-      <div className="bg-red-400">hola</div>
+      <SearchBar />
     </>
   );
 }
