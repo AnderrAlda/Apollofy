@@ -4,6 +4,7 @@ import AlbumComponents from "./pages/albumPage";
 import { SongPage } from "./pages/songPage";
 import { EditProfile } from "./pages/editProfile";
 import HomePage from "./pages/home";
+import SearchBar from "./pages/search/search";
 import { UserPage } from "./pages/userPage";
 import { PublicRoutes } from "./types/routes";
 import SearchBar from "./pages/search/search";
