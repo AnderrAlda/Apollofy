@@ -3,4 +3,6 @@ export const PublicRoutes = {
   HOME: "/",
   SEARCH: "/search",
   USER: "/user",
+  ALBUM: "/album",
+  SONG: "/song",
 };
