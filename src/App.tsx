@@ -8,7 +8,7 @@ import { UserPage } from "./pages/userPage";
 function App() {
   return (
     <>
-      <AlbumComponents />
+      <SongPage />
     </>
   );
 }
