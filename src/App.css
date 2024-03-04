@@ -1,0 +1,12 @@
+body{
+    background-color: black;
+    
+   
+}
+.app{
+    width: 390px;
+    height: 844px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
