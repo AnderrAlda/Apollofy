@@ -1,9 +1,12 @@
-import "./App.css";
+ import { UserPage } from "./pages/userPage";
+// import { EditProfile } from "./pages/userPage/editProfile";
+
 
 function App() {
   return (
     <>
-      <div className="bg-red-400">hola</div>
+     <UserPage/>
+    {/* <EditProfile/> */}
     </>
   );
 }
