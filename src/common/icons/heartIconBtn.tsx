@@ -6,12 +6,10 @@ export function HeartIconBtn() {
 
     return(
         <>
-        <button className="absolute right-5 mt-7 text text-white hover:text-green-500">
-           <IoHeart/>
+        <button className="absolute ml-10 mt-1 text text-white hover:text-green-500">
+            <IoHeart/>
         </button>
         </>
-    
+
     )
 }
-
-

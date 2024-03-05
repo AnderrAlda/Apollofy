@@ -1,4 +1,5 @@
-import { HeartIconBtn } from "../../../common/icons/HeartIconBtn";
+import { HeartIconBtn } from "../../../common/icons/heartIconBtn";
+
 
 export function ListOfSongs() {
   return (

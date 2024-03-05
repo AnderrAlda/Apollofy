@@ -6,6 +6,7 @@ import HomePage from "./pages/home";
 import { UserPage } from "./pages/userPage";
 import { PublicRoutes } from "./types/routes";
 import SearchBarPage from "./pages/search/search";
+import { EditProfile } from "./pages/editProfile";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path={PublicRoutes.USER} element={<UserPage />} />
           <Route path={PublicRoutes.ALBUM} element={<AlbumComponents />} />
           <Route path={PublicRoutes.SONG} element={<SongPage />} />
+          <Route path={PublicRoutes.EDITPROFILE} element={<EditProfile />} />
         </Routes>
       </BrowserRouter>
     </>
