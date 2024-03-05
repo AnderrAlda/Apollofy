@@ -1,12 +1,54 @@
-body{
-    background-color: black;
-    
-   
+.section {
+    background: #0D0D0D;
+    margin: 20%;
+    border: 2px solid black;
+    border-radius: 25px;
+    width: 399px;
+    height: 850px;
+
 }
-.app{
-    width: 390px;
-    height: 844px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.div-img {
+    width: 283px;
+    height: 340px;
+}
+
+.full {
+    margin-left: 80%;
+}
+
+.buttons {
+    margin-top: 10%;
+    justify-content: space-between;
+    
+}
+
+.text {
+    font-size: 200%;
+}
+
+.img-album {
+    margin-top: 20%;
+    margin-left: 24%;
+    width: 212px;
+    height: 220px;
+    background: #383333;
+    border-radius: 10px;
+}
+
+.show {
+    position:fixed;
+    margin-top: 24%;
+    width: 100%;
+    height: 58px;
+    background-color: gray;
+    margin-top: 73%;
+}
+
+.imgsmall {
+    margin-top: 2px;
+    width: 50px;
+    height: 50px;
+    background-color: #0D0D0D;
+    border-radius: 10px;
 }
