@@ -1,12 +1,17 @@
+import { Track } from '../../../utils/index.tsx'
 
-export function MusicShowPage() {
+type Props = {
+  song: Track
+}
+
+export function MusicShowPage({song}: Props) {
   return (
-    <section>
+    <div>
         <div className="div-img ml-16 mt-20 rounded-lg bg-gray-800">
-            <img src="" alt="" />
+            <img src={song.thumbnail} alt="" />
         </div>
-        <p className="mt-9 text-2xl space-x-6 text-center text-white">Viva la vida</p>
-        <p className="mt-2 text-lg text-center text-white">coldplay</p>
-    </section>
+        <p className="mt-9 text-2xl space-x-6 text-center text-white">{song.name}</p>
+        <p className="mt-2 text-lg text-center text-white">{song.artist}</p>
+    </div>
   )
 }

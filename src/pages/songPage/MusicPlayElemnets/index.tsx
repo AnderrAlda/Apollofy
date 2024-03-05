@@ -1,29 +1,19 @@
 // import React,{ useState } from 'react';
-import { IoPlayCircleOutline } from "react-icons/io5";
-// import { IoPauseCircleOutline } from "react-icons/io5";
-import { IoPlaySkipBackSharp } from "react-icons/io5";
 import { IoPlaySkipForward } from "react-icons/io5";
+// import { IoPauseCircleOutline, IoPlayCircleOutline } from "react-icons/io5";
+import { IoPlaySkipBackSharp } from "react-icons/io5";
 import { RiRestartLine } from "react-icons/ri";
-import { HeartIconBtn } from "../../../common/icons/HeartIconBtn";
+import { HeartIconBtn } from "../../../common/icons/heartIconBtn";
+import { Icon } from '@iconify/react';
+import pauseIcon from '@iconify/icons-ion/pause';
+import playIcon from '@iconify/icons-ion/play';
 
-export function MusicPlayElements() {
-  // const Heart: React.FC = () => {
-  //   const [mostrarMensaje, setMostrarMensaje] = useState(false);
+interface Props {
+  togglePlay: () => void
+  isPlaying: boolean
+}
 
-  //   const handleBotonClick = () => {
-  //     setMostrarMensaje(true);
-  //     setTimeout(() => {
-  //       setMostrarMensaje(false);
-  //     }, 2000); // Ocultar el mensaje después de 2 segundos
-  //   };
-
-  //   return (
-  //     <div>
-  //       <button onClick={handleBotonClick}></button>
-  //       {mostrarMensaje && <p>¡Mensaje mostrado!</p>}
-  //     </div>
-  //   );
-  // }
+export function MusicPlayElements({ togglePlay, isPlaying}: Props) {
 
   return (
     <section>
@@ -35,7 +25,7 @@ export function MusicPlayElements() {
           <IoPlaySkipBackSharp />
         </button>
         <button className="ml-10 text text-white hover:text-green-500">
-          <IoPlayCircleOutline />
+        <Icon icon={isPlaying ? pauseIcon : playIcon} onClick={togglePlay} />
         </button>
         <button className="ml-10 text text-white hover:text-green-500">
           <IoPlaySkipForward />

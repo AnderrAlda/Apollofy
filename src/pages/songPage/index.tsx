@@ -1,13 +1,12 @@
+import { AudioPlayer } from './AudioPlayer'
 import { GoBackPageBtn } from './GoBackPage'
-import { MusicShowPage } from './MusicShowPage'
-import { MusicPlayElements } from './MusicPlayElemnets'
+
 
 export function SongPage() {
   return (
     <section className="section">
         <GoBackPageBtn />
-        <MusicShowPage />
-        <MusicPlayElements />
+        <AudioPlayer />
     </section>
   )
 }

@@ -6,6 +6,7 @@ import HomePage from "./pages/home";
 import { UserPage } from "./pages/userPage";
 import { PublicRoutes } from "./types/routes";
 import SearchBarPage from "./pages/search/search";
+// import { AudioPlayer } from "./pages/songPage/AudioPlayer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path={PublicRoutes.ALBUM} element={<AlbumComponents />} />
           <Route path={PublicRoutes.SONG} element={<SongPage />} />
         </Routes>
+        {/* <SongPage/> */}
       </BrowserRouter>
     </>
   );

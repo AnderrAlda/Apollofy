@@ -6,7 +6,7 @@ export function HeartIconBtn() {
 
     return(
         <>
-        <button className="absolute right-5 mt-7 text text-white hover:text-green-500">
+        <button className="absolute ml-10 text text-white hover:text-green-500">
            <IoHeart/>
         </button>
         </>
