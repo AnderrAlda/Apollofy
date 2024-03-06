@@ -31,8 +31,9 @@ function App() {
             />
           </Routes>
         </BrowserRouter>
+        </AuthProvider>
       </FilterProvider>
-      </AuthProvider>
+   
     </>
   );
 }
