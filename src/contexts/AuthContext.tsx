@@ -5,70 +5,14 @@ import {
     useContext,
     useReducer,
   } from "react";
+import { getUsers } from "../utils";
+import { User } from "../utils";
 
-  export interface User {
-    id: number;
-    first_name: string;
-    last_name: string;
-    email: string;
-    password: string;
-    profilePicture: string;
-    isLoggedIn: boolean;
-}
+
   
+   
 
-const users: User[] = [
-    {
-        id: 1,
-        first_name: "Eira",
-        last_name: "Melé",
-        email: "eira@eira.com",
-        password: "eiraeira",
-        profilePicture: "",        
-        isLoggedIn: false       
-        
-    },
-    {
-        id: 2,
-        first_name: "Lucia",
-        last_name: "Mercorelli",
-        email: "lucia@lucia.com",
-        password: "lucialucia",
-        profilePicture: "",
-        isLoggedIn: false       
-        
-    },
-    {
-        id: 3,
-        first_name: "Alvaro",
-        last_name: "Del Cacho",
-        email: "alvaro@alvaro.com",
-        password: "alvaroalvaro",
-        profilePicture: "",
-        isLoggedIn: false       
-        
-    },
-    {
-        id: 4,
-        first_name: "Ander",
-        last_name: "Aldabaldetreku",
-        email: "ander@ander.com",
-        password: "anderander",
-        profilePicture: "",
-        isLoggedIn: false       
-        
-    },
-    {
-        id: 5,
-        first_name: "Javi",
-        last_name: "Martin",
-        email: "javi@javi.com",
-        password: "javijavi",
-        profilePicture: "",
-        isLoggedIn: false       
-        
-    }
-]
+
   
   
   interface AuthState {
@@ -120,8 +64,8 @@ const users: User[] = [
       initialState
     );
   
-     function login(email: string, password: string) {
-      
+     async function login(email: string, password: string) {
+      const users = await getUsers();
      
         
         const user: User | undefined = users?.find(

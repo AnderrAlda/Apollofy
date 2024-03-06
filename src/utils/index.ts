@@ -1,4 +1,4 @@
-import { Tracks } from '../utils/index.tsx';
+import { Tracks, User } from '../utils/index.tsx';
 
 export async function getTracks(): Promise<Tracks[]> {
     try {
@@ -9,3 +9,18 @@ export async function getTracks(): Promise<Tracks[]> {
       throw new Error(`Something is wrong in f APIFetch: ${error}`);
     }
   }
+  export async function getUsers(): Promise<User[]> {
+    try {
+      const response = await fetch('src/assets/data/users.json');
+      const JSONResponse = await response.json();
+      const data = JSONResponse.users;
+       console.log(data)
+      return data;
+    } catch (error) {
+      throw new Error(`Something is wrong in f APIFetch: ${error}`);
+    }
+  }
+
+
+
+
