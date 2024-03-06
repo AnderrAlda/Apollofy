@@ -1,6 +1,12 @@
 import { PlayPauseBtn } from "../../../common/icons/PlayPauseBtn";
 
-export function SmallShowPlaySong({ song }) {
+interface props 
+{
+  title:string
+  artist:string
+}
+
+export function SmallShowPlaySong({ title,artist }:props) {
   return (
     <section>
       <div className="show flex relative">
@@ -8,8 +14,8 @@ export function SmallShowPlaySong({ song }) {
           <img src="" alt="" />
         </div>
         <div>
-          <p className="text-white ml-5">{song.title}</p>
-          <p className="text-white ml-5 text-sm">{song.artist}</p>
+          <p className="text-white ml-5">{title}</p>
+          <p className="text-white ml-5 text-sm">{artist}</p>
         </div>
         <div>
           <PlayPauseBtn />
