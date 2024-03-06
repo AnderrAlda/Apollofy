@@ -5,8 +5,14 @@ import { NavBar } from "../../components/navbar";
 export const EditProfile= () => {
 
   const[newEmail, setNewEmail] = useState("")
+  const[gender, newGender] = useState("")
+  const[newRegion, setNewRegion] = useState("")
+  const[newPassword, setNewPassaword] = useState("")
+  const[repeatPassword, setRepeatPassword] = useState("")
 
-
+const handleFormSubmit = (e: any) => {
+  e.preventDeafault();
+}
   return (
     <>
     <div className="bg-black h-screen">
