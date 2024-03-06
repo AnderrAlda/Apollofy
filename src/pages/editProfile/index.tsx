@@ -8,11 +8,11 @@ import { IoPencil } from "react-icons/io5";
 export const EditProfile= () => {
   const {user} = useAuth()
 
-  const[newEmail, setNewEmail] = useState(user?.email)
-  const[gender, newGender] = useState(user?.gender)
-  const[newRegion, setNewRegion] = useState(user?.newRegion)
-  const[newPassword, setNewPassaword] = useState(user?.password)
-  const[repeatPassword, setRepeatPassword] = useState(user?.newPassword)
+  const[newEmail, setNewEmail] = useState("")
+  const[newGender, setNewGender] = useState("")
+  const[newCountry, setNewCountry] = useState("")
+  const[newPassword, setNewPassaword] = useState("")
+  const[repeatPassword, setRepeatPassword] = useState("")
   const[changeProfile, setChangeProfile] = useState(false)
 
 const handleChangeProfile = () => {
@@ -23,15 +23,46 @@ const handleChangeProfile = () => {
   }}
 
 
-const handleFormSubmit = (e: any) => {
-  e.preventDeafault();
-}
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
 
-console.log(user)
+    const updatedUserData = {
+       
+    };
 
+     if (newEmail !== "" && newEmail !== user.email) {
+      updatedUserData.email = newEmail;
+       }
+       //REPETIR CONDICIONALES 
+
+    try {
+  
+      const response = await fetch(`src/assets/data/users/${user.id}.json`, {
+        method: 'PATCH',
+        headers: {'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: newEmail,
+        }),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Something went wrong');
+      }
+  
+      const data = await response.json();
+
+  
+    } catch (error) {
+
+    }
+  };
+
+
+console.log(newEmail)
   return (
     <>
-    <div className="bg-black h-screen">
+    <div className="bg-slate-900 h-screen">
       <div className="flex flex-col p-5 gap-4">
         <div className="flex flex-row">
         <h2 className="text-white text-5xl">Edit profile</h2>
@@ -42,26 +73,26 @@ console.log(user)
       
 
         <div className="flex flex-row text-white">
-          <p>Email:  {user?.email}</p>
+          <p className="text-2xl">Email:  {user?.email}</p>
           </div>
-          {(changeProfile) ? <input type="text" placeholder="New email" /> : null }
+          {(changeProfile) ? <input type="text" value={newEmail} onChange={(e) => setNewEmail(e.target.value)} placeholder="New email" className=" p-1.5 pl-4 rounded-full"/> : null }
 
           <div className="text-white">
           <p className="text-2xl">Gender: {user?.gender}</p>
         </div>
-        {(changeProfile) ? <input type="text" placeholder="New gender" /> : null }
+        {(changeProfile) ? <input type="text" value={newGender} onChange={(e)=>setNewGender(e.target.value)} placeholder="New gender"className="p-1.5 pl-4 rounded-full" /> : null }
 
         <div className="text-white">
           <p className="text-2xl">Country: {user?.country}</p>
         </div>
-        {(changeProfile) ? <input type="text" placeholder="New country" /> : null }
+        {(changeProfile) ? <input type="text" value={newCountry} onChange={(e)=>setNewCountry(e.target.value)} placeholder="New country"className=" p-1.5 pl-4 rounded-full" /> : null }
 
         <div className="text-white">
           <p className="text-2xl">Password: {user?.password}</p>
         </div>
-        {(changeProfile) ? <input type="password" placeholder="New password" /> : null }
+        {(changeProfile) ? <input type="password"value={newPassword} onChange={(e)=>setNewPassaword(e.target.value)} placeholder="New password"className="p-1.5 pl-4 rounded-full" /> : null }
 
-        <button type="submit" className="text-white border border-s w-14">Save</button>
+        <button type="submit" className="text-white text-2xl mt-6 p-1.5 rounded-full border border-s w-18">Save changes</button>
 
         
         </div>
