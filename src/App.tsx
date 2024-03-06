@@ -12,6 +12,7 @@ import Login from "./pages/Login/Login";
 import { AuthProvider } from "./contexts/AuthContext";
 import { MySongs } from "./pages/mySongs";
 
+import { EditProfile } from "./pages/editProfile";
 
 function App() {
   return (
@@ -31,7 +32,8 @@ function App() {
               path={PublicRoutes.AUDIOPLAYER}
               element={<AudioPlayerPage />}
             />
-          </Routes>
+            <Route path={PublicRoutes.EDITPROFILE} element={<EditProfile />} />
+        </Routes>
         </BrowserRouter>
         </AuthProvider>
       </FilterProvider>

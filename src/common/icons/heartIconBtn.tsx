@@ -44,6 +44,6 @@ export function HeartIconBtn() {
             </button>
         {/* </NavLink> */}
         </>
-    
+
     )
 }

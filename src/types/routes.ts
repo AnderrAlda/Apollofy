@@ -7,4 +7,5 @@ export const PublicRoutes = {
   SONG: "/song",
   AUDIOPLAYER: "/audioPlayer",
   MYSONGS: "/mySongs",
+  EDITPROFILE:"/editptofile"
 };

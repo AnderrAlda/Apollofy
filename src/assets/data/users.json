@@ -1,0 +1,55 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "Javier Martin",
+        "email": "javielillo@example.com",
+        "age": 26,
+        "city": "Almeria",
+        "gender": "Male",
+        "country": "Spain",
+        "dateOfBirth": "1997-11-12"
+      },
+      {
+        "id": 2,
+        "name": "Lucia Mercorelli",
+        "email": "lucia@example.com",
+        "age": 41,
+        "city": "Barcelona",
+        "gender": "Female",
+        "country": "Spain",
+        "dateOfBirth": "1982-12-16"
+      },
+      {
+        "id": 3,
+        "name": "Eira Melè",
+        "email": "eira@example.com",
+        "age": 37,
+        "city": "Barcelona",
+        "gender": "Female",
+        "country": "Spain",
+        "dateOfBirth": "1986-06-25"
+      },
+      {
+        "id": 4,
+        "name": "Alvaro del Cacho",
+        "email": "alvaro@example.com",
+        "age": 19,
+        "city": "Valencia",
+        "gender": "Male",
+        "country": "Spain",
+        "dateOfBirth": "1999-11-18"
+      },
+      {
+        "id": 5,
+        "name": "Ander A",
+        "email": "ander@example.com",
+        "age": 20,
+        "city": "Orio",
+        "gender": "Male",
+        "country": "Spain",
+        "dateOfBirth": "1987-07-03"
+      }
+    ]
+  }
+  

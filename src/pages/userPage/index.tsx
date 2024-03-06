@@ -1,6 +1,7 @@
 import { FaUserAstronaut } from "react-icons/fa";
 import { FiAlignJustify } from "react-icons/fi";
 import { NavBar } from "../../components/navbar";
+import { Link } from "react-router-dom";
 
 export const UserPage = () => {
   return (
@@ -17,7 +18,9 @@ export const UserPage = () => {
         <div className="flex flex-row ">
           <p className="text-white ml-7 text-3xl">Playlist</p>
           <div className="flex ml-52">
-            <FiAlignJustify size={30} className=" text-white " />
+            <Link to={"/editptofile"}>
+            <FiAlignJustify size={30} className="text-white cursor-pointer " />
+            </Link>
           </div>
         </div>
         <div className="flex flex-col m-6 gap-4 ">
