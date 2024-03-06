@@ -10,6 +10,8 @@ import AudioPlayerPage from "./pages/audioPlayer";
 import { FilterProvider } from "./contexts/FilterContext";
 import Login from "./pages/Login/Login";
 import { AuthProvider } from "./contexts/AuthContext";
+import { MySongs } from "./pages/mySongs";
+
 
 function App() {
   return (

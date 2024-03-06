@@ -6,4 +6,5 @@ export const PublicRoutes = {
   ALBUM: "/album",
   SONG: "/song",
   AUDIOPLAYER: "/audioPlayer",
+  MYSONGS: "/mySongs",
 };
