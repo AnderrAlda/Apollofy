@@ -1,8 +1,8 @@
 import { NavBar } from "../../components/navbar";
 import { SmallShowPlaySong } from "./SmallShowPlaySong";
-import { IoChevronBackOutline, IoHeart } from "react-icons/io5";
+import { IoChevronBackOutline } from "react-icons/io5";
 
-export default function MySongs() {
+export function MySongs() {
   return (
     <div className="bg-black h-screen">
       <div>
@@ -24,9 +24,9 @@ export default function MySongs() {
           <p className="text-white">Group name</p>
         </div>
 
-        <div>
-          <IoHeart className="text-4xl text-white absolute right-5 top-0" />
-        </div>
+        {/* <div>
+          <IoHeart className="text-4xl text-white hover:text-green-500 absolute right-5 top-0" />
+        </div> */}
       </div>
 
       <div className="absolute bottom-14 w-screen">

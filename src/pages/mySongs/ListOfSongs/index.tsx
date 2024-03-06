@@ -1,4 +1,4 @@
-import { HeartIconBtn } from "../../../common/icons/HeartIconBtn";
+import { HeartIconBtn } from "../../../common/icons/heartIconBtn";
 
 export function ListOfSongs() {
   return (
@@ -9,7 +9,7 @@ export function ListOfSongs() {
           <p className=" text-sm text-white">Artist Name</p>
         </div>
       </div>
-      <div className="absolute right-0">
+      <div className="absolute right-0 ">
         <HeartIconBtn />
       </div>
     </section>

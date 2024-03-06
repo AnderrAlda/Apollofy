@@ -6,7 +6,8 @@ import HomePage from "./pages/home";
 import { UserPage } from "./pages/userPage";
 import { PublicRoutes } from "./types/routes";
 import SearchBarPage from "./pages/search/search";
-import MySongs from "./pages/mySongs";
+import { MySongs } from "./pages/mySongs";
+
 
 function App() {
   return (
