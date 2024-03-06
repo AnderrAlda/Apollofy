@@ -10,7 +10,7 @@ export function MusicPlayElements() {
 
   return (
     <section>
-      <div className="mt-12 ml-20">
+      <div className="mt-12">
         <button className="ml-9 text-3xl text-white hover:text-green-500">
           <RiRestartLine />
         </button>
@@ -23,7 +23,7 @@ export function MusicPlayElements() {
         <button className="ml-10 text-3xl text-white hover:text-green-500">
           <IoPlaySkipForward />
         </button>
-        {/* <HeartIconBtn /> */}
+        <HeartIconBtn /> 
       </div>
     </section>
   );
