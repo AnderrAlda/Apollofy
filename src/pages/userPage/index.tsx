@@ -19,7 +19,7 @@ export const UserPage = () => {
           <p className="text-white ml-7 text-3xl">Playlist</p>
           <div className="flex ml-52">
             <Link to={"/editptofile"}>
-            <FiAlignJustify size={30} className=" text-white " />
+            <FiAlignJustify size={30} className="text-white cursor-pointer " />
             </Link>
           </div>
         </div>

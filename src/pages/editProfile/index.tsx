@@ -1,7 +1,12 @@
+import { useState } from "react";
 import { NavBar } from "../../components/navbar";
 
 
 export const EditProfile= () => {
+
+  const[newEmail, setNewEmail] = useState("")
+
+
   return (
     <>
     <div className="bg-black h-screen">
