@@ -6,12 +6,10 @@ import HomePage from "./pages/home";
 import { UserPage } from "./pages/userPage";
 import { PublicRoutes } from "./types/routes";
 import SearchBarPage from "./pages/searchPage/search";
-import AudioPlayerPage from "./pages/audioPlayer";
-import { FilterProvider } from "./contexts/FilterContext";
+ import { FilterProvider } from "./contexts/FilterContext";
 import Login from "./pages/Login/Login";
 import { AuthProvider } from "./contexts/AuthContext";
-import { MySongs } from "./pages/mySongs";
-
+ 
 import { EditProfile } from "./pages/editProfile";
 
 function App() {
@@ -28,10 +26,7 @@ function App() {
             <Route path={PublicRoutes.USER} element={<UserPage />} />
             <Route path={PublicRoutes.ALBUM} element={<AlbumComponents />} />
             <Route path={PublicRoutes.SONG} element={<SongPage />} />
-            <Route
-              path={PublicRoutes.AUDIOPLAYER}
-              element={<AudioPlayerPage />}
-            />
+  
             <Route path={PublicRoutes.EDITPROFILE} element={<EditProfile />} />
         </Routes>
         </BrowserRouter>

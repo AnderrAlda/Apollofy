@@ -1,15 +1,24 @@
+import { Link } from "react-router-dom";
+import { PlayPauseBtn } from "../../common/icons/PlayPauseBtn";
+import { PublicRoutes } from "../../types/routes";
 import React, { useState, useRef, useEffect } from "react";
 import ReactPlayer from "react-player";
-
 import {
   IoPlayCircleOutline,
   IoPauseCircleOutline,
   IoPlaySkipBackSharp,
   IoPlaySkipForward,
 } from "react-icons/io5";
-import "./audioPlayer.css";
+import "../audioPlayer/audioPlayer.css";
 
-const AudioPlayerPage = () => {
+interface props 
+{
+  title:string
+  artist:string
+}
+
+export function SmallShowPlaySong({ title,artist }:props) {
+
   const [playing, setPlaying] = useState(false);
   const [played, setPlayed] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -84,10 +93,10 @@ const AudioPlayerPage = () => {
   };
 
   return (
-    <div className="bg-black h-screen">
-      <div>
-        <ReactPlayer
-          width="100%"
+    <section>
+         <ReactPlayer
+          width="1px"
+          height="1px"
           ref={playerRef}
           url={songs[currentSongIndex]}
           playing={playing}
@@ -95,8 +104,41 @@ const AudioPlayerPage = () => {
           onProgress={handleProgress}
           onDuration={handleDuration}
         />
+    
+
+<div className="show flex relative">
+ 
+
+        <div className=" imgsmall">
+          <img src="" alt="" />
+        </div>
+
+        <Link to={PublicRoutes.SONG}>
+        <div>
+          <p className="text-white ml-5">{title}</p>
+          <p className="text-white ml-5 text-sm">{artist}</p>
+        </div>
+
+        </Link>
+ 
+      
+
+        <div> 
+        <div className="absolute right-5 top-1">
+        <button onClick={togglePlaying}>
+                {playing ? (
+                  <IoPauseCircleOutline className="text-4xl text-white" />
+                ) : (
+                  <IoPlayCircleOutline className="text-4xl text-white" />
+                )}
+              </button>
+        </div>
+        </div>
+        
+      
       </div>
-      <div className="bg-gray-300 flex">
+      <div className="bg-gray-300 flex h-2">
+
         <input
           className="w-screen"
           type="range"
@@ -114,50 +156,7 @@ const AudioPlayerPage = () => {
           }}
         />
       </div>
-      <div className="relative">
-        <span className="ml-5 text-white">{formatTime(currentTime)}</span>
-        <span className="absolute right-5 text-white">
-          {formatTime(duration)}
-        </span>
-      </div>
-      <div className="w-screen flex gap-10 justify-center">
-        <IoPlaySkipBackSharp
-          className="text-4xl text-white"
-          onClick={handleSkipBackward}
-        />
-        <button onClick={togglePlaying}>
-          {playing ? (
-            <IoPauseCircleOutline className="text-4xl text-white" />
-          ) : (
-            <IoPlayCircleOutline className="text-4xl text-white" />
-          )}
-        </button>
-        <IoPlaySkipForward
-          className="text-4xl text-white"
-          onClick={handleSkipForward}
-        />
-      </div>
-
-      <div className="mt-10">
-        <p className="text-white">Volume:</p>
-        <input
-          className="w-20 appearance-none h-1 rounded-md"
-          type="range"
-          min={0}
-          max={1}
-          step="any"
-          value={volume}
-          onChange={handleVolumeChange}
-          style={{
-            background: `linear-gradient(to right, green ${
-              volume * 100
-            }%, transparent 0%)`,
-            WebkitAppearance: "none",
-          }}
-        />
-      </div>
-    </div>
+      
+    </section>
   );
-};
-
-export default AudioPlayerPage;
+}

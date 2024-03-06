@@ -1,5 +1,5 @@
 import { NavBar } from "../../components/navbar";
-import { SmallShowPlaySong } from "./SmallShowPlaySong";
+import { SmallShowPlaySong } from "../../components/SmallShowPlaySong";
 import { HeartIconBtn } from "../../common/icons/heartIconBtn";
 
 
