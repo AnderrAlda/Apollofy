@@ -8,15 +8,20 @@ import { PublicRoutes } from "./types/routes";
 import SearchBarPage from "./pages/searchPage/search";
 import AudioPlayerPage from "./pages/audioPlayer";
 import { FilterProvider } from "./contexts/FilterContext";
+import Login from "./pages/Login/Login";
+import { AuthProvider } from "./contexts/AuthContext";
 
 function App() {
   return (
     <>
       <FilterProvider>
-        <BrowserRouter>
+      <AuthProvider>
+      <BrowserRouter>
           <Routes>
-            <Route path={PublicRoutes.HOME} element={<HomePage />} />
-            <Route path={PublicRoutes.SEARCH} element={<SearchBarPage />} />
+            
+          <Route path={PublicRoutes.HOME} element={<HomePage />} />
+            <Route path={PublicRoutes.LOGIN} element={<Login/>} />
+          <Route path={PublicRoutes.SEARCH} element={<SearchBarPage />} />
             <Route path={PublicRoutes.USER} element={<UserPage />} />
             <Route path={PublicRoutes.ALBUM} element={<AlbumComponents />} />
             <Route path={PublicRoutes.SONG} element={<SongPage />} />
@@ -27,6 +32,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </FilterProvider>
+      </AuthProvider>
     </>
   );
 }
