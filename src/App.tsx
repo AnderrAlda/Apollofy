@@ -5,22 +5,39 @@ import { SongPage } from "./pages/songPage";
 import HomePage from "./pages/home";
 import { UserPage } from "./pages/userPage";
 import { PublicRoutes } from "./types/routes";
-import SearchBarPage from "./pages/search/search";
+import SearchBarPage from "./pages/searchPage/search";
+import AudioPlayerPage from "./pages/audioPlayer";
+import { FilterProvider } from "./contexts/FilterContext";
+import Login from "./pages/Login/Login";
+import { AuthProvider } from "./contexts/AuthContext";
+import { MySongs } from "./pages/mySongs";
+
 import { EditProfile } from "./pages/editProfile";
 
 function App() {
   return (
     <>
+      <FilterProvider>
+      <AuthProvider>
       <BrowserRouter>
-        <Routes>
+          <Routes>
+            
           <Route path={PublicRoutes.HOME} element={<HomePage />} />
+            <Route path={PublicRoutes.LOGIN} element={<Login/>} />
           <Route path={PublicRoutes.SEARCH} element={<SearchBarPage />} />
-          <Route path={PublicRoutes.USER} element={<UserPage />} />
-          <Route path={PublicRoutes.ALBUM} element={<AlbumComponents />} />
-          <Route path={PublicRoutes.SONG} element={<SongPage />} />
-          <Route path={PublicRoutes.EDITPROFILE} element={<EditProfile />} />
+            <Route path={PublicRoutes.USER} element={<UserPage />} />
+            <Route path={PublicRoutes.ALBUM} element={<AlbumComponents />} />
+            <Route path={PublicRoutes.SONG} element={<SongPage />} />
+            <Route
+              path={PublicRoutes.AUDIOPLAYER}
+              element={<AudioPlayerPage />}
+            />
+            <Route path={PublicRoutes.EDITPROFILE} element={<EditProfile />} />
         </Routes>
-      </BrowserRouter>
+        </BrowserRouter>
+        </AuthProvider>
+      </FilterProvider>
+   
     </>
   );
 }

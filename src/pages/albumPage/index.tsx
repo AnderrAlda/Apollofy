@@ -4,11 +4,16 @@ import { ListOfSongs } from "./ListOfSongs";
 import { ImgAndTitle } from "./img&title";
 
 export default function AlbumComponents() {
+
+  const song = {
+    title:"Song title",
+    artist:"song artist"
+  }
   return (
     <div className="bg-black">
       <ImgAndTitle />
       <ListOfSongs />
-      <SmallShowPlaySong />
+      <SmallShowPlaySong title={song.title} artist={song.artist}/>
       <NavBar />
     </div>
   );

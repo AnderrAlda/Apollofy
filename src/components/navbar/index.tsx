@@ -21,9 +21,9 @@ export function NavBar(): ReactNode {
         <CiSearch className="text-white hover:text-green-500" />
       </Link>
 
-      {/* <NavLink to="/wishlist"> */}
-      <IoLibraryOutline className="text-white hover:text-green-500" />
-      {/* </NavLink> */}
+      <Link to={PublicRoutes.MYSONGS}>
+        <IoLibraryOutline className="text-white hover:text-green-500" />
+      </Link>
       <Link to={PublicRoutes.USER}>
         <IoPersonOutline className="text-white hover:text-green-500" />
       </Link>
