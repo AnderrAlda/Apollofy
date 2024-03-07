@@ -10,7 +10,7 @@ import AudioPlayerPage from "./pages/audioPlayer";
 import { FilterProvider } from "./contexts/FilterContext";
 import Login from "./pages/Login/Login";
 import { AuthProvider } from "./contexts/AuthContext";
-import { MySongs } from "./pages/mySongs";
+// import { MySongs } from "./pages/mySongs";
 
 import { EditProfile } from "./pages/editProfile";
 

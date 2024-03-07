@@ -1,14 +1,14 @@
 import { NavBar } from "../../components/navbar";
-import { SmallShowPlaySong } from "./SmallShowPlaySong";
 import { HeartIconBtn } from "../../common/icons/heartIconBtn";
+import { MiniSongShow } from "../../common/MiniSongShow";
 
 
 export default function AlbumComponents() {
 
-  const song = {
-    title:"Song title",
-    artist:"song artist"
-  }
+  // const song = {
+  //   title:"Song title",
+  //   artist:"song artist"
+  // }
   return (
     <div className="bg-black h-screen w-screen relative">
       
@@ -21,20 +21,17 @@ export default function AlbumComponents() {
     </div>
 
     <div className="fixed bottom-80 left-6 w-screen">
-     <div className="mb-20  w-screen relative">
-     <p className="text-white text-xl">Song name</p>
-     <p className="text-white text-xs">Group name</p>
-   <div className="absolute right-32 top-2">
-   <HeartIconBtn/>
-   </div>
-
-     </div>
+      <div className="mb-20  w-screen relative">
+      <p className="text-white text-xl">Song name</p>
+      <p className="text-white text-xs">Group name</p>
+    <div className="absolute right-32 top-2">
+    <HeartIconBtn/>
     </div>
 
- 
-    <div className="absolute bottom-14 w-screen">
-    <SmallShowPlaySong title={song.title} artist={song.artist}/>
+      </div>
     </div>
+
+    <MiniSongShow/>
     <div className="absolute bottom-0 w-screen">
     <NavBar />
     </div>
