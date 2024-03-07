@@ -2,7 +2,7 @@ import { FaUserAstronaut } from "react-icons/fa";
 import { FiAlignJustify } from "react-icons/fi";
 import { NavBar } from "../../components/navbar";
 import { Link } from "react-router-dom";
-import { MiniSongShow } from "../../common/MiniSongShow";
+import { PublicRoutes } from "../../types/routes";
 
 export const UserPage = () => {
   return (
@@ -19,7 +19,7 @@ export const UserPage = () => {
         <div className="flex flex-row ">
           <p className="text-white ml-7 text-3xl">Playlist</p>
           <div className="flex ml-52">
-            <Link to={"/editptofile"}>
+            <Link to={PublicRoutes.EDITPROFILE}>
             <FiAlignJustify size={30} className="text-white cursor-pointer " />
             </Link>
           </div>

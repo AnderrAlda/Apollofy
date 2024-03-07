@@ -11,8 +11,7 @@ import Login from "./pages/Login/Login";
 import { AuthProvider } from "./contexts/AuthContext";
  
 import { EditProfile } from "./pages/editProfile";
-import { PlayerProvider } from "./contexts/AudioPlayerContext";
- 
+import { PrivateRoute } from "./routes";
 
 function App() {
   return (
@@ -26,7 +25,7 @@ function App() {
           <Route path={PublicRoutes.HOME} element={<HomePage />} />
             <Route path={PublicRoutes.LOGIN} element={<Login/>} />
           <Route path={PublicRoutes.SEARCH} element={<SearchBarPage />} />
-            <Route path={PublicRoutes.USER} element={<UserPage />} />
+            <Route path={PublicRoutes.USER} element={<PrivateRoute><UserPage /></PrivateRoute>} />
             <Route path={PublicRoutes.ALBUM} element={<AlbumComponents />} />
             <Route path={PublicRoutes.SONG} element={<SongPage />} />
   
