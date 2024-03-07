@@ -26,20 +26,13 @@ export const UserPage = () => {
         </div>
         <div className="flex flex-col m-6 gap-4 ">
           <div className="flex flex-row">
-            <div className="border-solid border-white border h-32 w-32"></div>
-            <div className="flex flex-col">
+            <div className="border-solid border-white border rounded-xl bg-slate-600 h-32 w-32"></div>
+            <div className="flex flex-col ">
               <p className="text-white text-3xl ">Account</p>
               <p className="text-white text-3xl ">Account</p>
             </div>
           </div>
-          <div className="flex flex-row">
-            <div className="border-solid border-white border h-32 w-32"></div>
-            <div className="flex flex-col">
-              <p className="text-white text-3xl ">Account</p>
-
-              <p className="text-white text-3xl ">Account</p>
-            </div>
-          </div>
+          
         </div>
         <div className="absolute bottom-0 w-screen">
           <NavBar />

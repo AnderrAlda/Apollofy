@@ -27,22 +27,30 @@ const handleChangeProfile = () => {
     e.preventDefault();
 
     const updatedUserData = {
-       
     };
 
      if (newEmail !== "" && newEmail !== user.email) {
       updatedUserData.email = newEmail;
        }
-       //REPETIR CONDICIONALES 
+      if (newGender !== "" && newGender !== user.gender) {
+        updatedUserData.gender = newGender;
+         }
+      if (newPassword !== "" && newPassword !== user.password) {
+          updatedUserData.password = newPassword;
+           }
+      if (newCountry !== "" && newCountry !== user.country) {
+          updatedUserData.country = newCountry;
+             }
+               
 
     try {
   
-      const response = await fetch(`src/assets/data/users/${user.id}.json`, {
+      const response = await fetch(`http://localhost:3000/users/${user.id}`, {
         method: 'PATCH',
         headers: {'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: newEmail,
+          updatedUserData
         }),
       });
   
@@ -92,7 +100,7 @@ console.log(newEmail)
         </div>
         {(changeProfile) ? <input type="password"value={newPassword} onChange={(e)=>setNewPassaword(e.target.value)} placeholder="New password"className="p-1.5 pl-4 rounded-full" /> : null }
 
-        <button type="submit" className="text-white text-2xl mt-6 p-1.5 rounded-full border border-s w-18">Save changes</button>
+        <button type="submit" onClick={handleSubmit} className="text-white text-2xl mt-6 p-1.5 rounded-full border border-s w-18">Save changes</button>
 
         
         </div>
