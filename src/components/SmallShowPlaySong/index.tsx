@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
- import { PublicRoutes } from "../../types/routes";
+import { PublicRoutes } from "../../types/routes";
 import React, { useState, useRef, useEffect } from "react";
 import ReactPlayer from "react-player";
-import {
-  IoPlayCircleOutline,
-  IoPauseCircleOutline,
- } from "react-icons/io5";
+import { IoPlayCircleOutline, IoPauseCircleOutline } from "react-icons/io5";
 import "../audioPlayer/audioPlayer.css";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
 
@@ -17,20 +14,26 @@ interface Props {
 export function SmallShowPlaySong({ title, artist }: Props) {
   const songs = ["/src/assets/song1.mp3", "/src/assets/song2.mp3"];
 
-  const { playing, setPlaying, currentTime, setCurrentTime ,currentSongIndex,volume} = usePlayer();
+  const {
+    playing,
+    setPlaying,
+    currentTime,
+    setCurrentTime,
+    currentSongIndex,
+    volume,
+  } = usePlayer();
 
-    //played represent the progress in the input range
+  //played represent the progress in the input range
   const [played, setPlayed] = useState(0);
   const [duration, setDuration] = useState(0);
 
-    //initialCurrentTimeSet is the boolean that controls that the context currentTime value is loaded only when the page mounts
-   const [initialCurrentTimeSet, setInitialCurrentTimeSet] = useState(false); // Add this state
+  //initialCurrentTimeSet is the boolean that controls that the context currentTime value is loaded only when the page mounts
+  const [initialCurrentTimeSet, setInitialCurrentTimeSet] = useState(false); // Add this state
 
   //playerRef reference to the ReactPlayer component
   const playerRef = useRef<ReactPlayer>(null);
 
-
-    //this useEffect updates the currentTime state while the audio is playing. It updates every second and does it if the song is playing so if playing state is changed. the return is to clear the interval when the component unmounts.
+  //this useEffect updates the currentTime state while the audio is playing. It updates every second and does it if the song is playing so if playing state is changed. the return is to clear the interval when the component unmounts.
   useEffect(() => {
     const interval = setInterval(() => {
       if (playing) {
@@ -40,15 +43,14 @@ export function SmallShowPlaySong({ title, artist }: Props) {
     return () => clearInterval(interval);
   }, [playing]);
 
-   //every time a song in changed to set to 0 this values. So that when song change the next start from 0.
+  //every time a song in changed to set to 0 this values. So that when song change the next start from 0.
   useEffect(() => {
     playerRef.current?.seekTo(0);
     setPlayed(0);
     setCurrentTime(0);
   }, [currentSongIndex]);
 
-
-    //ensures that when the component mounts, the initial current time of the audio player is set to the context's current time if it's available.  It helps synchronize the audio playback position with the stored current time value in the context, ensuring continuity between different sessions or when navigating between components.
+  //ensures that when the component mounts, the initial current time of the audio player is set to the context's current time if it's available.  It helps synchronize the audio playback position with the stored current time value in the context, ensuring continuity between different sessions or when navigating between components.
   useEffect(() => {
     if (!initialCurrentTimeSet && currentTime !== 0) {
       playerRef.current?.seekTo(currentTime);
@@ -60,8 +62,7 @@ export function SmallShowPlaySong({ title, artist }: Props) {
     setPlaying(!playing);
   };
 
-
-    //callback function that is triggered when the user interacts with the seek bar (input element) to change the playback position of the audio. 
+  //callback function that is triggered when the user interacts with the seek bar (input element) to change the playback position of the audio.
   const handleSeekChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const seekValue = parseFloat(e.target.value);
     setPlayed(seekValue);
@@ -69,12 +70,12 @@ export function SmallShowPlaySong({ title, artist }: Props) {
     playerRef.current?.seekTo(seekValue);
   };
 
-    //this function controls the drag of the seek bar. so when you mouseup (stop clicking) the bar updates the time in the player.
+  //this function controls the drag of the seek bar. so when you mouseup (stop clicking) the bar updates the time in the player.
   const handleSeekMouseUp = (e: React.MouseEvent<HTMLInputElement>) => {
     playerRef.current?.seekTo(parseFloat(e.currentTarget.value));
   };
 
-    //when you are moving the bar from left to right, this controls that the song stops and starts.
+  //when you are moving the bar from left to right, this controls that the song stops and starts.
   const handleProgress = (state: any) => {
     if (!state.seeking) {
       setPlayed(state.played);
