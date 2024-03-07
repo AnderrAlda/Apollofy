@@ -42,8 +42,7 @@ export const UserPage = () => {
           </div>
         </div>
         <div>
-          <MiniSongShow />
-        </div>
+         </div>
         <div className="absolute bottom-0 w-screen">
           <NavBar />
         </div>

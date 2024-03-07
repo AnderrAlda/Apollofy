@@ -31,7 +31,7 @@ export default function AlbumComponents() {
       </div>
     </div>
 
-    <MiniSongShow/>
+   
     <div className="absolute bottom-0 w-screen">
     <NavBar />
     </div>
