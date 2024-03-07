@@ -1,4 +1,4 @@
-import { HeartIconBtn } from "../../../common/icons/heartIconBtn";
+import { HeartIconBtn } from "../../../common/icons/heartIconBtn.tsx";
 
 
 
@@ -10,7 +10,7 @@ export function ListOfSongs() {
           <p className="ml-7 mt-5 text-white">Song Name</p>
           <p className="ml-7 text-sm text-white">Artist Name</p>
         </div>
-        {/* <HeartIconBtn /> */}
+        <HeartIconBtn />
       </div>
     </section>
   );
