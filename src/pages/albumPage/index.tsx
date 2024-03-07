@@ -1,7 +1,6 @@
 import { NavBar } from "../../components/navbar";
 import { SmallShowPlaySong } from "./SmallShowPlaySong";
-import { ListOfSongs } from "./ListOfSongs";
-import { ImgAndTitle } from "./img&title";
+ 
 
 export default function AlbumComponents() {
 
@@ -10,11 +9,34 @@ export default function AlbumComponents() {
     artist:"song artist"
   }
   return (
-    <div className="bg-black">
-      <ImgAndTitle />
-      <ListOfSongs />
-      <SmallShowPlaySong title={song.title} artist={song.artist}/>
-      <NavBar />
+    <div className="bg-black h-screen w-screen relative">
+      
+    <div>
+    <img src="src/assets/album1.png" alt=""  className="w-52 absolute top-20 left-20 rounded-xl"/>
+    </div>
+
+    <div className="absolute top-80 left-6">
+      <p className="text-white text-3xl">Album name</p>
+    </div>
+
+    <div className="fixed bottom-80 left-6 w-screen">
+     <div className="mb-20  w-screen relative">
+     <p className="text-white text-xl">Song name</p>
+     <p className="text-white text-xs">Group name</p>
+   <div className="absolute right-32 top-2">
+ 
+   </div>
+
+     </div>
+    </div>
+
+ 
+    <div className="absolute bottom-14 w-screen">
+    <SmallShowPlaySong title={song.title} artist={song.artist}/>
+    </div>
+    <div className="absolute bottom-0 w-screen">
+    <NavBar />
+    </div>
     </div>
   );
 }
