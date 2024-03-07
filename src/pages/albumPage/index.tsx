@@ -1,7 +1,6 @@
 import { NavBar } from "../../components/navbar";
 import { SmallShowPlaySong } from "./SmallShowPlaySong";
-import { HeartIconBtn } from "../../common/icons/heartIconBtn";
-
+ 
 
 export default function AlbumComponents() {
 
@@ -25,7 +24,7 @@ export default function AlbumComponents() {
      <p className="text-white text-xl">Song name</p>
      <p className="text-white text-xs">Group name</p>
    <div className="absolute right-32 top-2">
-   <HeartIconBtn/>
+ 
    </div>
 
      </div>
