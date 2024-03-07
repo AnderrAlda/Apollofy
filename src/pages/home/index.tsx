@@ -3,9 +3,16 @@ import HorizontalScrollLayout from "../../layouts/horizontalScroll";
 import VerticalScrollLayout from "../../layouts/verticalScroll";
 import { NavBar } from "../../components/navbar";
 import { MusicProfile } from "../../common/musicProfile";
+import { SmallShowPlaySong } from "../../components/SmallShowPlaySong";
 
 const HomePage = () => {
   const generator = new AvatarGenerator();
+
+
+  const song = {
+    title:"Song title",
+    artist:"song artist"
+  }
 
   return (
     <div className="relative h-screen">
@@ -35,7 +42,7 @@ const HomePage = () => {
         </svg>
       </div>
 
-      <VerticalScrollLayout height="38rem">
+      <VerticalScrollLayout height="42rem">
         <div className="mt-5 ml-5">
           <h2 className="text-2xl mb-5">Top Playlists</h2>
           <HorizontalScrollLayout>
@@ -55,42 +62,10 @@ const HomePage = () => {
           </HorizontalScrollLayout>
         </div>
       </VerticalScrollLayout>
-      <div className=" w-full">
-        <div className=" flex gap-5 mt-9 relative ">
-          <img
-            className="rounded-2xl h-16"
-            src="src/assets/album1.png"
-            alt="album1"
-          />
-          <div>
-            <p>Rogue About Me</p>
-            <p>The Weekend</p>
-          </div>
-          <svg
-            className="h-12 absolute right-5 top-1"
-            data-slot="icon"
-            data-darkreader-inline-stroke=""
-            fill="none"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-            ></path>
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z"
-            ></path>
-          </svg>
-        </div>
-      </div>
-      <div className="">
+      <div className="absolute bottom-14 w-screen">
+    <SmallShowPlaySong title={song.title} artist={song.artist}/>
+    </div>
+      <div className="absolute bottom-0 w-screen">
         <NavBar />
       </div>
     </div>
