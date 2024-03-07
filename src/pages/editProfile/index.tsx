@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavBar } from "../../components/navbar";
 import { CgLayoutGrid } from "react-icons/cg";
 import { useAuth } from "../../contexts/AuthContext";
-import { IoPencil } from "react-icons/io5";
+import { IoPencil, IoEye } from "react-icons/io5";
 
 export const EditProfile = () => {
-  const { user } = useAuth();
+  const { user, updateUser } = useAuth();
 
   const [newEmail, setNewEmail] = useState("");
   const [newGender, setNewGender] = useState("");
@@ -13,12 +13,20 @@ export const EditProfile = () => {
   const [newPassword, setNewPassaword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
   const [changeProfile, setChangeProfile] = useState(false);
+  const [displayPassword, setDisplayPassword] = useState(false);
 
   const handleChangeProfile = () => {
     if (changeProfile) {
       setChangeProfile(false);
     } else {
       setChangeProfile(true);
+    }
+  };
+  const handleDisplayPassword = () => {
+    if (displayPassword) {
+      setDisplayPassword(false);
+    } else {
+      setDisplayPassword(true);
     }
   };
 
@@ -53,7 +61,11 @@ export const EditProfile = () => {
       }
 
       const data = await response.json();
-    } catch (error) {}
+      console.log(data);
+      updateUser(data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   console.log(newEmail);
@@ -111,7 +123,12 @@ export const EditProfile = () => {
           ) : null}
 
           <div className="text-white">
-            <p className="text-2xl">Password: {user?.password}</p>
+            <div className="text-2xl flex justify-between">
+              Password: {displayPassword ? user?.password : "*****"}
+              <button onClick={handleDisplayPassword}>
+                <IoEye />
+              </button>
+            </div>
           </div>
           {changeProfile ? (
             <input
@@ -122,14 +139,16 @@ export const EditProfile = () => {
               className="p-1.5 pl-4 rounded-full"
             />
           ) : null}
-          
-          <button
-            type="submit"
-            onClick={handleSubmit}
-            className="text-white text-2xl mt-6 p-1.5 rounded-full border border-s w-18"
-          >
-            Save changes
-          </button>
+
+          {changeProfile ? (
+            <button
+              type="submit"
+              onClick={handleSubmit}
+              className="text-white text-2xl mt-6 p-1.5 rounded-full border border-s w-18"
+            >
+              Save changes
+            </button>
+          ) : null}
         </div>
         <div className="absolute bottom-0 w-screen">
           <NavBar />
