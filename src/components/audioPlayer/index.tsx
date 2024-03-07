@@ -9,21 +9,53 @@ import {
 } from "react-icons/io5";
 import "./audioPlayer.css";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
+import { getSongs } from "../../contexts/GetTrack";
+
+interface Song {
+  id: number;
+  name: string;
+  artist: string;
+  url: string;
+  thumbnail: string;
+  genre: string;
+  liked: boolean;
+}
 
 const AudioPlayer = () => {
+  const [songs, setSongs] = useState<Song[]>([]);
 
-  //the array of songs
-  const songs = ["/src/assets/song1.mp3", "/src/assets/song2.mp3"];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const songsData = await getSongs();
+        setSongs(songsData);
+        console.log(songs);
+      } catch (error) {
+        console.error("Error fetching songs:", error);
+      }
+    };
+
+    fetchData();
+  }, []); // Empty dependency array ensures this effect runs only once, like componentDidMount
 
   //the states from the context
-  const { playing, setPlaying, currentTime, setCurrentTime ,currentSongIndex, setCurrentSongIndex,volume, setVolume} = usePlayer();
+  const {
+    playing,
+    setPlaying,
+    currentTime,
+    setCurrentTime,
+    currentSongIndex,
+    setCurrentSongIndex,
+    volume,
+    setVolume,
+  } = usePlayer();
 
   //played represent the progress in the input range
   const [played, setPlayed] = useState(0);
   const [duration, setDuration] = useState(0);
- 
+
   //initialCurrentTimeSet is the boolean that controls that the context currentTime value is loaded only when the page mounts
-  const [initialCurrentTimeSet, setInitialCurrentTimeSet] = useState(false); 
+  const [initialCurrentTimeSet, setInitialCurrentTimeSet] = useState(false);
 
   //playerRef reference to the ReactPlayer component
   const playerRef = useRef<ReactPlayer>(null);
@@ -38,7 +70,7 @@ const AudioPlayer = () => {
     return () => clearInterval(interval);
   }, [playing]);
 
- //every time a song in changed to set to 0 this values. So that when song change the next start from 0.
+  //every time a song in changed to set to 0 this values. So that when song change the next start from 0.
   useEffect(() => {
     playerRef.current?.seekTo(0);
     setPlayed(0);
@@ -53,12 +85,11 @@ const AudioPlayer = () => {
     }
   }, [currentTime, initialCurrentTimeSet]);
 
-
   const togglePlaying = () => {
     setPlaying(!playing);
   };
 
-  //callback function that is triggered when the user interacts with the seek bar (input element) to change the playback position of the audio. 
+  //callback function that is triggered when the user interacts with the seek bar (input element) to change the playback position of the audio.
   const handleSeekChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const seekValue = parseFloat(e.target.value);
     setPlayed(seekValue);
@@ -98,7 +129,6 @@ const AudioPlayer = () => {
     setCurrentSongIndex(newIndex);
   };
 
- 
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newVolume = parseFloat(e.target.value);
     setVolume(newVolume);
@@ -111,7 +141,11 @@ const AudioPlayer = () => {
           width="100%"
           height="80px"
           ref={playerRef}
-          url={songs[currentSongIndex]}
+          url={
+            songs.length > 0 && currentSongIndex !== null
+              ? songs[currentSongIndex].url
+              : ""
+          }
           playing={playing}
           volume={volume}
           onProgress={handleProgress}
