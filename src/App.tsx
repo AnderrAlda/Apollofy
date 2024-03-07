@@ -11,10 +11,13 @@ import Login from "./pages/Login/Login";
 import { AuthProvider } from "./contexts/AuthContext";
  
 import { EditProfile } from "./pages/editProfile";
+import { PlayerProvider } from "./contexts/AudioPlayerContext";
+ 
 
 function App() {
   return (
     <>
+    <PlayerProvider>
       <FilterProvider>
       <AuthProvider>
       <BrowserRouter>
@@ -32,6 +35,7 @@ function App() {
         </BrowserRouter>
         </AuthProvider>
       </FilterProvider>
+      </PlayerProvider>
    
     </>
   );

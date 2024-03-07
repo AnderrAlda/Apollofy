@@ -8,19 +8,27 @@ import {
   IoPlaySkipForward,
 } from "react-icons/io5";
 import "./audioPlayer.css";
+import { usePlayer } from "../../contexts/AudioPlayerContext";
 
 const AudioPlayer = () => {
-  const [playing, setPlaying] = useState(false);
-  const [played, setPlayed] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [currentSongIndex, setCurrentSongIndex] = useState(0);
-  const [volume, setVolume] = useState(0.5); // Initialize volume to 0.5
 
+  //the array of songs
   const songs = ["/src/assets/song1.mp3", "/src/assets/song2.mp3"];
 
+  //the states from the context
+  const { playing, setPlaying, currentTime, setCurrentTime ,currentSongIndex, setCurrentSongIndex,volume, setVolume} = usePlayer();
+
+  //played represent the progress in the input range
+  const [played, setPlayed] = useState(0);
+  const [duration, setDuration] = useState(0);
+ 
+  //initialCurrentTimeSet is the boolean that controls that the context currentTime value is loaded only when the page mounts
+  const [initialCurrentTimeSet, setInitialCurrentTimeSet] = useState(false); 
+
+  //playerRef reference to the ReactPlayer component
   const playerRef = useRef<ReactPlayer>(null);
 
+  //this useEffect updates the currentTime state while the audio is playing. It updates every second and does it if the song is playing so if playing state is changed. the return is to clear the interval when the component unmounts.
   useEffect(() => {
     const interval = setInterval(() => {
       if (playing) {
@@ -30,26 +38,40 @@ const AudioPlayer = () => {
     return () => clearInterval(interval);
   }, [playing]);
 
+ //every time a song in changed to set to 0 this values. So that when song change the next start from 0.
   useEffect(() => {
     playerRef.current?.seekTo(0);
     setPlayed(0);
     setCurrentTime(0);
   }, [currentSongIndex]);
 
+  //ensures that when the component mounts, the initial current time of the audio player is set to the context's current time if it's available.  It helps synchronize the audio playback position with the stored current time value in the context, ensuring continuity between different sessions or when navigating between components.
+  useEffect(() => {
+    if (!initialCurrentTimeSet && currentTime !== 0) {
+      playerRef.current?.seekTo(currentTime);
+      setInitialCurrentTimeSet(true);
+    }
+  }, [currentTime, initialCurrentTimeSet]);
+
+
   const togglePlaying = () => {
     setPlaying(!playing);
   };
 
+  //callback function that is triggered when the user interacts with the seek bar (input element) to change the playback position of the audio. 
   const handleSeekChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const seekValue = parseFloat(e.target.value);
     setPlayed(seekValue);
+    //set the time of the player to seekValue that is the one clicked
     playerRef.current?.seekTo(seekValue);
   };
 
+  //this function controls the drag of the seek bar. so when you mouseup (stop clicking) the bar updates the time in the player.
   const handleSeekMouseUp = (e: React.MouseEvent<HTMLInputElement>) => {
     playerRef.current?.seekTo(parseFloat(e.currentTarget.value));
   };
 
+  //when you are moving the bar from left to right, this controls that the song stops and starts.
   const handleProgress = (state: any) => {
     if (!state.seeking) {
       setPlayed(state.played);
@@ -67,17 +89,16 @@ const AudioPlayer = () => {
   };
 
   const handleSkipBackward = () => {
-    setCurrentSongIndex((prevIndex) =>
-      prevIndex === 0 ? songs.length - 1 : prevIndex - 1
-    );
+    const newIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+    setCurrentSongIndex(newIndex);
   };
 
   const handleSkipForward = () => {
-    setCurrentSongIndex((prevIndex) =>
-      prevIndex === songs.length - 1 ? 0 : prevIndex + 1
-    );
+    const newIndex = (currentSongIndex + 1) % songs.length;
+    setCurrentSongIndex(newIndex);
   };
 
+ 
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newVolume = parseFloat(e.target.value);
     setVolume(newVolume);
