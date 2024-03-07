@@ -1,55 +1,64 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "name": "Javier Martin",
-        "email": "javielillo@example.com",
-        "age": 26,
-        "city": "Almeria",
-        "gender": "Male",
-        "country": "Spain",
-        "dateOfBirth": "1997-11-12"
-      },
-      {
-        "id": 2,
-        "name": "Lucia Mercorelli",
-        "email": "lucia@example.com",
-        "age": 41,
-        "city": "Barcelona",
-        "gender": "Female",
-        "country": "Spain",
-        "dateOfBirth": "1982-12-16"
-      },
-      {
-        "id": 3,
-        "name": "Eira Melè",
-        "email": "eira@example.com",
-        "age": 37,
-        "city": "Barcelona",
-        "gender": "Female",
-        "country": "Spain",
-        "dateOfBirth": "1986-06-25"
-      },
-      {
-        "id": 4,
-        "name": "Alvaro del Cacho",
-        "email": "alvaro@example.com",
-        "age": 19,
-        "city": "Valencia",
-        "gender": "Male",
-        "country": "Spain",
-        "dateOfBirth": "1999-11-18"
-      },
-      {
-        "id": 5,
-        "name": "Ander A",
-        "email": "ander@example.com",
-        "age": 20,
-        "city": "Orio",
-        "gender": "Male",
-        "country": "Spain",
-        "dateOfBirth": "1987-07-03"
-      }
-    ]
-  }
-  
+  "users": [
+    {
+      "id": 1,
+      "name": "Javier",
+      "last_name":"Martin",
+      "email": "javi@javi.com",
+      "password": "javijavi",
+      "city": "Almeria",
+      "gender": "Male",
+      "profilePicture":"",
+      "country": "Spain",
+      "dateOfBirth": "1997-11-12"
+    },
+    {
+      "id": 2,
+      "name": "Lucia",
+      "last_name":"Mercorelli",
+      "email": "lucia@lucia.com",
+      "password": "lucialucia",
+      "city": "Barcelona",
+      "gender": "Female",
+      "profilePicture":"",
+      "country": "Spain",
+      "dateOfBirth": "1982-12-16"
+    },
+    {
+      "id": 3,
+      "name": "Eira",
+      "last_name":"Melè",
+      "email": "eira@eira.com",
+      "password": "eiraeira",
+      "city": "Barcelona",
+      "gender": "Female",
+      "profilePicture":"",
+      "country": "Spain",
+      "dateOfBirth": "1986-06-25"
+    },
+    {
+      "id": 4,
+      "name": "Alvaro",
+      "last_name":"del Cacho",
+      "email": "alvaro@alvaro.com",
+      "password": "alvaroalvaro",
+      "city": "Valencia",
+      "gender": "Male",
+      "profilePicture":"",
+      "country": "Spain",
+      "dateOfBirth": "1999-11-18"
+    },
+    {
+      "id": 5,
+      "name": "Ander",
+      "last_name":"Aldabaldetreku",
+      "email": "ander@ander.com",
+      "password": "anderander",
+      "city": "Orio",
+      "gender": "Male",
+      "profilePicture":"",
+      "country": "Spain",
+      "dateOfBirth": "1987-07-03"
+    }
+  ]
+}

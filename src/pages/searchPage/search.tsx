@@ -66,3 +66,28 @@ export function SearchContainer({ song }) {
     </div>
   );
 }
+export function SearchSongContainer({ song }) {
+  return (
+    <div className="flex flex-col">
+      <h3>Songs</h3>
+      <SmallShowPlaySong song={song} />
+    </div>
+  );
+}
+
+export function SearchArtistContainer({ song }) {
+  return (
+    <div className="flex flex-col">
+      <h3>Artist</h3>
+      <SmallShowPlaySong song={song} />
+    </div>
+  );
+}
+export function SearchAlbumContainer({ song }) {
+  return (
+    <div className="flex flex-col">
+      <h3>Album</h3>
+      <SmallShowPlaySong song={song} />
+    </div>
+  );
+}
