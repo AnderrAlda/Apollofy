@@ -2,6 +2,7 @@ import { FaUserAstronaut } from "react-icons/fa";
 import { FiAlignJustify } from "react-icons/fi";
 import { NavBar } from "../../components/navbar";
 import { Link } from "react-router-dom";
+import { MiniSongShow } from "../../common/MiniSongShow";
 
 export const UserPage = () => {
   return (
@@ -39,6 +40,9 @@ export const UserPage = () => {
               <p className="text-white text-3xl ">Account</p>
             </div>
           </div>
+        </div>
+        <div>
+          <MiniSongShow />
         </div>
         <div className="absolute bottom-0 w-screen">
           <NavBar />

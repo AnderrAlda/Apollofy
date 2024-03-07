@@ -7,9 +7,9 @@ import { SmallShowPlaySong } from "../../components/SmallShowPlaySong";
 
 export default function SearchBarPage() {
   const { filter, handleSetFilter } = useFilter();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [, setSearchParams] = useSearchParams();
 
-  const handleFilter = (e) => {
+  const handleFilter = (e: { target: { value: never; }; }) => {
     const newFilter = e.target.value;
     setSearchParams({ filter: newFilter });
     handleSetFilter(newFilter);
@@ -17,7 +17,7 @@ export default function SearchBarPage() {
 
   useEffect(() => {
     handleSetFilter("");
-  }, []);
+  }, [handleSetFilter]);
   console.log(filter);
 
   return (
@@ -52,6 +52,8 @@ export default function SearchBarPage() {
           .map((song) => <SearchContainer song={song} key={song.id} />)
       )}
 
+      <MiniSongShow />
+
       <div className="absolute bottom-0 w-screen">
         <NavBar />
       </div>
@@ -62,7 +64,7 @@ export default function SearchBarPage() {
 export function SearchContainer({ song }) {
   return (
     <div className="flex flex-col">
-      <SmallShowPlaySong song={song} />
+      <MiniSongShow song={song}/>
     </div>
   );
 }
