@@ -12,6 +12,7 @@ import { AuthProvider } from "./contexts/AuthContext";
  
 import { EditProfile } from "./pages/editProfile";
 import { PrivateRoute } from "./routes";
+import { PlayerProvider } from "./contexts/AudioPlayerContext";
 
 function App() {
   return (
