@@ -4,7 +4,7 @@ import { IoPlayCircleOutline } from "react-icons/io5";
 import { IoPlaySkipBackSharp } from "react-icons/io5";
 import { IoPlaySkipForward } from "react-icons/io5";
 import { RiRestartLine } from "react-icons/ri";
-import { HeartIconBtn } from "../../../common/icons/heartIconBtn";
+ 
 
 export function MusicPlayElements() {
 
@@ -23,7 +23,7 @@ export function MusicPlayElements() {
         <button className="ml-10 text-3xl text-white hover:text-green-500">
           <IoPlaySkipForward />
         </button>
-        <HeartIconBtn /> 
+ 
       </div>
     </section>
   );

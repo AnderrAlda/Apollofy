@@ -1,6 +1,6 @@
 import { NavBar } from "../../components/navbar";
+
 import { HeartIconBtn } from "../../common/icons/heartIconBtn";
-import { MiniSongShow } from "../../common/MiniSongShow";
 
 
 export default function AlbumComponents() {
