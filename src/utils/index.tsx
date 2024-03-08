@@ -26,12 +26,17 @@ export interface Tracks {
 }
 
 export interface User {
-    id: Int16Array;
-    first_name: string;
+    id: number;
+    name: string;
     last_name: string;
-    email: boolean;
+    email: string;
+    password: string;
+    city: string;
+    gender: string;
     profilePicture: string;
-    isLoggedIn: boolean;
+    country: string;
+    dateOfBirth: number;
+
 }
 
 export interface Album {

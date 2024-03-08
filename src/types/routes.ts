@@ -1,5 +1,5 @@
 export const PublicRoutes = {
-  LOGIN: "login",
+  LOGIN: "/login",
   HOME: "/",
   SEARCH: "/search",
   USER: "/user",
@@ -7,5 +7,5 @@ export const PublicRoutes = {
   SONG: "/song",
   AUDIOPLAYER: "/audioPlayer",
   MYSONGS: "/mySongs",
-  EDITPROFILE:"/editptofile"
+  EDITPROFILE:"/editprofile"
 };

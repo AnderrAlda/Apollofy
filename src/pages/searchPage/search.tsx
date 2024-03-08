@@ -3,13 +3,13 @@ import { useEffect } from "react";
 import { NavBar } from "../../components/navbar";
 import { useFilter } from "../../contexts/FilterContext";
 import { songs } from "../../data/data";
-import { SmallShowPlaySong } from "../albumPage/SmallShowPlaySong";
+import { SmallShowPlaySong } from "../../components/SmallShowPlaySong";
 
 export default function SearchBarPage() {
   const { filter, handleSetFilter } = useFilter();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const handleFilter = (e) => {
+  const handleFilter = (e: any) => {
     const newFilter = e.target.value;
     setSearchParams({ filter: newFilter });
     handleSetFilter(newFilter);
@@ -59,10 +59,11 @@ export default function SearchBarPage() {
   );
 }
 
-export function SearchContainer({ song }) {
+export function SearchContainer({ song }: any) {
   return (
     <div className="flex flex-col">
-      <SmallShowPlaySong song={song} />
+      {/* here we need to create a component to show results */}
+      {/* <SmallShowPlaySong song={song} /> */}
     </div>
   );
 }
