@@ -9,14 +9,7 @@ import { usePlayer } from "../../contexts/AudioPlayerContext";
 const HomePage = () => {
   const generator = new AvatarGenerator();
 
-
-  const song = {
-    title:"Song title",
-    artist:"song artist"
-  }
-
   return (
-    <div className="relative h-screen bg-black">
     <div className="relative h-screen bg-black">
       <div className="relative">
         <img className="h-20" src={generator.generateRandomAvatar()} alt="" />
@@ -34,23 +27,19 @@ const HomePage = () => {
       </div>
 
       <VerticalScrollLayout height="42rem">
-      <VerticalScrollLayout height="42rem">
         <div className="mt-5 ml-5">
           <h2 className="text-2xl mb-5 text-gray-400">Top Playlists</h2>
-          <h2 className="text-2xl mb-5 text-gray-400">Top Playlists</h2>
           <HorizontalScrollLayout>
             <MusicProfile />
           </HorizontalScrollLayout>
         </div>
         <div className="mt-5 ml-5 ">
           <h2 className="text-2xl mb-5 text-gray-400">Top Artists</h2>
-          <h2 className="text-2xl mb-5 text-gray-400">Top Artists</h2>
           <HorizontalScrollLayout>
             <MusicProfile />
           </HorizontalScrollLayout>
         </div>
         <div className="mt-5 ml-5 ">
-          <h2 className="text-2xl mb-5 text-gray-400">Top Albums</h2>
           <h2 className="text-2xl mb-5 text-gray-400">Top Albums</h2>
           <HorizontalScrollLayout>
             <MusicProfile />

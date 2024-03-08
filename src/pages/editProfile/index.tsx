@@ -1,16 +1,12 @@
 import { useEffect, useState } from "react";
-import { useEffect, useState } from "react";
 import { NavBar } from "../../components/navbar";
-import { CgLayoutGrid } from "react-icons/cg";
-import { useAuth } from "../../contexts/AuthContext";
-import { IoPencil, IoEye } from "react-icons/io5";
 import { CgLayoutGrid } from "react-icons/cg";
 import { useAuth } from "../../contexts/AuthContext";
 import { IoPencil, IoEye } from "react-icons/io5";
 
 export const EditProfile = () => {
   const { user, updateUser } = useAuth();
-
+  console.log(user);
   const [newEmail, setNewEmail] = useState("");
   const [newGender, setNewGender] = useState("");
   const [newCountry, setNewCountry] = useState("");
@@ -34,7 +30,7 @@ export const EditProfile = () => {
     }
   };
 
-  const handleSubmit = async (e: any) => {
+  /*  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     console.log("💪💪");
@@ -70,7 +66,7 @@ export const EditProfile = () => {
     } catch (error) {
       console.error(error);
     }
-  };
+  }; */
 
   console.log(newEmail);
   return (
@@ -147,7 +143,7 @@ export const EditProfile = () => {
           {changeProfile ? (
             <button
               type="submit"
-              onClick={handleSubmit}
+              /*       onClick={handleSubmit} */
               className="text-white text-2xl mt-6 p-1.5 rounded-full border border-s w-18"
             >
               Save changes

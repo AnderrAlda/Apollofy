@@ -7,31 +7,17 @@ import { useFilter } from "../../contexts/FilterContext";
 import { Song } from "../../components/audioPlayer";
 import { getSongs } from "../../contexts/GetTrack";
 import { PublicRoutes } from "../../types/routes";
+import { usePlayer } from "../../contexts/AudioPlayerContext";
 
 export default function SearchBarPage() {
   const { filter, handleSetFilter } = useFilter();
   const [searchParams, setSearchParams] = useSearchParams();
-  const [songs, setSongs] = useState<Song[]>([]);
-
+  const { songs } = usePlayer();
   const handleFilter = (e: any) => {
     const newFilter = e.target.value;
     setSearchParams({ filter: newFilter });
     handleSetFilter(newFilter);
   };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const songsData = await getSongs();
-        setSongs(songsData);
-        //console.log(songs);
-      } catch (error) {
-        console.error("Error fetching songs:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   useEffect(() => {
     handleSetFilter("");
