@@ -62,7 +62,7 @@ export const PlayerProvider = ({ children }: PlayerProviderProps) => {
   // Other player states
   const [playing, setPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-  const [currentSongIndex, setCurrentSongIndex] = useState(0);
+  const [currentSongIndex, setCurrentSongIndex] = useState(1);
   const [volume, setVolume] = useState(0.5);
 
   // Fetch songs on component mount

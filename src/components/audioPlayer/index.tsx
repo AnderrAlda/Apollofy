@@ -6,20 +6,16 @@ import {
   IoPauseCircleOutline,
   IoPlaySkipBackSharp,
   IoPlaySkipForward,
+  IoHeart,
 } from "react-icons/io5";
 import "./audioPlayer.css";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
 import { getSongs } from "../../contexts/GetTrack";
-
-interface Song {
-  id: number;
-  name: string;
-  artist: string;
-  url: string;
-  thumbnail: string;
-  genre: string;
-  liked: boolean;
-}
+import { useAuth } from "../../contexts/AuthContext";
+import {
+  addSongToUserLikedSongs,
+  deleteSongFromUserLikedSongs,
+} from "../../utils";
 
 const AudioPlayer = () => {
   //the states from the context
@@ -34,6 +30,13 @@ const AudioPlayer = () => {
     setVolume,
     songs,
   } = usePlayer();
+
+  const { user, updateUser } = useAuth();
+
+  const handleAddSongClick = () => {
+    /* addSongToUserLikedSongs(user.id, 4); */
+    addSongToUserLikedSongs(user.id, songs[currentSongIndex].id);
+  };
 
   //played represent the progress in the input range
   const [played, setPlayed] = useState(0);
@@ -120,7 +123,16 @@ const AudioPlayer = () => {
   };
 
   return (
-    <div className="bg-black">
+    <div className="bg-black relative">
+      <div className="absolute right-5">
+        {/* Button triggering the function */}
+        <button onClick={handleAddSongClick}>
+          <IoHeart
+            className="text-white hover:text-green-600"
+            style={{ fontSize: "2em", cursor: "pointer" }}
+          />
+        </button>
+      </div>
       <div>
         <ReactPlayer
           width="100%"

@@ -6,6 +6,7 @@ import {
   addSongToUserLikedSongs,
   deleteSongFromUserLikedSongs,
 } from "../../utils";
+import { usePlayer } from "../../contexts/AudioPlayerContext";
 interface Song {
   id: number;
   name: string;
@@ -21,7 +22,7 @@ export default function AlbumComponents() {
 
   const handleAddSongClick = () => {
     /* addSongToUserLikedSongs(user.id, 4); */
-    deleteSongFromUserLikedSongs(user.id, 3);
+    addSongToUserLikedSongs(user.id, 3);
   };
 
   return (
