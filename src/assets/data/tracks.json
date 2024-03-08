@@ -2,46 +2,231 @@
   {
     "id": 1,
     "name": "Enjoy the silence",
-    "artist": "RXBYN",
-    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709816349/songs/mwpfjz74llxh4ux4poxu.mp3",
-    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709816645/songs/caiivctulhf0sntclw8i.webp",
-    "genre": "piano",
+    "artist": "Depeche Mode",
+    "album": "Violator",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709892657/songs/q3hxikb5qitkf1tc8muz.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709892800/songs/psuf8upwk81sjzxrdqhl.jpg",
+    "genre": "rock",
     "liked": false
   },
   {
     "id": 2,
-    "name": "Alone",
-    "artist": "Color Out",
-    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709816345/songs/guvycrakjy7vfhrttjvt.mp3",
-    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709816689/songs/di3ljzk2pzyl7lo7u4ih.webp",
-    "genre": "poprock",
+    "name": "Personal Jesus",
+    "artist": "Depeche Mode",
+    "album": "Violator",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709887832/songs/dfph7s85voajtsf6qvz9.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709893166/songs/ukywp0kwkpf20ax48mee.jpg",
+    "genre": "rock",
     "liked": false
   },
   {
     "id": 3,
-    "name": "Mahidevran - Maze of sorrow",
-    "artist": "MAHIDEVRAN ROCK BAND",
-    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709816328/songs/aeu2loituqwwclj6ilw8.mp3",
-    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709816730/songs/tgdgrcpqngtizshslan5.webp",
-    "genre": "chillout",
+    "name": "Policy of truth",
+    "artist": "Depeche Mode",
+    "album": "Violator",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709894116/songs/dicpzvbeg35avqehoopp.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709894215/songs/eity0fxpiykdxg5qrlpc.jpg",
+    "genre": "rock",
     "liked": false
   },
   {
     "id": 4,
-    "name": "Aurora",
+    "name": "World in my eyes",
+    "artist": "Depeche Mode",
+    "album": "Violator",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709894580/songs/zrjnfpmbcclphzvps511.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709894667/songs/hl8aqpzcv7xxj8rjdpbl.jpg",
+    "genre": "rock",
+    "liked": false
+  },
+  {
+    "id": 5,
+    "name": "Strangelove",
+    "artist": "Depeche Mode",
+    "album": "Violator",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709894842/songs/fqm8fgh52ivqqlffxnyz.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709894926/songs/xkyelkjrzyqjh3autvcb.jpg",
+    "genre": "rock",
+    "liked": false
+  },
+  {
+    "id": 6,
+    "name": "Blinding lights",
+    "artist": "The weekend",
+    "album": "After hours",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709895297/songs/tuq8mrstpw4r2tqkrnxl.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709895388/songs/ri0mms141junabcatlej.jpg",
+    "genre": "pop",
+    "liked": false
+  },
+  {
+    "id": 7,
+    "name": "I Feel It Coming ft. Daft Punk",
+    "artist": "The weekend",
+    "album": "After hours",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709895512/songs/awchkzkv1n4zawve22yq.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709895581/songs/i7nhgkd1ii5esi2qydwh.jpg",
+    "genre": "pop",
+    "liked": false
+  },
+  {
+    "id": 8,
+    "name": "Starboy ft. Daft Punk",
+    "artist": "The weekend",
+    "album": "After hours",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709895753/songs/rnipqsnjuxq8q3guyluv.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709895813/songs/sxt7tatsiyhlp1d3ciw6.jpg",
+    "genre": "pop",
+    "liked": false
+  },
+  {
+    "id": 9,
+    "name": "Can't Feel My Face",
+    "artist": "The weekend",
+    "album": "After hours",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709895906/songs/kbwbv52lehn0uhpmmryx.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709895990/songs/qdwxnl0yezfobxskqzyk.jpg",
+    "genre": "pop",
+    "liked": false
+  },
+  {
+    "id": 10,
+    "name": "Save Your Tears",
+    "artist": "The weekend",
+    "album": "After hours",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709896115/songs/goglgrudrurftlbjo7tn.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709896193/songs/f2rmnrlcvmkozotpxtct.jpg",
+    "genre": "pop",
+    "liked": false
+  },
+  {
+    "id": 11,
+    "name": "Don't Start Now",
+    "artist": "Dua Lipa",
+    "album": "Future nostalgia",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709897045/songs/on9jlrhml2ldh3kon4p2.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709897159/songs/i9xdxacyb992jth7gjgi.jpg",
+    "genre": "dance",
+    "liked": false
+  },
+  {
+    "id": 12,
+    "name": "New Rules",
+    "artist": "Dua Lipa",
+    "album": "Future nostalgia",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709897245/songs/ih7zntol02joortmgck7.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709897318/songs/gh6gjazxwozjrzjustnf.jpg",
+    "genre": "dance",
+    "liked": false
+  },
+  {
+    "id": 13,
+    "name": "Hotter Than Hell",
+    "artist": "Dua Lipa",
+    "album": "Future nostalgia",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709897397/songs/zyxa1oqy2xsgwuhtcsb2.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709897472/songs/o3j9cidpcv7rkc7zumat.jpg",
+    "genre": "dance",
+    "liked": false
+  },
+  {
+    "id": 14,
+    "name": "Cold Heart",
+    "artist": "Dua Lipa",
+    "album": "Future nostalgia",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709897548/songs/q2ithuxx8bp33e69za1p.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709897612/songs/tbxfqy6cacnz6kmlvzxn.jpg",
+    "genre": "dance",
+    "liked": false
+  },
+  {
+    "id": 15,
+    "name": "IDGAF ",
+    "artist": "Dua Lipa",
+    "album": "Future nostalgia",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709897713/songs/w2r0zpikoh3yjzampigg.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709897781/songs/cg84o3qiqcbwcrxq0chr.jpg",
+    "genre": "dance",
+    "liked": false
+  },
+  {
+    "id": 16,
+    "name": "The Real Slim Shady",
+    "artist": "Eminem",
+    "album": "The Marshall Mathers LP",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709898222/songs/fdcdsuwvfl5szmiuspf3.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709898279/songs/twagiq3c9oe6vlwtu2wn.jpg",
+    "genre": "hip hop",
+    "liked": false
+  },
+  {
+    "id": 17,
+    "name": "Without Me",
+    "artist": "Eminem",
+    "album": "The Marshall Mathers LP",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709898426/songs/jtaaqomukkmokgnwy6nh.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709898489/songs/g8nxkmp6fgkte71x36qk.jpg",
+    "genre": "hip hop",
+    "liked": false
+  },
+  {
+    "id": 18,
+    "name": "Lose Yourself",
+    "artist": "Eminem",
+    "album": "The Marshall Mathers LP",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709898579/songs/udyfbb6qs27tpte0w589.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709898661/songs/rlrvi3mdylgkc2xexust.jpg",
+    "genre": "hip hop",
+    "liked": false
+  },
+  {
+    "id": 19,
+    "name": "Stan ft. Dido",
+    "artist": "Eminem",
+    "album": "The Marshall Mathers LP",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709898753/songs/ddd740ri01nvsru4jcze.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709898845/songs/bopfbzwieaqkhlgcjkor.jpg",
+    "genre": "hip hop",
+    "liked": false
+  },
+  {
+    "id": 20,
+    "name": "Mockingbird ",
+    "artist": "Eminem",
+    "album": "The Marshall Mathers LP",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709899003/songs/vl80r2ueevg3atxbfph1.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709899071/songs/ubfjt4lxw26xhxqkeebn.jpg",
+    "genre": "hip hop",
+    "liked": false
+  },
+  {
+    "id": 21,
+    "name": "To: Aurora",
     "artist": "Smoking with poets",
+    "album": "Smoking with poets",
     "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709816270/songs/wpmkyo4evwpjldquxqyp.mp3",
     "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709816779/songs/ugo4jgbya7yxf7mzq3rw.webp",
     "genre": "indie",
     "liked": false
   },
   {
-    "id": 5,
+    "id": 22,
     "name": "Sensitive",
     "artist": "Infraction",
+    "album": "Infraction",
     "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709816193/songs/xptrrulmekyhvdyynbbn.mp3",
     "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709816856/songs/uge12adav1le2wpem2um.jpg",
     "genre": "pop",
+    "liked": false
+  },
+  {
+    "id": 23,
+    "name": "Santé",
+    "artist": "Stromae",
+    "album": "Multitude",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709896697/songs/rfmmz9xmubwvkltar5im.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709896760/songs/tgmgfjhtaj4vzg6vijbe.jpg",
+    "genre": "dance",
     "liked": false
   }
 ]
