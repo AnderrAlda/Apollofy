@@ -11,7 +11,7 @@ const HorizontalScrollLayout = ({ children }: Props) => {
   )} - 1)) / ${React.Children.count(children)})`;
 
   return (
-    <div className="overflow-x-scroll scrollbar-hide">
+    <div className="overflow-x-scroll-hidden scrollbar-hide">
       <ul
         className={`flex no-scrollbar gap-3`}
         style={{ width: `calc(100% + 3rem)` }}

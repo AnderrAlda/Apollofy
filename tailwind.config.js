@@ -29,6 +29,7 @@ export const theme = {
     ml: {
       96: "10px",
     }
+ 
   },
 };
 export const plugins = [];

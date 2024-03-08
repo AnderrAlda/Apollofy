@@ -1,14 +1,14 @@
 import { GoBackPageBtn } from './GoBackPage'
 import { MusicShowPage } from './MusicShowPage'
-import { MusicPlayElements } from './MusicPlayElemnets'
-import  "./isongPage.css"
+ import  "./isongPage.css"
+import AudioPlayer from '../../components/audioPlayer'
 
 export function SongPage() {
   return (
-    <section className="section">
+    <section  className='bg-black w-screen h-screen'>
         <GoBackPageBtn />
         <MusicShowPage />
-        <MusicPlayElements />
+        <AudioPlayer/>
     </section>
   )
 }
