@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { NavBar } from "../../components/navbar";
+import { CgLayoutGrid } from "react-icons/cg";
+import { useAuth } from "../../contexts/AuthContext";
+import { IoPencil, IoEye } from "react-icons/io5";
 import { CgLayoutGrid } from "react-icons/cg";
 import { useAuth } from "../../contexts/AuthContext";
 import { IoPencil, IoEye } from "react-icons/io5";
 
 export const EditProfile = () => {
   const { user, updateUser } = useAuth();
-  console.log(user);
+
   const [newEmail, setNewEmail] = useState("");
   const [newGender, setNewGender] = useState("");
   const [newCountry, setNewCountry] = useState("");
