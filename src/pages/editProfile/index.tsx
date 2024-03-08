@@ -6,7 +6,7 @@ import { IoPencil, IoEye } from "react-icons/io5";
 
 export const EditProfile = () => {
   const { user, updateUser } = useAuth();
-
+  console.log(user);
   const [newEmail, setNewEmail] = useState("");
   const [newGender, setNewGender] = useState("");
   const [newCountry, setNewCountry] = useState("");
