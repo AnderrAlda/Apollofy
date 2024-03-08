@@ -18,7 +18,7 @@ export const EditProfile = () => {
   const handleChangeProfile = () => {
     if (changeProfile) {
       setChangeProfile(false);
-    } else {
+    } else {            
       setChangeProfile(true);
     }
   };
