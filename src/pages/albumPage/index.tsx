@@ -18,7 +18,6 @@ interface Song {
 
 export default function AlbumComponents() {
   const { user, updateUser } = useAuth();
-  console.log(user.likedSongs[1]);
 
   const handleAddSongClick = () => {
     /* addSongToUserLikedSongs(user.id, 4); */
