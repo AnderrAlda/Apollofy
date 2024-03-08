@@ -7,7 +7,7 @@ import { IoPencil, IoEye } from "react-icons/io5";
 import { Modal } from "../../components/modalEditprofile";
 export const EditProfile = () => {
   const { user, updateUser } = useAuth();
-  console.log(user);
+
   const [newEmail, setNewEmail] = useState("");
   const [newGender, setNewGender] = useState("");
   const [newCountry, setNewCountry] = useState("");
@@ -33,7 +33,7 @@ export const EditProfile = () => {
     }
   };
 
-  /*  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     console.log("💪💪");
@@ -68,11 +68,10 @@ export const EditProfile = () => {
       updateUser(data);
       //used of modal
       setConfirmationModalOpen(true);
-
     } catch (error) {
       console.error(error);
     }
-  }; */
+  };
 
   console.log(newEmail);
   return (
@@ -157,7 +156,7 @@ export const EditProfile = () => {
           {changeProfile ? (
             <button
               type="submit"
-              /*       onClick={handleSubmit} */
+              onClick={handleSubmit}
               className="text-white text-2xl mt-6 p-1.5 rounded-full border border-s w-18"
             >
               Save changes

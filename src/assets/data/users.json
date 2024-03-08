@@ -55,11 +55,15 @@
       "email": "ander@ander.com",
       "password": "anderander",
       "city": "Orio",
-      "gender": "Male",
+      "gender": "malote",
       "profilePicture": "",
       "country": "Spain",
       "dateOfBirth": "1987-07-03",
-      "likedSongs": [1, 2, 4]
+      "likedSongs": [
+        1,
+        2,
+        4
+      ]
     }
   ]
 }
