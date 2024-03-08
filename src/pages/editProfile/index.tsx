@@ -3,7 +3,8 @@ import { NavBar } from "../../components/navbar";
 import { CgLayoutGrid } from "react-icons/cg";
 import { useAuth } from "../../contexts/AuthContext";
 import { IoPencil, IoEye } from "react-icons/io5";
-
+//import frm modal
+import { Modal } from "../../components/modalEditprofile";
 export const EditProfile = () => {
   const { user, updateUser } = useAuth();
   console.log(user);
@@ -11,9 +12,11 @@ export const EditProfile = () => {
   const [newGender, setNewGender] = useState("");
   const [newCountry, setNewCountry] = useState("");
   const [newPassword, setNewPassaword] = useState("");
-  const [repeatPassword, setRepeatPassword] = useState("");
+
   const [changeProfile, setChangeProfile] = useState(false);
   const [displayPassword, setDisplayPassword] = useState(false);
+  //state of modal
+  const [isConfirmationModalOpen, setConfirmationModalOpen] = useState(false);
 
   const handleChangeProfile = () => {
     if (changeProfile) {
@@ -63,6 +66,9 @@ export const EditProfile = () => {
       const data = await response.json();
       console.log(data);
       updateUser(data);
+      //used of modal
+      setConfirmationModalOpen(true);
+
     } catch (error) {
       console.error(error);
     }
@@ -109,6 +115,14 @@ export const EditProfile = () => {
             />
           ) : null}
 
+          {/* <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto">
+  <div className="fixed inset-0 bg-black opacity-50"></div>
+  <div className="relative z-50 bg-white p-8 max-w-md mx-auto">
+
+    <button className="absolute top-0 right-0 m-4" onclick="cerrarModal()">Cerrar</button>
+  </div>
+</div> */}
+
           <div className="text-white">
             <p className="text-2xl">Country: {user?.country}</p>
           </div>
@@ -149,7 +163,19 @@ export const EditProfile = () => {
               Save changes
             </button>
           ) : null}
+          {/* //import modal */}
+          <Modal
+            isOpen={isConfirmationModalOpen}
+            onClose={() => setConfirmationModalOpen(false)}
+          >
+            <div className="text-center">
+              <p className="text-2xl text-white">
+                Your changes have been saved !
+              </p>
+            </div>
+          </Modal>
         </div>
+
         <div className="absolute bottom-0 w-screen">
           <NavBar />
         </div>
