@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { NavBar } from "../../components/navbar";
-import { CgLayoutGrid } from "react-icons/cg";
+
 import { useAuth } from "../../contexts/AuthContext";
 import { IoPencil, IoEye } from "react-icons/io5";
+
+
 
 export const EditProfile = () => {
   const { user, updateUser } = useAuth();
@@ -11,9 +13,10 @@ export const EditProfile = () => {
   const [newGender, setNewGender] = useState("");
   const [newCountry, setNewCountry] = useState("");
   const [newPassword, setNewPassaword] = useState("");
-  const [repeatPassword, setRepeatPassword] = useState("");
   const [changeProfile, setChangeProfile] = useState(false);
   const [displayPassword, setDisplayPassword] = useState(false);
+
+
 
   const handleChangeProfile = () => {
     if (changeProfile) {
@@ -63,6 +66,7 @@ export const EditProfile = () => {
       const data = await response.json();
       console.log(data);
       updateUser(data);
+      
     } catch (error) {
       console.error(error);
     }
@@ -140,15 +144,9 @@ export const EditProfile = () => {
             />
           ) : null}
 
-          {changeProfile ? (
-            <button
-              type="submit"
-              onClick={handleSubmit}
-              className="text-white text-2xl mt-6 p-1.5 rounded-full border border-s w-18"
-            >
-              Save changes
-            </button>
-          ) : null}
+        <button type="submit" className="text-white text-2xl mt-6 p-1.5 rounded-full border border-s w-18">Save changes</button>
+
+        
         </div>
         <div className="absolute bottom-0 w-screen">
           <NavBar />

@@ -29,7 +29,6 @@ function App() {
             <Route path={PublicRoutes.USER} element={<PrivateRoute><UserPage /></PrivateRoute>} />
             <Route path={PublicRoutes.ALBUM} element={<AlbumComponents />} />
             <Route path={PublicRoutes.SONG} element={<SongPage />} />
-  
             <Route path={PublicRoutes.EDITPROFILE} element={<EditProfile />} />
         </Routes>
         </BrowserRouter>

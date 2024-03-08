@@ -32,14 +32,7 @@ export const UserPage = () => {
               <p className="text-white text-3xl ">Account</p>
             </div>
           </div>
-          <div className="flex flex-row">
-            <div className="border-solid border-white border h-32 w-32"></div>
-            <div className="flex flex-col">
-              <p className="text-white text-3xl ">Account</p>
-
-              <p className="text-white text-3xl ">Account</p>
-            </div>
-          </div>
+          
         </div>
         <div>
          </div>
