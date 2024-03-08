@@ -6,7 +6,10 @@ import {
   addSongToUserLikedSongs,
   deleteSongFromUserLikedSongs,
 } from "../../utils";
+import IndividualSong from "../../components/individualSong";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
+import VerticalScrollLayout from "../../layouts/verticalScroll";
+import { useEffect, useState } from "react";
 interface Song {
   id: number;
   name: string;
@@ -20,9 +23,20 @@ interface Song {
 export default function AlbumComponents() {
   const { user, updateUser } = useAuth();
 
+  const { songs } = usePlayer();
+  const [likedSongs, setLikedSongs] = useState<Song[]>();
+
+  useEffect(() => {
+    const filteredSongs = songs.filter((song) =>
+      user.likedSongs.includes(song.id)
+    );
+    setLikedSongs(filteredSongs);
+    console.log("hola");
+  }, [songs, user]);
+
   const handleAddSongClick = () => {
     /* addSongToUserLikedSongs(user.id, 4); */
-    addSongToUserLikedSongs(user.id, 3);
+    deleteSongFromUserLikedSongs(user.id, 3);
   };
 
   return (
@@ -37,23 +51,25 @@ export default function AlbumComponents() {
         <img
           src="src/assets/album1.png"
           alt=""
-          className="w-52 absolute top-20 left-20 rounded-xl"
+          className="w-52  top-20 left-20 rounded-xl"
         />
       </div>
 
-      <div className="absolute top-80 left-6">
+      <div className=" top-80 left-6">
         <p className="text-white text-3xl">Album name</p>
       </div>
 
-      <div className="fixed bottom-80 left-6 w-screen">
-        <div className="mb-20  w-screen relative">
-          <p className="text-white text-xl">Song name</p>
-          <p className="text-white text-xs">Group name</p>
-          <div className="absolute right-32 top-2">
-            <HeartIconBtn />
-          </div>
-        </div>
-      </div>
+      <VerticalScrollLayout height="50rem">
+        {likedSongs?.map((song) => (
+          <IndividualSong
+            key={song.id}
+            songName={song.name}
+            groupName={song.artist}
+          />
+        ))}
+      </VerticalScrollLayout>
+
+      <IndividualSong songName="asdf" groupName="asdf"></IndividualSong>
 
       <div className="absolute bottom-0 w-screen">
         <NavBar />
