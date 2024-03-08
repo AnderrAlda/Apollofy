@@ -4,15 +4,10 @@ import VerticalScrollLayout from "../../layouts/verticalScroll";
 import { NavBar } from "../../components/navbar";
 import { MusicProfile } from "../../common/musicProfile";
 import { SmallShowPlaySong } from "../../components/SmallShowPlaySong";
+import { usePlayer } from "../../contexts/AudioPlayerContext";
 
 const HomePage = () => {
   const generator = new AvatarGenerator();
-
-
-  const song = {
-    title:"Song title",
-    artist:"song artist"
-  }
 
   return (
     <div className="relative h-screen bg-black">
@@ -28,8 +23,7 @@ const HomePage = () => {
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
-        >
-        </svg>
+        ></svg>
       </div>
 
       <VerticalScrollLayout height="42rem">
@@ -53,8 +47,8 @@ const HomePage = () => {
         </div>
       </VerticalScrollLayout>
       <div className="absolute bottom-14 w-screen">
-    <SmallShowPlaySong title={song.title} artist={song.artist}/>
-    </div>
+        <SmallShowPlaySong />
+      </div>
       <div className="absolute bottom-0 w-screen">
         <NavBar />
       </div>

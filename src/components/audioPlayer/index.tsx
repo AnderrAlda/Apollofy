@@ -22,22 +22,6 @@ interface Song {
 }
 
 const AudioPlayer = () => {
-  const [songs, setSongs] = useState<Song[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const songsData = await getSongs();
-        setSongs(songsData);
-        console.log(songs);
-      } catch (error) {
-        console.error("Error fetching songs:", error);
-      }
-    };
-
-    fetchData();
-  }, []); // Empty dependency array ensures this effect runs only once, like componentDidMount
-
   //the states from the context
   const {
     playing,
@@ -48,6 +32,7 @@ const AudioPlayer = () => {
     setCurrentSongIndex,
     volume,
     setVolume,
+    songs,
   } = usePlayer();
 
   //played represent the progress in the input range

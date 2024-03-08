@@ -6,14 +6,7 @@ import { IoPlayCircleOutline, IoPauseCircleOutline } from "react-icons/io5";
 import "../audioPlayer/audioPlayer.css";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
 
-interface Props {
-  title: string;
-  artist: string;
-}
-
-export function SmallShowPlaySong({ title, artist }: Props) {
-  const songs = ["/src/assets/song1.mp3", "/src/assets/song2.mp3"];
-
+export function SmallShowPlaySong() {
   const {
     playing,
     setPlaying,
@@ -21,6 +14,7 @@ export function SmallShowPlaySong({ title, artist }: Props) {
     setCurrentTime,
     currentSongIndex,
     volume,
+    songs,
   } = usePlayer();
 
   //played represent the progress in the input range
@@ -92,7 +86,11 @@ export function SmallShowPlaySong({ title, artist }: Props) {
         width="1px"
         height="1px"
         ref={playerRef}
-        url={songs[currentSongIndex]}
+        url={
+          songs.length > 0 && currentSongIndex !== null
+            ? songs[currentSongIndex].url
+            : ""
+        }
         playing={playing}
         volume={volume}
         onProgress={handleProgress}
@@ -100,14 +98,27 @@ export function SmallShowPlaySong({ title, artist }: Props) {
       />
 
       <div className="show flex relative">
-        <div className=" imgsmall">
-          <img src="" alt="" />
-        </div>
+        {songs.length > 0 && currentSongIndex !== null && (
+          <div className=" imgsmall">
+            <img
+              src={songs[currentSongIndex].thumbnail}
+              alt={songs[currentSongIndex].name}
+            />
+          </div>
+        )}
 
         <Link to={PublicRoutes.SONG}>
           <div>
-            <p className="text-white ml-5">{title}</p>
-            <p className="text-white ml-5 text-sm">{artist}</p>
+            <p className="text-white ml-5">
+              {songs.length > 0 && currentSongIndex !== null
+                ? songs[currentSongIndex].name
+                : ""}
+            </p>
+            <p className="text-white ml-5 text-sm">
+              {songs.length > 0 && currentSongIndex !== null
+                ? songs[currentSongIndex].artist
+                : ""}
+            </p>
           </div>
         </Link>
 
