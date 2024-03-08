@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { NavBar } from "../../components/navbar";
-import { CgLayoutGrid } from "react-icons/cg";
+
 import { useAuth } from "../../contexts/AuthContext";
 import { IoPencil, IoEye } from "react-icons/io5";
 
@@ -11,10 +11,15 @@ export const EditProfile = () => {
   const [newGender, setNewGender] = useState("");
   const [newCountry, setNewCountry] = useState("");
   const [newPassword, setNewPassaword] = useState("");
-  const [repeatPassword, setRepeatPassword] = useState("");
+
   const [changeProfile, setChangeProfile] = useState(false);
   const [displayPassword, setDisplayPassword] = useState(false);
 
+  interface User {
+    email: string;
+    // otras propiedades
+  }
+  
   const handleChangeProfile = () => {
     if (changeProfile) {
       setChangeProfile(false);
@@ -38,6 +43,18 @@ export const EditProfile = () => {
 
     if (newEmail !== "" && newEmail !== user.email) {
       updatedUserData.email = newEmail;
+       }
+       if (newCountry !== "" && newCountry !== user.country) {
+        updatedUserData.country = newCountry;
+         }
+         if (newGender !== "" && newGender !== user.gender) {
+          updatedUserData.gender = newGender;
+           }
+           if (newPassword !== "" && newPassword !== user.password) {
+            updatedUserData.password = newPassword;
+             }
+            
+        
        }
        //REPETIR CONDICIONALES 
 
