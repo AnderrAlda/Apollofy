@@ -11,7 +11,7 @@ import "./audioPlayer.css";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
 import { getSongs } from "../../contexts/GetTrack";
 
-interface Song {
+export interface Song {
   id: number;
   name: string;
   artist: string;

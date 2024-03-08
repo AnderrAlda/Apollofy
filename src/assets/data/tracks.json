@@ -43,5 +43,23 @@
     "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709816856/songs/uge12adav1le2wpem2um.jpg",
     "genre": "pop",
     "liked": false
+  },
+  {
+    "id": 6,
+    "name": "Sensitive",
+    "artist": "Enjoyment",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709816193/songs/xptrrulmekyhvdyynbbn.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709816856/songs/uge12adav1le2wpem2um.jpg",
+    "genre": "pop",
+    "liked": false
+  },
+  {
+    "id": 6,
+    "name": "Enjoy the noise",
+    "artist": "Lalala",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709816193/songs/xptrrulmekyhvdyynbbn.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709816856/songs/uge12adav1le2wpem2um.jpg",
+    "genre": "pop",
+    "liked": false
   }
 ]
