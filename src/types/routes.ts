@@ -1,6 +1,6 @@
 export const PublicRoutes = {
-  LOGIN: "/login",
-  HOME: "/",
+  LOGIN: "/",
+  HOME: "/home",
   SEARCH: "/search",
   USER: "/user",
   ALBUM: "/album",
