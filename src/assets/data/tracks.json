@@ -1,182 +1,209 @@
 [
-    {
-        "id": 1,
-        "name": "Better of alone",
-        "artist": "RXBYN",
-        "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644583924/tracks-dev/Rxbyn_-_better_off_alone_fvhwp8.mp3",
-        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644583757/tracks-thumbnails-dev/better_off_alone_gfmcby.jpg",
-        "genre": "piano",
-        "liked": false
-    },
-    {
-        "id": 2,
-        "name": "Alone",
-        "artist": "Color Out",
-        "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644583929/tracks-dev/Color_Out_-_Alone_aw3gmk.mp3",
-        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644583757/tracks-thumbnails-dev/alone_rfib7a.jpg",
-        "genre": "poprock",
-        "liked": false
-    },
-    {
-        "id": 3,
-        "name": "Mahidevran - Maze of sorrow",
-        "artist": "MAHIDEVRAN ROCK BAND",
-        "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644583928/tracks-dev/Mahidevran_Rock_Band_-_Mahidevran_-_Maze_of_sorrow_ips3zs.mp3",
-        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644583757/tracks-thumbnails-dev/Maze_of_sorrow_r1crlr.jpg",
-        "genre": "chillout",
-        "liked": false
-    },
-    {
-        "id": 4,
-        "name": "Aurora",
-        "artist": "Smoking with poets",
-        "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644583928/tracks-dev/Smoking_With_Poets_-_to__Aurora_t2qnaw.mp3",
-        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644583757/tracks-thumbnails-dev/aurora_omys8y.jpg",
-        "genre": "indie",
-        "liked": false
-    },
-    {
-        "id": 5,
-        "name": "Sensitive",
-        "artist": "Infraction",
-        "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644583922/tracks-dev/Infraction_-_Sensitive_vsu6qr.mp3",
-        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644583756/tracks-thumbnails-dev/Sensitive_unevif.jpg",
-        "genre": "pop",
-        "liked": false
-    },
-    {
-        "id": 6,
-        "name": "Tantalizing Youth",
-        "artist": "Social Square",
-        "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644583924/tracks-dev/Social_Square_-_Tantalizing_Youth_eykq87.mp3",
-        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644583757/tracks-thumbnails-dev/Tantalizing_Youth_bfshzo.jpg",
-        "genre": "rock",
-        "liked": false
-    },
-    {
-        "id": 7,
-        "name": "Igor Pumphonia - Point Of Light",
-        "artist": "Igor Pumphonia",
-        "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644584871/tracks-dev/Igor_Pumphonia_-_Igor_Pumphonia_-_Point_Of_Light_kjgbyz.mp3",
-        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644584802/tracks-thumbnails-dev/Igor_Pumphonia_-_Point_Of_Light_urg7nn.jpg",
-        "genre": "electronic",
-        "liked": false
-    },
-    {
-        "id": 8,
-        "name": "Marsupial",
-        "artist": "Laurence Danova",
-        "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644584996/tracks-dev/Laurence_DaNova_-_Marsupial_1_bxvpkj.mp3",
-        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644585151/tracks-thumbnails-dev/Lurence_Danova_oeew0j.jpg",
-        "genre": "indie",
-        "liked": false
-    },
-    {
-        "id": 9,
-        "name": "Chasing Tomorrow (feat. Jade Gritty)",
-        "artist": "TAB",
-        "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644585238/tracks-dev/Tab_-_Chasing_Tomorrow__feat._Jade_Gritty__leh4r1.mp3",
-        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644585210/tracks-thumbnails-dev/TAB_fxakq3.jpg",
-        "genre": "electronic",
-        "liked": false
-    },
-    {
-        "id": 10,
-        "name": "Healin My Blues",
-        "artist": "BJ Wilbanks",
-        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644427496/tracks-thumbnails/thumbnail-1644427496210_qqpy4a.jpg",
-        "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644523019/tracks/track-1644523017728_qb6wq4.mp3",
-        "genre": "soul",
-        "liked": false
-    },
-    {
-        "id": 11,
-        "name": "Head Over Heels (Friend Group Remix)",
-        "artist": "The Devil Music Co.",
-        "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644585554/tracks-dev/The_Devil_Music_Co._-_Head_Over_Heels__Friend_Group_Remix__buotnt.mp3",
-        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644585551/tracks-thumbnails-dev/Head_Over_Heels_Friend_Group_Remix_c9uatt.jpg",
-        "genre": "poprock",
-        "liked": false
-    },
-    {
-        "id": 12,
-        "name": "Under Water",
-        "artist": "THE.MADPIX.PROJECT",
-        "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644586422/tracks-dev/The.madpix.project_-_Under_Water_2_gyvrkl.mp3",
-        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644586423/tracks-thumbnails-dev/Under_Water_yoirsy.jpg",
-        "genre": "electronic",
-        "liked": false
-    },
-    {
-        "id": 13,
-        "name": "Better",
-        "artist": "A8",
-        "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644586627/tracks-dev/A8_MUSIC_PRODUCTIONS_-_Better_umwfkh.mp3",
-        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644586622/tracks-thumbnails-dev/A8_vxgyaf.jpg",
-        "genre": "pop",
-        "liked": false
-    },
-    {
-        "id": 14,
-        "name": "My Love",
-        "artist": "Modus",
-        "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644586724/tracks-dev/MODUS_-_My_Love_z7tzk1.mp3",
-        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644586719/tracks-thumbnails-dev/My_love_wqjuiz.jpg",
-        "genre": "pop",
-        "liked": false
-    },
-    {
-        "id": 15,
-        "name": "Bebe go",
-        "artist": "P Steve Officiel",
-        "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644586823/tracks-dev/P_Steve_Officiel_-_Bebe_go_r0hlbl.mp3",
-        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644586816/tracks-thumbnails-dev/bebe_go_zdfn6e.jpg",
-        "genre": "reggaeton",
-        "liked": false
-    },
-    {
-        "id": 16,
-        "name": "Reflections (feat. Mathias Hagen)",
-        "artist": "KEVIN S.",
-        "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644587062/tracks-dev/Kevin_S._-_Reflections__feat._Mathias_Hagen__lypkgw.mp3",
-        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644587058/tracks-thumbnails-dev/Reflections_qvdzan.jpg",
-        "genre": "alternative",
-        "liked": false
-    },
-    {
-        "id": 17,
-        "name": "Un Ratito Nama (Prod: Duran The Coach)",
-        "artist": "Igor Pumphonia",
-        "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644587219/tracks-dev/Lessky_-_Un_Ratito_Nama__Prod__Duran_The_Coach__npuws5.mp3",
-        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644587222/tracks-thumbnails-dev/Un_ratito_m2aeq0.jpg",
-        "genre": "reggaeton",
-        "liked": false
-    },
-    {
-        "id": 18,
-        "name": "Sax Is My Cardio",
-        "artist": "KUZINMUZIN",
-        "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644587961/tracks-dev/Kuzinmuzin_-_Sax_Is_My_Cardio_fqmvwb.mp3",
-        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644587960/tracks-thumbnails-dev/Sax_kgjfn8.jpg",
-        "genre": "funk",
-        "liked": false
-    },
-    {
-        "id": 19,
-        "name": "Chill Lofi Hip Hop Type Beat",
-        "artist": "PERYCREEP",
-        "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644653754/tracks-dev/PeryCreep_-_Chill_Lofi_Hip_Hop_Type_Beat_l2k8zv.mp3",
-        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644653692/tracks-thumbnails-dev/Chill_Lofi_Hip_Hop_Type_Beat_ltpm24.jpg",
-        "genre": "groovy",
-        "liked": false
-    },
-    {
-          "id": 20,
-          "name": "Monday 8am",
-          "artist": "KINEMATIC",
-          "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644602996/tracks-thumbnails-dev/Monday_8am_amfdta.jpg",
-          "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644602494/tracks-dev/D_JAY_KOI_-_We_got_the_vibes___Feat_Fil_Straughan__uz9qw7.mp3",
-          "genre": "folk",
-          "liked": false
-    }
+  {
+    "id": 1,
+    "name": "Enjoy the silence",
+    "artist": "Depeche Mode",
+    "album": "Violator",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709892657/songs/q3hxikb5qitkf1tc8muz.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709892800/songs/psuf8upwk81sjzxrdqhl.jpg",
+    "genre": "rock"
+  },
+  {
+    "id": 2,
+    "name": "Personal Jesus",
+    "artist": "Depeche Mode",
+    "album": "Violator",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709887832/songs/dfph7s85voajtsf6qvz9.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709893166/songs/ukywp0kwkpf20ax48mee.jpg",
+    "genre": "rock"
+  },
+  {
+    "id": 3,
+    "name": "Policy of truth",
+    "artist": "Depeche Mode",
+    "album": "Violator",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709894116/songs/dicpzvbeg35avqehoopp.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709894215/songs/eity0fxpiykdxg5qrlpc.jpg",
+    "genre": "rock"
+  },
+  {
+    "id": 4,
+    "name": "World in my eyes",
+    "artist": "Depeche Mode",
+    "album": "Violator",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709894580/songs/zrjnfpmbcclphzvps511.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709894667/songs/hl8aqpzcv7xxj8rjdpbl.jpg",
+    "genre": "rock"
+  },
+  {
+    "id": 5,
+    "name": "Strangelove",
+    "artist": "Depeche Mode",
+    "album": "Violator",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709894842/songs/fqm8fgh52ivqqlffxnyz.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709894926/songs/xkyelkjrzyqjh3autvcb.jpg",
+    "genre": "rock"
+  },
+  {
+    "id": 6,
+    "name": "Blinding lights",
+    "artist": "The weekend",
+    "album": "After hours",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709895297/songs/tuq8mrstpw4r2tqkrnxl.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709895388/songs/ri0mms141junabcatlej.jpg",
+    "genre": "pop"
+  },
+  {
+    "id": 7,
+    "name": "I Feel It Coming ft. Daft Punk",
+    "artist": "The weekend",
+    "album": "After hours",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709895512/songs/awchkzkv1n4zawve22yq.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709895581/songs/i7nhgkd1ii5esi2qydwh.jpg",
+    "genre": "pop"
+  },
+  {
+    "id": 8,
+    "name": "Starboy ft. Daft Punk",
+    "artist": "The weekend",
+    "album": "After hours",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709895753/songs/rnipqsnjuxq8q3guyluv.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709895813/songs/sxt7tatsiyhlp1d3ciw6.jpg",
+    "genre": "pop"
+  },
+  {
+    "id": 9,
+    "name": "Can't Feel My Face",
+    "artist": "The weekend",
+    "album": "After hours",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709895906/songs/kbwbv52lehn0uhpmmryx.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709895990/songs/qdwxnl0yezfobxskqzyk.jpg",
+    "genre": "pop"
+  },
+  {
+    "id": 10,
+    "name": "Save Your Tears",
+    "artist": "The weekend",
+    "album": "After hours",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709896115/songs/goglgrudrurftlbjo7tn.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709896193/songs/f2rmnrlcvmkozotpxtct.jpg",
+    "genre": "pop"
+  },
+  {
+    "id": 11,
+    "name": "Don't Start Now",
+    "artist": "Dua Lipa",
+    "album": "Future nostalgia",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709897045/songs/on9jlrhml2ldh3kon4p2.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709897159/songs/i9xdxacyb992jth7gjgi.jpg",
+    "genre": "dance"
+  },
+  {
+    "id": 12,
+    "name": "New Rules",
+    "artist": "Dua Lipa",
+    "album": "Future nostalgia",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709897245/songs/ih7zntol02joortmgck7.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709897318/songs/gh6gjazxwozjrzjustnf.jpg",
+    "genre": "dance"
+  },
+  {
+    "id": 13,
+    "name": "Hotter Than Hell",
+    "artist": "Dua Lipa",
+    "album": "Future nostalgia",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709897397/songs/zyxa1oqy2xsgwuhtcsb2.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709897472/songs/o3j9cidpcv7rkc7zumat.jpg",
+    "genre": "dance"
+  },
+  {
+    "id": 14,
+    "name": "Cold Heart",
+    "artist": "Dua Lipa",
+    "album": "Future nostalgia",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709897548/songs/q2ithuxx8bp33e69za1p.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709897612/songs/tbxfqy6cacnz6kmlvzxn.jpg",
+    "genre": "dance"
+  },
+  {
+    "id": 15,
+    "name": "IDGAF ",
+    "artist": "Dua Lipa",
+    "album": "Future nostalgia",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709897713/songs/w2r0zpikoh3yjzampigg.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709897781/songs/cg84o3qiqcbwcrxq0chr.jpg",
+    "genre": "dance"
+  },
+  {
+    "id": 16,
+    "name": "The Real Slim Shady",
+    "artist": "Eminem",
+    "album": "The Marshall Mathers LP",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709898222/songs/fdcdsuwvfl5szmiuspf3.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709898279/songs/twagiq3c9oe6vlwtu2wn.jpg",
+    "genre": "hip hop"
+  },
+  {
+    "id": 17,
+    "name": "Without Me",
+    "artist": "Eminem",
+    "album": "The Marshall Mathers LP",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709898426/songs/jtaaqomukkmokgnwy6nh.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709898489/songs/g8nxkmp6fgkte71x36qk.jpg",
+    "genre": "hip hop"
+  },
+  {
+    "id": 18,
+    "name": "Lose Yourself",
+    "artist": "Eminem",
+    "album": "The Marshall Mathers LP",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709898579/songs/udyfbb6qs27tpte0w589.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709898661/songs/rlrvi3mdylgkc2xexust.jpg",
+    "genre": "hip hop"
+  },
+  {
+    "id": 19,
+    "name": "Stan ft. Dido",
+    "artist": "Eminem",
+    "album": "The Marshall Mathers LP",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709898753/songs/ddd740ri01nvsru4jcze.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709898845/songs/bopfbzwieaqkhlgcjkor.jpg",
+    "genre": "hip hop"
+  },
+  {
+    "id": 20,
+    "name": "Mockingbird ",
+    "artist": "Eminem",
+    "album": "The Marshall Mathers LP",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709899003/songs/vl80r2ueevg3atxbfph1.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709899071/songs/ubfjt4lxw26xhxqkeebn.jpg",
+    "genre": "hip hop"
+  },
+  {
+    "id": 21,
+    "name": "To: Aurora",
+    "artist": "Smoking with poets",
+    "album": "Smoking with poets",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709816270/songs/wpmkyo4evwpjldquxqyp.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709816779/songs/ugo4jgbya7yxf7mzq3rw.webp",
+    "genre": "indie"
+  },
+  {
+    "id": 22,
+    "name": "Sensitive",
+    "artist": "Infraction",
+    "album": "Infraction",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709816193/songs/xptrrulmekyhvdyynbbn.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709816856/songs/uge12adav1le2wpem2um.jpg",
+    "genre": "pop"
+  },
+  {
+    "id": 23,
+    "name": "Santé",
+    "artist": "Stromae",
+    "album": "Multitude",
+    "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709896697/songs/rfmmz9xmubwvkltar5im.mp3",
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709896760/songs/tgmgfjhtaj4vzg6vijbe.jpg",
+    "genre": "dance"
+  }
 ]

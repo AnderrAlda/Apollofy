@@ -1,8 +1,11 @@
 export const PublicRoutes = {
-  LOGIN: "login",
+  LOGIN: "/login",
   HOME: "/",
   SEARCH: "/search",
   USER: "/user",
   ALBUM: "/album",
   SONG: "/song",
+  AUDIOPLAYER: "/audioPlayer",
+  MYSONGS: "/mySongs",
+  EDITPROFILE:"/editprofile"
 };
