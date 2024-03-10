@@ -13,6 +13,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import { EditProfile } from "./pages/editProfile";
 import { PrivateRoute } from "./routes";
 import { PlayerProvider } from "./contexts/AudioPlayerContext";
+import SignUp from "./pages/SignUp/signup";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <BrowserRouter>
               <Routes>
                 <Route path={PublicRoutes.LOGIN} element={<Login />} />
+                <Route path={PublicRoutes.SIGNUP} element={<SignUp />} />
                 <Route
                   path={PublicRoutes.HOME}
                   element={
