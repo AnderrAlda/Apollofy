@@ -169,7 +169,7 @@ export const EditProfile = () => {
           >
             <div className="text-center">
               <p className="text-2xl text-white">
-                Your changes have been saved !
+                Your changes have been saved!
               </p>
             </div>
           </Modal>

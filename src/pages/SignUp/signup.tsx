@@ -1,12 +1,18 @@
 import { useState } from "react";
 import "./signup.css";
-import { User } from "../../utils";
+import { User, getUsers } from "../../utils";
 import { Link } from "react-router-dom";
 import { PublicRoutes } from "../../types/routes";
+//import { AvatarGenerator } from "random-avatar-generator";
+
+
 
 export default function SignUp() {
+  
+  //const generator = new AvatarGenerator();
+  
   const [newUser, setNewUser] = useState<User>({
-    id: 0, // Asumint que id s'assignarà d'alguna altra manera ja que això és només un exemple
+    id: "", // Asumint que id s'assignarà d'alguna altra manera ja que això és només un exemple
     name: "",
     last_name: "",
     email: "",
@@ -18,10 +24,30 @@ export default function SignUp() {
     dateOfBirth: 0, // Asumiràs que aquest camp s'actualitza d'alguna altra manera
     likedSongs: [], // Asumiràs que aquest camp s'actualitza d'alguna altra manera
   });
+  
 
   const updateUser = (key, value) => {
     setNewUser((prev) => ({ ...prev, [key]: value }));
   };
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const users = await getUsers();
+    const lastID = users.reduce(
+      (max, user) => Math.max(max, parseInt(user.id, 10)),
+      0
+    );
+    const updatedUser = { ...newUser, id: (lastID + 1).toString() };
+    try {
+      const response = await fetch(`http://localhost:3000/users`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedUser),
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     <div className="bg-black h-screen">
@@ -29,7 +55,7 @@ export default function SignUp() {
       <p className="text-white flex justify-center py-5">
         Sign up and start listening to the best music
       </p>
-      <form className="form-container">
+      <form className="form-container" onSubmit={handleSubmit}>
         <Name updateUser={updateUser} />
         <Lastname updateUser={updateUser} />
         <Gender updateUser={updateUser} />
@@ -38,9 +64,10 @@ export default function SignUp() {
         <Country updateUser={updateUser} />
         <Birthday updateUser={updateUser} />
         <Password updateUser={updateUser} />
-      <div className="flex justify-around">
-        <CancelButton />
-        <SignUpButton newUser={newUser} /></div>
+        <div className="flex justify-around">
+          <CancelButton />
+          <SignUpButton />
+        </div>
       </form>
     </div>
   );
@@ -76,7 +103,7 @@ function Lastname({ updateUser }) {
     updateUser("last_name", newLastName);
   };
   return (
-    <form className="text-white flex justify-between mx-8">
+    <div className="text-white flex justify-between mx-8">
       <label>Your lastname * </label>
       <input
         type="text"
@@ -84,7 +111,7 @@ function Lastname({ updateUser }) {
         value={lastName}
         onChange={handleChanges}
       />
-    </form>
+    </div>
   );
 }
 
@@ -96,7 +123,7 @@ function Email({ updateUser }) {
     updateUser("email", newEmail);
   };
   return (
-    <form className="text-white flex justify-between mx-8">
+    <div className="text-white flex justify-between mx-8">
       <label>Email * </label>
       <input
         type="email"
@@ -104,7 +131,7 @@ function Email({ updateUser }) {
         value={email}
         onChange={handleChanges}
       />
-    </form>
+    </div>
   );
 }
 function Gender({ updateUser }) {
@@ -115,7 +142,7 @@ function Gender({ updateUser }) {
     updateUser("gender", newGender);
   };
   return (
-    <form className="text-white flex justify-between mx-8">
+    <div className="text-white flex justify-between mx-8">
       <label>Gender * </label>
       <input
         type="text"
@@ -123,7 +150,7 @@ function Gender({ updateUser }) {
         value={gender}
         onChange={handleChanges}
       />
-    </form>
+    </div>
   );
 }
 function City({ updateUser }) {
@@ -135,7 +162,7 @@ function City({ updateUser }) {
   };
 
   return (
-    <form className="text-white flex justify-between mx-8">
+    <div className="text-white flex justify-between mx-8">
       <label>City * </label>
       <input
         type="text"
@@ -143,7 +170,7 @@ function City({ updateUser }) {
         value={city}
         onChange={handleChanges}
       />
-    </form>
+    </div>
   );
 }
 function Country({ updateUser }) {
@@ -155,7 +182,7 @@ function Country({ updateUser }) {
   };
 
   return (
-    <form className="text-white flex justify-between mx-8">
+    <div className="text-white flex justify-between mx-8">
       <label>Country * </label>
       <input
         type="text"
@@ -163,11 +190,11 @@ function Country({ updateUser }) {
         value={country}
         onChange={handleChanges}
       />
-    </form>
+    </div>
   );
 }
 function Birthday({ updateUser }) {
-  const [birthday, setBirthday] = useState();
+  const [birthday, setBirthday] = useState("");
 
   const handleChanges = (e) => {
     const newBirthday = e.target.value;
@@ -176,7 +203,7 @@ function Birthday({ updateUser }) {
   };
 
   return (
-    <form className="text-white flex justify-between mx-8">
+    <div className="text-white flex justify-between mx-8">
       <label>Country * </label>
       <input
         type="date"
@@ -184,7 +211,7 @@ function Birthday({ updateUser }) {
         value={birthday}
         onChange={handleChanges}
       />
-    </form>
+    </div>
   );
 }
 
@@ -199,7 +226,7 @@ function Password({ updateUser }) {
   };
 
   return (
-    <form className="text-white flex flex-col gap-2 ">
+    <div className="text-white flex flex-col gap-2 ">
       <div className="flex justify-between mx-8">
         <label>Create password * </label>
         <input
@@ -218,15 +245,26 @@ function Password({ updateUser }) {
           onChange={(e) => setConfirmedPassword(e.target.value)}
         />
       </div> */}
-    </form>
+    </div>
   );
 }
 
 function CancelButton() {
-  return <Link to={PublicRoutes.LOGIN}><button className="w-15 bg-white rounded p-2 mt-5 ml-5" >Back to login</button></Link>;
+  return (
+    <Link to={PublicRoutes.LOGIN}>
+      <button className="w-15 bg-white rounded p-2 mt-5 ml-5">
+        Back to login
+      </button>
+    </Link>
+  );
 }
-function SignUpButton({ newUser }) {
-  console.log(newUser);
-  
-  return <input type="submit" className="w-15 bg-white rounded p-2 mt-5 ml-5" value="Sign up"/>;
+
+function SignUpButton() {
+  return (
+    <input
+      type="submit"
+      className="w-15 bg-white rounded p-2 mt-5 ml-5"
+      value="Sign up"
+    />
+  );
 }
