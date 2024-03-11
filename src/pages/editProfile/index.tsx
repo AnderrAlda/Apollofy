@@ -36,7 +36,6 @@ export const EditProfile = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    console.log("💪💪");
     const updatedUserData = {};
 
     if (newEmail !== "" && newEmail !== user.email) {
@@ -116,8 +115,6 @@ export const EditProfile = () => {
               />
             ) : null}
 
-        
-
             <div className="text-white">
               <p className="text-2xl">Country: {user?.country}</p>
             </div>
@@ -135,7 +132,7 @@ export const EditProfile = () => {
               <div className="text-2xl ">
                 Password: {displayPassword ? user?.password : "*****"}
                 <button onClick={handleDisplayPassword}>
-                  <IoEye className="ml-36 lg:ml-12"/>
+                  <IoEye className="ml-36 lg:ml-12" />
                 </button>
               </div>
             </div>
