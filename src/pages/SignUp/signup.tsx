@@ -243,18 +243,18 @@ function CancelButton() {
   return (
     <Link to={PublicRoutes.LOGIN}>
       <button className="w-15 bg-white rounded p-2 mt-5 ml-5 hover:bg-accent">
-      <button className="w-15 bg-accent rounded p-2 mt-5 ml-5">
+
         Back to login
       </button>
     </Link>
-  );
+  ); 
 }
 
 function SignUpButton() {
   return (
     <input
       type="submit"
-      className="w-15 bg-accent rounded p-2 mt-5 ml-5"
+      className="w-15 bg-white rounded p-2 mt-5 ml-5"
       value="Sign up"
     />
   );

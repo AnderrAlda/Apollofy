@@ -46,7 +46,7 @@ const HomePage = () => {
     <div className="relative h-screen bg-black">
       <div className="lg:ml-12">
         <div className="relative">
-          <img className="h-20" src={avatarUrl} alt="Avatar" />
+          <img className="h-20 p-3" src={avatarUrl} alt="Avatar" />
           <svg
             className="h-12 absolute top-5 right-5"
             data-slot="icon"

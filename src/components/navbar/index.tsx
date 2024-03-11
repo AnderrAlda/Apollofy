@@ -30,21 +30,5 @@ export function NavBar(): ReactNode {
     </section>
   );
 
-  // return (
-  //   <section className="responsive-tablet responsive-laptop  flex justify-between items-center p-4 text-2xl bg-black w-full lg:left-0">
-  //     <Link to={PublicRoutes.HOME}>
-  //       <IoHomeOutline className="text-white hover:text-green-500" />
-  //     </Link>
-  //     <Link to={PublicRoutes.SEARCH}>
-  //       <CiSearch className="text-white hover:text-green-500" />
-  //     </Link>
-
-  //     <Link to={PublicRoutes.ALBUM}>
-  //       <IoLibraryOutline className="text-white hover:text-green-500" />
-  //     </Link>
-  //     <Link to={PublicRoutes.USER}>
-  //       <IoPersonOutline className="text-white hover:text-green-500" />
-  //     </Link>
-  //   </section>
-  // );
+  
 }
