@@ -11,6 +11,7 @@ import IndividualSong from "../../components/individualSong";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
 import VerticalScrollLayout from "../../layouts/verticalScroll";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 interface Song {
   id: number;
   name: string;
@@ -38,6 +39,22 @@ export default function AlbumComponents() {
     /* addSongToUserLikedSongs(user.id, 4); */
     deleteSongFromUserLikedSongs(user.id, 3);
   };
+
+  const { albums } = usePlayer();
+
+  console.log(albums);
+
+  const { albumid } = useParams<{ albumid?: string }>(); // Specify the type of useParams object
+  const number = parseInt(albumid || ""); // Provide a default value or handle undefined
+
+  console.log(number);
+
+  const selectedAlbum = albums.find((album) => album.id === number);
+  if (selectedAlbum) {
+    console.log(selectedAlbum.songs);
+  } else {
+    console.log("Album not found");
+  }
 
   return (
     <div className="bg-black h-screen w-screen relative">

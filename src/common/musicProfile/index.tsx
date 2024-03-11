@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { PublicRoutes } from "../../types/routes";
 import { getAlbums, getArtists, getPlaylists } from "../../contexts/GetTrack";
 
@@ -30,13 +30,13 @@ export function TopAlbums() {
     <div className="flex gap-8">
       {albums.map((album) => (
         <div key={album.id} className="w-40">
-          <NavLink to={`${PublicRoutes.MYSONGS}/${album.id}`}>
+          <Link to={`/album/${album.id}`}>
             <img
               className="rounded-2xl"
               src={album.imageUrl}
               alt={album.name}
             />
-          </NavLink>
+          </Link>
           <p className="text-white">{album.name}</p>
           <p className="text-gray-500">{album.artist}</p>
         </div>
@@ -46,9 +46,9 @@ export function TopAlbums() {
 }
 
 interface Artists {
-  id: number,
-  name: string,
-  photoUrl: string,
+  id: number;
+  name: string;
+  photoUrl: string;
 }
 
 export function TopArtist() {
@@ -69,19 +69,20 @@ export function TopArtist() {
 
   return (
     <div className="flex gap-8">
-      {artists.length > 0 && artists.map((artist) => (
-        <div key={artist.id} className="w-40">
-          <NavLink to={`${PublicRoutes.MYSONGS}/${artist.id}`}>
-            <img
-              className="rounded-2xl"
-              src={artist.photoUrl}
-              alt={artist.name}
-            />
-          </NavLink>
-          <p className="text-white">{artist.name}</p>
-          {/* <p className="text-gray-500">{artist.artist}</p> */}
-        </div>
-      ))}
+      {artists.length > 0 &&
+        artists.map((artist) => (
+          <div key={artist.id} className="w-40">
+            <NavLink to={`${PublicRoutes.MYSONGS}/${artist.id}`}>
+              <img
+                className="rounded-2xl"
+                src={artist.photoUrl}
+                alt={artist.name}
+              />
+            </NavLink>
+            <p className="text-white">{artist.name}</p>
+            {/* <p className="text-gray-500">{artist.artist}</p> */}
+          </div>
+        ))}
     </div>
   );
 }
@@ -110,18 +111,19 @@ export function TopPlaylist() {
 
   return (
     <div className="flex gap-8">
-      {playlists.length > 0 && playlists.map((playlist) => (
-        <div key={playlist.id} className="w-40">
-          <NavLink to={`${PublicRoutes.MYSONGS}/${playlist.id}`}>
-            <img
-              className="rounded-2xl"
-              src={playlist.thumbnail}
-              alt={playlist.name}
-            />
-          </NavLink>
-          <p className="text-white">{playlist.name}</p>
-        </div>
-      ))}
+      {playlists.length > 0 &&
+        playlists.map((playlist) => (
+          <div key={playlist.id} className="w-40">
+            <NavLink to={`${PublicRoutes.MYSONGS}/${playlist.id}`}>
+              <img
+                className="rounded-2xl"
+                src={playlist.thumbnail}
+                alt={playlist.name}
+              />
+            </NavLink>
+            <p className="text-white">{playlist.name}</p>
+          </div>
+        ))}
     </div>
   );
 }

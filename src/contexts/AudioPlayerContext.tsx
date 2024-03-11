@@ -1,4 +1,4 @@
-import{
+import {
   createContext,
   useState,
   useContext,
@@ -6,7 +6,7 @@ import{
   ReactNode,
 } from "react";
 import { getSongs } from "./GetTrack";
-import { Song } from "../utils";
+import { Song, getAlbums } from "../utils";
 // import { getAlbums } from "./GetTrack";
 
 // Define the Song type
@@ -25,6 +25,7 @@ interface PlayerContextType {
   volume: number;
   setVolume: (value: number) => void;
   songs: Song[];
+  albums: Albums[];
 }
 
 interface Song {
@@ -37,6 +38,13 @@ interface Song {
   liked: boolean;
 }
 
+interface Albums {
+  id: number;
+  name: string;
+  imageUrl: string;
+  artist: string;
+  songs: Number[];
+}
 
 const PlayerContext = createContext<PlayerContextType>({
   playing: false,
@@ -48,6 +56,7 @@ const PlayerContext = createContext<PlayerContextType>({
   volume: 0.5,
   setVolume: (value: number) => {},
   songs: [],
+  albums: [],
 });
 
 export const usePlayer = () => {
@@ -61,6 +70,8 @@ interface PlayerProviderProps {
 export const PlayerProvider = ({ children }: PlayerProviderProps) => {
   // State for songs
   const [songs, setSongs] = useState<Song[]>([]);
+
+  const [albums, setAlbums] = useState<Albums[]>([]);
 
   // Other player states
   const [playing, setPlaying] = useState(false);
@@ -82,6 +93,19 @@ export const PlayerProvider = ({ children }: PlayerProviderProps) => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const albumsData = await getAlbums(); // Implement getSongs according to your API or data source
+        setAlbums(albumsData);
+      } catch (error) {
+        console.error("Error fetching songs:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <PlayerContext.Provider
       value={{
@@ -94,6 +118,7 @@ export const PlayerProvider = ({ children }: PlayerProviderProps) => {
         volume,
         setVolume,
         songs,
+        albums,
       }}
     >
       {children}

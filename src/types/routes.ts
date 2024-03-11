@@ -4,9 +4,9 @@ export const PublicRoutes = {
   HOME: "/home",
   SEARCH: "/search",
   USER: "/user",
-  ALBUM: "/album",
+  ALBUM: "/album/:albumid",
   SONG: "/song",
   AUDIOPLAYER: "/audioPlayer",
   MYSONGS: "/mySongs",
-  EDITPROFILE:"/editprofile"
+  EDITPROFILE: "/editprofile",
 };

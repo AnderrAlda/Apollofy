@@ -10,6 +10,16 @@ export async function getTracks(): Promise<Tracks[]> {
   }
 }
 
+export async function getAlbums(): Promise<Tracks[]> {
+  try {
+    const response = await fetch("src/assets/data/albums.json");
+    const JSONResponse = await response.json();
+    return JSONResponse;
+  } catch (error) {
+    throw new Error(`Something is wrong in f APIFetch: ${error}`);
+  }
+}
+
 export async function getUsers(): Promise<User[]> {
   try {
     const response = await fetch("src/assets/data/users.json");
