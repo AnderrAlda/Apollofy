@@ -1,9 +1,10 @@
 import { NavBar } from "../../components/navbar";
+// import { getAlbums } from "./GetTrack";
 
-import { HeartIconBtn } from "../../common/icons/heartIconBtn";
+// import { HeartIconBtn } from "../../common/icons/heartIconBtn";
 import { useAuth } from "../../contexts/AuthContext";
 import {
-  addSongToUserLikedSongs,
+  // addSongToUserLikedSongs,
   deleteSongFromUserLikedSongs,
 } from "../../utils";
 import IndividualSong from "../../components/individualSong";
@@ -31,7 +32,6 @@ export default function AlbumComponents() {
       user.likedSongs.includes(song.id)
     );
     setLikedSongs(filteredSongs);
-    console.log("hola");
   }, [songs, user]);
 
   const handleAddSongClick = () => {

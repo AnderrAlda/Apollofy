@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { NavBar } from "../../components/navbar";
 
 import { HeartIconBtn } from "../../common/icons/heartIconBtn";

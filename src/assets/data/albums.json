@@ -1,0 +1,635 @@
+{
+    "playlists": [
+    {
+        "id": "1",
+        "name": "Road trip! All the masters I need!",
+        "isFollowed": true,
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710091885/Road_trip_sdyxro.jpg",
+        "description": "Get your mic on with this beats. You are going to sing all the way down",
+        "publicAccessible": true,
+        "primaryColor": "#fbdc00",
+        "songs": [1, 5, 8, 15, 23]
+    },
+    {
+        "id": "2",
+        "name": "Motorcycle Mama!",
+        "isFollowed": true,
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710092173/Motorcycle_kcqnxh.jpg",
+        "description": "Take it easy on the wheels with this hits",
+        "publicAccessible": true,
+        "primaryColor": "#fbdc00",
+        "songs": [2, 7, 11, 18, 21]
+    },
+    {
+        "id": "3",
+        "name": "Chillout with the beats",
+        "isFollowed": false,
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710092349/bqhmkcgdfrsuandcnfwo.jpg",
+        "description": "Stressed? Don´t worry the final project will soon be over. Relax in the meantime with this hits.",
+        "publicAccessible": true,
+        "primaryColor": "#fbdc00",
+        "songs": [3, 4, 12, 18, 20]
+    },
+    {
+        "id": "4",
+        "name": "Boogie with the beats",
+        "isFollowed": true,
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710092456/hwmt17pzukymdmqa0zgg.jpg",
+        "description": "Take the dance floor and try to get your groove on with this beats",
+        "publicAccessible": false,
+        "primaryColor": "#fbdc00",
+        "songs": [2, 18, 17, 8, 22]
+    },
+    {
+        "id": "5",
+        "name": "Smile. You are beautiful",
+        "isFollowed": true,
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710092560/d76vdiskl93tfhrake6b.jpg",
+        "description": "For those times when you are feeling down.",
+        "publicAccessible": false,
+        "primaryColor": "#fbdc00",
+        "songs": [18, 14, 4, 6, 20]
+    },
+    {
+        "id": "6",
+        "name": "Staying home",
+        "isFollowed": true,
+        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644626587/tracks-thumbnails-dev/brennan-ehrhardt-HALe2SmkWAI-unsplash_c1yhnz.jpg",
+        "description": "Feeling homey. Lets keep it warm.",
+        "publicAccessible": false,
+        "primaryColor": "#fbdc00"
+    },
+    {
+        "id": "7",
+        "name": "Space hits!",
+        "isFollowed": true,
+        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644626067/tracks-thumbnails-dev/fly_hx4xyp.jpg",
+        "description": "Have no money for a space trip but you can have a space hit!",
+        "publicAccessible": false,
+        "primaryColor": "#fbdc00"
+    },
+    {
+        "id": "8",
+        "name": "Hits for the weekend",
+        "isFollowed": true,
+        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644626096/tracks-thumbnails-dev/hits_nuk3qf.webp",
+        "description": "Have no plans but will be happy to hear you are happy.",
+        "publicAccessible": false,
+        "primaryColor": "#fbdc00"
+    },
+    {
+        "id": "9",
+        "name": "Party time",
+        "isFollowed": true,
+        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644626587/tracks-thumbnails-dev/amy-shamblen-lJt-3NUFng4-unsplash_z4icus.jpg",
+        "description": "Have you finished your master project? Let´s party!",
+        "publicAccessible": false,
+        "primaryColor": "#fbdc00"
+    },
+    {
+        "id": "10",
+        "name": "Glitter",
+        "isFollowed": true,
+        "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644627361/tracks-thumbnails-dev/glitter_ru5qsp.jpg",
+        "description": "Let´s get glittering.",
+        "publicAccessible": false,
+        "primaryColor": "#fbdc00"
+    }
+    ],
+    "tracks":[
+    {
+        "id": 1,
+        "name": "Enjoy the silence",
+        "artist": "Depeche Mode",
+        "album": "Violator",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709892657/songs/q3hxikb5qitkf1tc8muz.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709892800/songs/psuf8upwk81sjzxrdqhl.jpg",
+        "genre": "rock"
+    },
+    {
+        "id": 2,
+        "name": "Personal Jesus",
+        "artist": "Depeche Mode",
+        "album": "Violator",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709887832/songs/dfph7s85voajtsf6qvz9.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709893166/songs/ukywp0kwkpf20ax48mee.jpg",
+        "genre": "rock"
+    },
+    {
+        "id": 3,
+        "name": "Policy of truth",
+        "artist": "Depeche Mode",
+        "album": "Violator",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709894116/songs/dicpzvbeg35avqehoopp.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709894215/songs/eity0fxpiykdxg5qrlpc.jpg",
+        "genre": "rock"
+    },
+    {
+        "id": 4,
+        "name": "World in my eyes",
+        "artist": "Depeche Mode",
+        "album": "Violator",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709894580/songs/zrjnfpmbcclphzvps511.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709894667/songs/hl8aqpzcv7xxj8rjdpbl.jpg",
+        "genre": "rock"
+    },
+    {
+        "id": 5,
+        "name": "Strangelove",
+        "artist": "Depeche Mode",
+        "album": "Violator",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709894842/songs/fqm8fgh52ivqqlffxnyz.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709894926/songs/xkyelkjrzyqjh3autvcb.jpg",
+        "genre": "rock"
+    },
+    {
+        "id": 6,
+        "name": "Blinding lights",
+        "artist": "The weekend",
+        "album": "After hours",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709895297/songs/tuq8mrstpw4r2tqkrnxl.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709895388/songs/ri0mms141junabcatlej.jpg",
+        "genre": "pop"
+    },
+    {
+        "id": 7,
+        "name": "I Feel It Coming ft. Daft Punk",
+        "artist": "The weekend",
+        "album": "After hours",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709895512/songs/awchkzkv1n4zawve22yq.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709895581/songs/i7nhgkd1ii5esi2qydwh.jpg",
+        "genre": "pop"
+    },
+    {
+        "id": 8,
+        "name": "Starboy ft. Daft Punk",
+        "artist": "The weekend",
+        "album": "After hours",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709895753/songs/rnipqsnjuxq8q3guyluv.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709895813/songs/sxt7tatsiyhlp1d3ciw6.jpg",
+        "genre": "pop"
+    },
+    {
+        "id": 9,
+        "name": "Can't Feel My Face",
+        "artist": "The weekend",
+        "album": "After hours",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709895906/songs/kbwbv52lehn0uhpmmryx.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709895990/songs/qdwxnl0yezfobxskqzyk.jpg",
+        "genre": "pop"
+    },
+    {
+        "id": 10,
+        "name": "Save Your Tears",
+        "artist": "The weekend",
+        "album": "After hours",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709896115/songs/goglgrudrurftlbjo7tn.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709896193/songs/f2rmnrlcvmkozotpxtct.jpg",
+        "genre": "pop"
+    },
+    {
+        "id": 11,
+        "name": "Don't Start Now",
+        "artist": "Dua Lipa",
+        "album": "Future nostalgia",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709897045/songs/on9jlrhml2ldh3kon4p2.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709897159/songs/i9xdxacyb992jth7gjgi.jpg",
+        "genre": "dance"
+    },
+    {
+        "id": 12,
+        "name": "New Rules",
+        "artist": "Dua Lipa",
+        "album": "Future nostalgia",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709897245/songs/ih7zntol02joortmgck7.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709897318/songs/gh6gjazxwozjrzjustnf.jpg",
+        "genre": "dance"
+    },
+    {
+        "id": 13,
+        "name": "Hotter Than Hell",
+        "artist": "Dua Lipa",
+        "album": "Future nostalgia",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709897397/songs/zyxa1oqy2xsgwuhtcsb2.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709897472/songs/o3j9cidpcv7rkc7zumat.jpg",
+        "genre": "dance"
+    },
+    {
+        "id": 14,
+        "name": "Cold Heart",
+        "artist": "Dua Lipa",
+        "album": "Future nostalgia",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709897548/songs/q2ithuxx8bp33e69za1p.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709897612/songs/tbxfqy6cacnz6kmlvzxn.jpg",
+        "genre": "dance"
+    },
+    {
+        "id": 15,
+        "name": "IDGAF ",
+        "artist": "Dua Lipa",
+        "album": "Future nostalgia",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709897713/songs/w2r0zpikoh3yjzampigg.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709897781/songs/cg84o3qiqcbwcrxq0chr.jpg",
+        "genre": "dance"
+    },
+    {
+        "id": 16,
+        "name": "The Real Slim Shady",
+        "artist": "Eminem",
+        "album": "The Marshall Mathers LP",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709898222/songs/fdcdsuwvfl5szmiuspf3.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709898279/songs/twagiq3c9oe6vlwtu2wn.jpg",
+        "genre": "hip hop"
+    },
+    {
+        "id": 17,
+        "name": "Without Me",
+        "artist": "Eminem",
+        "album": "The Marshall Mathers LP",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709898426/songs/jtaaqomukkmokgnwy6nh.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709898489/songs/g8nxkmp6fgkte71x36qk.jpg",
+        "genre": "hip hop"
+    },
+    {
+        "id": 18,
+        "name": "Lose Yourself",
+        "artist": "Eminem",
+        "album": "The Marshall Mathers LP",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709898579/songs/udyfbb6qs27tpte0w589.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709898661/songs/rlrvi3mdylgkc2xexust.jpg",
+        "genre": "hip hop"
+    },
+    {
+        "id": 19,
+        "name": "Stan ft. Dido",
+        "artist": "Eminem",
+        "album": "The Marshall Mathers LP",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709898753/songs/ddd740ri01nvsru4jcze.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709898845/songs/bopfbzwieaqkhlgcjkor.jpg",
+        "genre": "hip hop"
+    },
+    {
+        "id": 20,
+        "name": "Mockingbird ",
+        "artist": "Eminem",
+        "album": "The Marshall Mathers LP",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709899003/songs/vl80r2ueevg3atxbfph1.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709899071/songs/ubfjt4lxw26xhxqkeebn.jpg",
+        "genre": "hip hop"
+    },
+    {
+        "id": 21,
+        "name": "To: Aurora",
+        "artist": "Smoking with poets",
+        "album": "Smoking with poets",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709816270/songs/wpmkyo4evwpjldquxqyp.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709816779/songs/ugo4jgbya7yxf7mzq3rw.webp",
+        "genre": "indie"
+    },
+    {
+        "id": 22,
+        "name": "Sensitive",
+        "artist": "Infraction",
+        "album": "Infraction",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709816193/songs/xptrrulmekyhvdyynbbn.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709816856/songs/uge12adav1le2wpem2um.jpg",
+        "genre": "pop"
+    },
+    {
+        "id": 23,
+        "name": "Santé",
+        "artist": "Stromae",
+        "album": "Multitude",
+        "url": "https://res.cloudinary.com/dmnyizy0f/video/upload/v1709896697/songs/rfmmz9xmubwvkltar5im.mp3",
+        "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1709896760/songs/tgmgfjhtaj4vzg6vijbe.jpg",
+        "genre": "dance"
+    }
+    ],
+    "albums": [
+    {
+        "id": "1",
+        "name": "Violator",
+        "imageUrl": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710098841/suddrpffcc9fjoy3alyy.jpg",
+        "artist": "Depeche Mode",
+        "songs": ["Enjoy the silence", "Personal Jesus", "Policy of truth", "World in my eyes", "Strangelove"]
+    },
+    {
+        "id": "2",
+        "name": "After hours",
+        "imageUrl": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710098919/zxlnbnbbx8n731ay9hdz.jpg",
+        "artist": "The Weekend",
+        "songs": ["Blinding lights", "I Feel It Coming ft. Daft Punk", "Starboy ft. Daft Punk", "Can't Feel My Face", "Save Your Tears"]
+    },
+    {
+        "id": "3",
+        "name": "Future nostalgia",
+        "imageUrl": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710099013/j6ij58k2urcsqb941xve.jpg",
+        "artist": "Dua Lipa",
+        "songs": ["Don't Start Now", "New Rules", "Hotter Than Hell", "Cold Heart", "IDGAF"]
+    },
+    {
+        "id": "4",
+        "name": "The Marshall Mathers LP",
+        "imageUrl": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710099082/fc8h3uflvdahak7rtagg.jpg",
+        "artist": "Eminem",
+        "songs": ["The Real Slim Shady", "Without Me", "Lose Yourself", "Stan ft. Dido", "Mockingbird"]
+    },
+    {
+        "id": "5",
+        "name": "Vivaldi",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273a7fc8699c8a8c6dc4b90c948",
+        "artist": "Jesper Swärd"
+    },
+    {
+        "id": "6",
+        "name": "Velvet Pony Trax 11 part 2",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b27347d2bc41f459a0422c3dfff5",
+        "artist": "Axel Boman"
+    },
+    {
+        "id": "7",
+        "name": "PARTYPINGLA",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273e467c6a0b070f390daa47693",
+        "artist": "Rasmus Hultgren"
+    },
+    {
+        "id": "8",
+        "name": "Someone To Love",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273e9e5fbbde2d4147260db99bf",
+        "artist": "Dimitri Vangelis & Wyman"
+    },
+    {
+        "id": "9",
+        "name": "I samma bil",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b27349108981b176704992078242",
+        "artist": "Hemliga Klubben"
+    },
+    {
+        "id": "10",
+        "name": "Ofiltrerad",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273d43759a300274388d5b3ac7d",
+        "artist": "Steph K"
+    },
+    {
+        "id": "11",
+        "name": "Closer",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273e04542a5b2f5c4e80b8043f9",
+        "artist": "Romeo"
+    },
+    {
+        "id": "12",
+        "name": "YOUNG",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b27350414c15d3e534effd5840ab",
+        "artist": "SINAN"
+    },
+    {
+        "id": "13",
+        "name": "THE REAL",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273189b84e563687baf99c8d800",
+        "artist": "Chapee"
+    },
+    {
+        "id": "14",
+        "name": "Eternal Light Brigade",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b2732f4d9bfec9c13fc7979ed942",
+        "artist": "Les Big Byrd"
+    },
+    {
+        "id": "15",
+        "name": "Tombolo (Réédition)",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273966b2b28801e75d7d293c3a9",
+        "artist": "Kalash"
+    },
+    {
+        "id": "16",
+        "name": "KARIMO II",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273aa311f30a24a7002e089c379",
+        "artist": "Karim Alger"
+    },
+    {
+        "id": "17",
+        "name": "Midnight FM",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273d62e4c88ec0df746317863af",
+        "artist": "Prof. Stranger"
+    },
+    {
+        "id": "18",
+        "name": "Jag såg en kvinna",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273897c8155c64e1436daf8a466",
+        "artist": "Ken Ring"
+    },
+    {
+        "id": "19",
+        "name": "Alltid varit här",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273940bcb3763667fa773d46a29",
+        "artist": "Rozh"
+    },
+    {
+        "id": "20",
+        "name": "38",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273a009515d20b39aa065540314",
+        "artist": "Arre"
+    }
+],
+"artists": [
+        {
+        "id": "1",
+        "name": "Depeche Mode",
+        "genres": "rock",
+        "popularity": 38,
+        "photoUrl": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710099693/qaltput74verdcznodpz.jpg",
+        "songs": [1, 2, 3, 4, 5],
+        "album": "Violator"
+        },
+        {
+        "id": "2",
+        "name": "The weekend",
+        "genres": "pop",
+        "popularity": "56",
+        "photoUrl": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710099875/xjjz0rxe0pkk4swizbwx.jpg",
+        "songs": [6, 7, 8, 9, 10],
+        "album": "After hours"
+        },
+        {
+        "id": "3",
+        "name": "Dua Lipa",
+        "genres": "dance",
+        "popularity": 63,
+        "photoUrl": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710100032/ue28iuudbzp0rpdqxq3j.jpg",
+        "songs": [11, 12, 13, 14, 15],
+        "album": "Future nostalgia"
+        },
+        {
+        "id": "4",
+        "name": "Eminem",
+        "genres": "hip hop",
+        "popularity": 51,
+        "photoUrl": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710100184/jhffluz5rm68agfxdcgc.jpg",
+        "songs": [16, 17, 18, 19, 20],
+        "album": "The Marshall Mathers LP"
+        },
+        {
+        "id": "5",
+        "name": "Jesper Swärd",
+        "genres": [],
+        "popularity": 19,
+        "photoUrl": "https://i.scdn.co/image/ab6761610000e5eb9acc7db8348539634e585144"
+        },
+        {
+        "id": "6",
+        "name": "Axel Boman",
+        "genres": [
+            "deep house",
+            "electronica",
+            "float house",
+            "microhouse",
+            "minimal tech house",
+            "swedish electronic",
+            "swedish house"
+        ],
+        "popularity": 39,
+        "photoUrl": "https://i.scdn.co/image/ab6761610000e5eb19cd7b26fa38886bd6355b3c"
+        },
+        {
+        "id": "7",
+        "name": "Rasmus Hultgren",
+        "genres": [
+            "swedish pop rap"
+        ],
+        "popularity": 31,
+        "photoUrl": "https://i.scdn.co/image/ab6761610000e5eb470a02669d59859a21676ed0"
+        },
+        {
+        "id": "8",
+        "name": "Dimitri Vangelis & Wyman",
+        "genres": [
+            "edm",
+            "electro house",
+            "pop dance",
+            "pop edm",
+            "progressive electro house",
+            "progressive house"
+        ],
+        "popularity": 55,
+        "photoUrl": "https://i.scdn.co/image/d3e1ce67d48fa05431bdd2b0f14ffc294960f0bf"
+        },
+        {
+        "id": "9",
+        "name": "Hemliga Klubben",
+        "genres": [
+            "swedish pop"
+        ],
+        "popularity": 34,
+        "photoUrl": "https://i.scdn.co/image/ab6761610000e5eb014c22b80be73cee9c7835b1"
+        },
+        {
+        "id": "10",
+        "name": "Steph K",
+        "genres": [
+            "swedish trap pop"
+        ],
+        "popularity": 37,
+        "photoUrl": "https://i.scdn.co/image/ab6761610000e5ebf913a1de42e743a6f462dfe1"
+        },
+        {
+        "id": "11",
+        "name": "Romeo",
+        "genres": [
+            "swedish hip hop",
+            "swedish trap pop"
+        ],
+        "popularity": 44,
+        "photoUrl": "https://i.scdn.co/image/ab6761610000e5eb6dca4eb1f2347310b27c3000"
+        },
+        {
+        "id": "12",
+        "name": "SINAN",
+        "genres": [
+            "swedish gangsta rap",
+            "swedish hip hop",
+            "swedish trap pop"
+        ],
+        "popularity": 44,
+        "photoUrl": "https://i.scdn.co/image/ab6761610000e5eb5c1a2d5e3c93fe46ff18878d"
+        },
+        {
+        "id": "13",
+        "name": "Chapee",
+        "genres": [],
+        "popularity": 22,
+        "photoUrl": "https://i.scdn.co/image/ab6761610000e5eb8d4c9938258d04640bf9f091"
+        },
+        {
+        "id": "14",
+        "name": "Les Big Byrd",
+        "genres": [
+            "neo-kraut",
+            "stockholm indie",
+            "swedish indie rock",
+            "swedish psychedelic rock"
+        ],
+        "popularity": 33,
+        "photoUrl": "https://i.scdn.co/image/ab6761610000e5ebb7ed50718dfd36111ab26f40"
+        },
+        {
+        "id": "15",
+        "name": "Kalash",
+        "genres": [
+            "french hip hop",
+            "pop urbaine",
+            "rap antillais",
+            "trap antillais"
+        ],
+        "popularity": 62,
+        "photoUrl": "https://i.scdn.co/image/ab6761610000e5ebbeffebd066171f03029a3c2a"
+        },
+        {
+        "id": "16",
+        "name": "Karim Alger",
+        "genres": [
+            "swedish trap pop"
+        ],
+        "popularity": 24,
+        "photoUrl": "https://i.scdn.co/image/ab6761610000e5eb5c33b372d2ef6275ed536450"
+        },
+        {
+        "id": "17",
+        "name": "Prof. Stranger",
+        "genres": [],
+        "popularity": 19,
+        "photoUrl": "https://i.scdn.co/image/ab6761610000e5eb559babce20a71e8210990c29"
+        },
+        {
+        "id": "18",
+        "name": "Ken Ring",
+        "genres": [
+            "swedish gangsta rap",
+            "swedish hip hop",
+            "swedish trap pop"
+        ],
+        "popularity": 41,
+        "photoUrl": "https://i.scdn.co/image/ab6761610000e5ebd093354b1da8c7c55c4cee9f"
+        },
+        {
+        "id": "19",
+        "name": "Arre",
+        "genres": [],
+        "popularity": 25,
+        "photoUrl": "https://i.scdn.co/image/ab6761610000e5ebf6b060d446495921bd200593"
+        },
+        {
+        "id": "20",
+        "name": "Rozh",
+        "genres": [
+            "swedish drill",
+            "swedish gangsta rap",
+            "swedish hip hop",
+            "swedish trap",
+            "swedish trap pop"
+        ],
+        "popularity": 42,
+        "photoUrl": "https://i.scdn.co/image/ab6761610000e5eb31b2c3d4c8866b38310591be"
+    }
+    ]
+    
+}

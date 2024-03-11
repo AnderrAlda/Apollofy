@@ -22,6 +22,7 @@ export const theme = {
     },
     height: {
       96: "15rem",
+      100: "54rem",
     },
     width: {
       96: "15rem",
