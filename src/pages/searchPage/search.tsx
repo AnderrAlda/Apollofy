@@ -86,7 +86,7 @@ export default function SearchBarPage() {
 
   return (
     <div className="flex flex-col bg-black h-screen">
-      <form className="mt-10 ml-10">
+      <form className="mt-10 ml-10 lg:ml-20">
         <label className="text-white text-4xl ">Search</label>
         <br />
         <input
@@ -100,7 +100,7 @@ export default function SearchBarPage() {
       <button className="search-btn">Search</button>
 
       {!filter || filter.length < 4 ? (
-        <p className="text-white text-2xl ml-12">Top songs</p>
+        <p className="text-white text-2xl ml-12 lg:ml-20">Top songs</p>
       ) : (
         <>
           {songResults.length > 0 && (
