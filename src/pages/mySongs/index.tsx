@@ -10,7 +10,7 @@ import {
 import IndividualSong from "../../components/individualSong";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
 import VerticalScrollLayout from "../../layouts/verticalScroll";
-import { useEffect, useState } from "react";
+
 interface Song {
   id: number;
   name: string;
