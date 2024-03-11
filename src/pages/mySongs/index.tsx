@@ -20,7 +20,7 @@ interface Song {
 export function MySongs() {
   const { user, updateUser } = useAuth();
 
-  const { songs, setUsingLiked, setSongs } = usePlayer();
+  const { songs, setUsingLiked, setSongs, setCurrentSongIndex } = usePlayer();
   const [likedSongs, setLikedSongs] = useState<Song[]>();
 
   useEffect(() => {
@@ -52,6 +52,7 @@ export function MySongs() {
           const handleSongClick = () => {
             setSelectedSongId(song.id);
             setUsingLiked(true);
+            setCurrentSongIndex(0);
             setSongs(likedSongs);
           };
           return (
