@@ -23,7 +23,7 @@ export function HeartIconBtn() {
     <>
       <button onClick={handleClick} className="absolute ml-10 text-1xl">
         <IoHeart
-          className="text-white hover:text-green-600"
+          className="text-white hover:text-accent"
           style={{ fontSize: "2em", cursor: "pointer" }}
         />
         {enCarrito ? "Añadir al carrito" : "remove al carrito"}

@@ -17,7 +17,7 @@ const IndividualSong = ({
   return (
     <div>
       <div
-        className={`mb-12  w-screen relative ${isSelected ? "text-green-500" : "text-white"}`}
+        className={`mb-12  w-screen relative ${isSelected ? "text-accent" : "text-white"}`}
         onClick={onClick}
       >
         <p className="text-xl">{songName}</p>
@@ -26,7 +26,7 @@ const IndividualSong = ({
           {/* Button triggering the function */}
           <button>
             <IoHeart
-              className="text-white hover:text-green-600"
+              className="text-white hover:text-accent"
               style={{ fontSize: "2em", cursor: "pointer" }}
             />
           </button>

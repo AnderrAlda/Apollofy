@@ -1,10 +1,7 @@
 import { NavBar } from "../../components/navbar";
 
 import { useAuth } from "../../contexts/AuthContext";
-import {
-
-  deleteSongFromUserLikedSongs,
-} from "../../utils";
+import { deleteSongFromUserLikedSongs } from "../../utils";
 import IndividualSong from "../../components/individualSong";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
 import VerticalScrollLayout from "../../layouts/verticalScroll";
@@ -40,15 +37,14 @@ export default function AlbumComponents() {
   }, [songs, user]);
 
   const handleAddSongClick = () => {
-    
     deleteSongFromUserLikedSongs(user.id, 3);
   };
 
   const { albums, songs: Song } = usePlayer();
   console.log(albums);
 
-  const { albumid } = useParams<{ albumid?: string }>(); 
-  const number = parseInt(albumid || ""); 
+  const { albumid } = useParams<{ albumid?: string }>();
+  const number = parseInt(albumid || "");
 
   console.log(number);
 
@@ -63,9 +59,7 @@ export default function AlbumComponents() {
 
   const albumSongs: AlbumSongs = {};
 
-
   if (selectedAlbum) {
-    
     const selectedAlbumSongs = songs.filter((song) =>
       selectedAlbum.songs.includes(song.id)
     );
@@ -88,13 +82,13 @@ export default function AlbumComponents() {
   const navigate = useNavigate();
 
   const goBack = () => {
-    navigate(-1); 
+    navigate(-1);
   };
 
   return (
     <div className="bg-black h-screen w-screen relative">
       <button onClick={goBack}>
-        <IoChevronBackSharp className="text-2xl text-white ml-3 mt-3 hover:text-green-500" />
+        <IoChevronBackSharp className="text-2xl text-white ml-3 mt-3 hover:text-accent" />
       </button>
       <div className="pt-10 pl-20">
         <img

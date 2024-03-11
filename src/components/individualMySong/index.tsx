@@ -16,14 +16,14 @@ const IndividualMySong = ({
   return (
     <div>
       <div
-        className={`mb-12  w-screen relative ${isSelected ? "text-green-500" : "text-white"}`}
+        className={`mb-12  w-screen relative ${isSelected ? "text-accent" : "text-white"}`}
         onClick={onClick}
       >
         <p className="text-xl">{songName}</p>
         <p className="text-xs">{groupName}</p>
         <div className="absolute right-10 top-1">
           <IoHeart
-            className="text-white text-green-600"
+            className="text-accent "
             style={{ fontSize: "2em", cursor: "pointer" }}
           />
         </div>

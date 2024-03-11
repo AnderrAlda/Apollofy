@@ -135,7 +135,7 @@ const AudioPlayer = () => {
         {/* Button triggering the function */}
         <button onClick={handleAddSongClick}>
           <IoHeart
-            className="text-white hover:text-green-600"
+            className="text-white hover:text-accent"
             style={{ fontSize: "2em", cursor: "pointer" }}
           />
         </button>
