@@ -4,8 +4,8 @@ import { NavBar } from "../../components/navbar";
 import { useFilter } from "../../contexts/FilterContext";
 //import { songs } from "../../data/data";
 
-import { Song } from "../../components/audioPlayer";
-import { getSongs } from "../../contexts/GetTrack";
+// import { Song } from "../../components/audioPlayer";
+// import { getSongs } from "../../contexts/GetTrack";
 import { PublicRoutes } from "../../types/routes";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
 
@@ -13,6 +13,7 @@ export default function SearchBarPage() {
   const { filter, handleSetFilter } = useFilter();
   const [searchParams, setSearchParams] = useSearchParams();
   const { songs } = usePlayer();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleFilter = (e: any) => {
     const newFilter = e.target.value;
     setSearchParams({ filter: newFilter });

@@ -10,11 +10,11 @@ import {
 } from "react-icons/io5";
 import "./audioPlayer.css";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
-import { getSongs } from "../../contexts/GetTrack";
+// import { getSongs } from "../../contexts/GetTrack";
 import { useAuth } from "../../contexts/AuthContext";
 import {
   addSongToUserLikedSongs,
-  deleteSongFromUserLikedSongs,
+  // deleteSongFromUserLikedSongs,
 } from "../../utils";
 
 const AudioPlayer = () => {
@@ -56,14 +56,14 @@ const AudioPlayer = () => {
       }
     }, 1000);
     return () => clearInterval(interval);
-  }, [playing]);
+  }, [playing, setCurrentTime]);
 
   //every time a song in changed to set to 0 this values. So that when song change the next start from 0.
   useEffect(() => {
     playerRef.current?.seekTo(0);
     setPlayed(0);
     setCurrentTime(0);
-  }, [currentSongIndex]);
+  }, [currentSongIndex, setCurrentTime]);
 
   //ensures that when the component mounts, the initial current time of the audio player is set to the context's current time if it's available.  It helps synchronize the audio playback position with the stored current time value in the context, ensuring continuity between different sessions or when navigating between components.
   useEffect(() => {

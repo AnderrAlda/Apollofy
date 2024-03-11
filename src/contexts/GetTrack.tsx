@@ -1,5 +1,4 @@
-// import { useEffect } from "react";
-// import { songs } from "../data/data";
+
 
 export async function getSongs() {
     try {
@@ -11,11 +10,12 @@ export async function getSongs() {
     }
 }
 
-// useEffect(() => {
-//     async function getProductAPI() {
-//       const response = await getSongs();
-//       songs.setProducts(response);
-//     }
-
-//     getProductAPI();
-//   },);
+export async function getAlbums() {
+    try {
+        const response = await fetch('src/assets/data/albums.json');
+        const JSONResponsee = await response.json();
+        return JSONResponsee;
+        } catch (error) {
+        // throw new Error(`Something is wrong in f APIFetch: ${error}`);
+    }
+}

@@ -1,4 +1,4 @@
-import React, {
+import{
   createContext,
   useState,
   useContext,
@@ -6,11 +6,12 @@ import React, {
   ReactNode,
 } from "react";
 import { getSongs } from "./GetTrack";
+// import { getAlbums } from "./GetTrack";
 
 // Define the Song type
-interface Song {
-  // Define your song properties here
-}
+// interface Song {
+//   // Define your song properties here
+// }
 
 // Create the context with a default value including songs
 interface PlayerContextType {
@@ -34,6 +35,7 @@ interface Song {
   genre: string;
   liked: boolean;
 }
+
 
 const PlayerContext = createContext<PlayerContextType>({
   playing: false,

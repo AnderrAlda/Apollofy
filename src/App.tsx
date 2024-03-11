@@ -13,6 +13,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import { EditProfile } from "./pages/editProfile";
 import { PrivateRoute } from "./routes";
 import { PlayerProvider } from "./contexts/AudioPlayerContext";
+import { MySongs } from "./pages/mySongs";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path={PublicRoutes.USER} element={<PrivateRoute><UserPage /></PrivateRoute>} />
             <Route path={PublicRoutes.ALBUM} element={<AlbumComponents />} />
             <Route path={PublicRoutes.SONG} element={<SongPage />} />
+            <Route path={PublicRoutes.MYSONGS} element={<MySongs />} />
   
             <Route path={PublicRoutes.EDITPROFILE} element={<EditProfile />} />
         </Routes>

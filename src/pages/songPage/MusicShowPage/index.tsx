@@ -2,20 +2,20 @@ import { usePlayer } from "../../../contexts/AudioPlayerContext";
 
 export function MusicShowPage() {
   const {
-    playing,
-    setPlaying,
-    currentTime,
-    setCurrentTime,
+    // playing,
+    // setPlaying,
+    // currentTime,
+    // setCurrentTime,
     currentSongIndex,
-    setCurrentSongIndex,
-    volume,
-    setVolume,
+    // setCurrentSongIndex,
+    // volume,
+    // setVolume,
     songs,
   } = usePlayer();
 
   return (
     <section>
-      <div className=" h-96 w-96 ml-20 mt-20 rounded-lg bg-gray-800">
+      <div className="ml-20 mt-20">
         <img src={songs[currentSongIndex].thumbnail} alt="" />
       </div>
       <p className="mt-9 text-2xl space-x-6 text-center text-white">
