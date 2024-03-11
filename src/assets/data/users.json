@@ -7,8 +7,8 @@
       "email": "j.com",
       "password": "javi",
       "city": "Almeria",
-      "gender": "Mal",
-      "profilePicture": "",
+      "gender": "mal",
+      "profilePicture": "https://avataaars.io/?accessoriesType=Prescription01&avatarStyle=Circle&clotheColor=PastelYellow&clotheType=Overall&eyeType=WinkWacky&eyebrowType=Default&facialHairColor=Blonde&facialHairType=BeardLight&hairColor=Auburn&hatColor=Black&mouthType=Disbelief&skinColor=Pale&topType=Hijab",
       "country": "Spain",
       "dateOfBirth": "1997-11-12",
       "likedSongs": []
@@ -63,7 +63,12 @@
       "profilePicture": "",
       "country": "Spain",
       "dateOfBirth": "1987-07-03",
-      "likedSongs": [2, 3, 4, 8]
+      "likedSongs": [
+        2,
+        3,
+        4,
+        8
+      ]
     },
     {
       "id": "6",

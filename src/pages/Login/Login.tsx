@@ -29,8 +29,8 @@ export default function Login() {
     
   
     <div className="h-screen bg-black flex flex-col  justify-center items-center p-1">
-      <div className="lg:p-7 p-5  bg-slate-900 rounded-lg border border-solid border-slate-500">
-        <img className=" lg:ml-8 lg:m-1 size-40 ml-8 m-4 border-solid border border-transparent rounded-full" src="src/assets/apollofyremovebg.png" />
+      <div className="lg:p-7 p-5  bg-gray-700 rounded-lg border border-solid border-slate-500">
+        <img className=" lg:ml-6 lg:m-1 h-46 w-44 ml-6 mr-6 border-solid border border-transparent rounded-full" src="src/assets/apollofyremovebg.png" />
 
         <form
           className="flex flex-col gap-2 items-center"
@@ -52,7 +52,7 @@ export default function Login() {
             className="rounded p-1 m-2  lg:m-2"
           />
 
-          <button className="bg-blue-600 text-white mt-4 w-20 h-8 rounded">
+          <button className="bg-accent text-slate-600 mt-4 w-20 h-8 rounded">
             Log in
           </button>
           <Link to={PublicRoutes.SIGNUP}>
