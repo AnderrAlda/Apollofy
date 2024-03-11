@@ -10,7 +10,8 @@
       "gender": "Male",
       "profilePicture": "",
       "country": "Spain",
-      "dateOfBirth": "1997-11-12"
+      "dateOfBirth": "1997-11-12",
+      "likedSongs": []
     },
     {
       "id": "2",
@@ -22,7 +23,8 @@
       "gender": "Female",
       "profilePicture": "",
       "country": "Spain",
-      "dateOfBirth": "1982-12-16"
+      "dateOfBirth": "1982-12-16",
+      "likedSongs": []
     },
     {
       "id": "3",
@@ -34,7 +36,8 @@
       "gender": "Female",
       "profilePicture": "",
       "country": "Spain",
-      "dateOfBirth": "1986-06-25"
+      "dateOfBirth": "1986-06-25",
+      "likedSongs": []
     },
     {
       "id": "4",
@@ -46,7 +49,8 @@
       "gender": "Male",
       "profilePicture": "",
       "country": "Spain",
-      "dateOfBirth": "1999-11-18"
+      "dateOfBirth": "1999-11-18",
+      "likedSongs": []
     },
     {
       "id": "5",
@@ -59,11 +63,7 @@
       "profilePicture": "",
       "country": "Spain",
       "dateOfBirth": "1987-07-03",
-      "likedSongs": [
-        2,
-        3,
-        4
-      ]
+      "likedSongs": [2, 3, 4, 8]
     },
     {
       "id": "6",
