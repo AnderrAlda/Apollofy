@@ -1,6 +1,6 @@
 //import "./login.css"
 import {useState, useEffect} from "react";
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { PublicRoutes } from "../../types/routes"
 import { useAuth } from "../../contexts/AuthContext";
 
@@ -45,6 +45,7 @@ export default function Login() {
         className="rounded"/>
         
         <button className="bg-blue-600 text-white mt-4 w-20 h-8 rounded">Log in</button>
+        <Link to={PublicRoutes.SIGNUP}><p className="text-white">Don't have an account? Create one</p></Link>
       </form>
     </div>
   );

@@ -13,7 +13,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import { EditProfile } from "./pages/editProfile";
 import { PrivateRoute } from "./routes";
 import { PlayerProvider } from "./contexts/AudioPlayerContext";
-import { MySongs } from "./pages/mySongs";
+import SignUp from "./pages/SignUp/signup";
 
 function App() {
   return (
@@ -23,9 +23,24 @@ function App() {
           <AuthProvider>
             <BrowserRouter>
               <Routes>
-                <Route path={PublicRoutes.HOME} element={<HomePage />} />
                 <Route path={PublicRoutes.LOGIN} element={<Login />} />
-                <Route path={PublicRoutes.SEARCH} element={<SearchBarPage />} />
+                <Route path={PublicRoutes.SIGNUP} element={<SignUp />} />
+                <Route
+                  path={PublicRoutes.HOME}
+                  element={
+                    <PrivateRoute>
+                      <HomePage />
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path={PublicRoutes.SEARCH}
+                  element={
+                    <PrivateRoute>
+                      <SearchBarPage />
+                    </PrivateRoute>
+                  }
+                />
                 <Route
                   path={PublicRoutes.USER}
                   element={
@@ -36,15 +51,29 @@ function App() {
                 />
                 <Route
                   path={PublicRoutes.ALBUM}
-                  element={<AlbumComponents />}
+                  element={
+                    <PrivateRoute>
+                      <AlbumComponents />
+                    </PrivateRoute>
+                  }
                 />
-                <Route path={PublicRoutes.SONG} element={<SongPage />} />
+                <Route
+                  path={PublicRoutes.SONG}
+                  element={
+                    <PrivateRoute>
+                      <SongPage />
+                    </PrivateRoute>
+                  }
+                />
 
                 <Route
                   path={PublicRoutes.EDITPROFILE}
-                  element={<EditProfile />}
+                  element={
+                    <PrivateRoute>
+                      <EditProfile />
+                    </PrivateRoute>
+                  }
                 />
-                <Route path={PublicRoutes.MYSONGS} element={<MySongs />} />
               </Routes>
             </BrowserRouter>
           </AuthProvider>

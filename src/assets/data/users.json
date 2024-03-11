@@ -64,6 +64,19 @@
         3,
         4
       ]
+    },
+    {
+      "id": "6",
+      "name": "Ariadna",
+      "last_name": "Melé",
+      "email": "ariadna@ariadna.com",
+      "password": "ariadnaariadna",
+      "city": "Barcelona",
+      "gender": "Female",
+      "profilePicture": "",
+      "country": "Spain",
+      "dateOfBirth": "2020-04-27",
+      "likedSongs": []
     }
   ]
 }
