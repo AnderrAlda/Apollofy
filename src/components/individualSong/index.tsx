@@ -18,21 +18,6 @@ const IndividualSong = ({
   isSelected,
   onClick,
 }: props) => {
-  const { currentSongIndex, songs } = usePlayer();
-
-  const { user, updateUser } = useAuth();
-  const handleAddSongClick = async () => {
-    try {
-      const updatedUser = await addSongToUserLikedSongs(
-        user.id,
-        songs[currentSongIndex].id
-      );
-      updateUser(updatedUser); // Update user context
-    } catch (error) {
-      console.error("Error adding song:", error);
-    }
-  };
-
   return (
     <div>
       <div
@@ -43,7 +28,7 @@ const IndividualSong = ({
         <p className="text-xs">{groupName}</p>
         <div className="absolute right-10 top-1">
           {/* Button triggering the function */}
-          <button onClick={handleAddSongClick}>
+          <button>
             <IoHeart
               className="text-white hover:text-green-600"
               style={{ fontSize: "2em", cursor: "pointer" }}
