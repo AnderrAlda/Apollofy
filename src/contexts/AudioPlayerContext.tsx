@@ -1,4 +1,4 @@
-import{
+import {
   createContext,
   useState,
   useContext,
@@ -6,6 +6,7 @@ import{
   ReactNode,
 } from "react";
 import { getSongs } from "./GetTrack";
+import { getAlbums } from "../utils";
 // import { getAlbums } from "./GetTrack";
 
 // Define the Song type
@@ -24,6 +25,10 @@ interface PlayerContextType {
   volume: number;
   setVolume: (value: number) => void;
   songs: Song[];
+  setSongs: (value: Song[]) => void;
+  albums: Albums[];
+  usingLiked: boolean;
+  setUsingLiked: (value: boolean) => void;
 }
 
 interface Song {
@@ -36,6 +41,13 @@ interface Song {
   liked: boolean;
 }
 
+interface Albums {
+  id: number;
+  name: string;
+  imageUrl: string;
+  artist: string;
+  songs: Number[];
+}
 
 const PlayerContext = createContext<PlayerContextType>({
   playing: false,
@@ -47,6 +59,10 @@ const PlayerContext = createContext<PlayerContextType>({
   volume: 0.5,
   setVolume: (value: number) => {},
   songs: [],
+  setSongs: (value: Song[]) => {},
+  albums: [],
+  usingLiked: false,
+  setUsingLiked: (value: boolean) => {},
 });
 
 export const usePlayer = () => {
@@ -61,8 +77,11 @@ export const PlayerProvider = ({ children }: PlayerProviderProps) => {
   // State for songs
   const [songs, setSongs] = useState<Song[]>([]);
 
+  const [albums, setAlbums] = useState<Albums[]>([]);
+
   // Other player states
   const [playing, setPlaying] = useState(false);
+  const [usingLiked, setUsingLiked] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [currentSongIndex, setCurrentSongIndex] = useState(1);
   const [volume, setVolume] = useState(0.5);
@@ -73,6 +92,19 @@ export const PlayerProvider = ({ children }: PlayerProviderProps) => {
       try {
         const songsData = await getSongs(); // Implement getSongs according to your API or data source
         setSongs(songsData);
+      } catch (error) {
+        console.error("Error fetching songs:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const albumsData = await getAlbums(); // Implement getSongs according to your API or data source
+        setAlbums(albumsData);
       } catch (error) {
         console.error("Error fetching songs:", error);
       }
@@ -93,6 +125,10 @@ export const PlayerProvider = ({ children }: PlayerProviderProps) => {
         volume,
         setVolume,
         songs,
+        setSongs,
+        albums,
+        usingLiked,
+        setUsingLiked,
       }}
     >
       {children}

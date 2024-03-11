@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Depeche Mode",
+    "genres": "rock",
+    "popularity": 38,
+    "photoUrl": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710099693/qaltput74verdcznodpz.jpg",
+    "songs": [1, 2, 3, 4, 5],
+    "album": "Violator"
+  },
+  {
+    "id": 2,
+    "name": "The weekend",
+    "genres": "pop",
+    "popularity": "56",
+    "photoUrl": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710099875/xjjz0rxe0pkk4swizbwx.jpg",
+    "songs": [6, 7, 8, 9, 10],
+    "album": "After hours"
+  },
+  {
+    "id": 3,
+    "name": "Dua Lipa",
+    "genres": "dance",
+    "popularity": 63,
+    "photoUrl": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710100032/ue28iuudbzp0rpdqxq3j.jpg",
+    "songs": [11, 12, 13, 14, 15],
+    "album": "Future nostalgia"
+  },
+  {
+    "id": 4,
+    "name": "Eminem",
+    "genres": "hip hop",
+    "popularity": 51,
+    "photoUrl": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710100184/jhffluz5rm68agfxdcgc.jpg",
+    "songs": [16, 17, 18, 19, 20],
+    "album": "The Marshall Mathers LP"
+  }
+]

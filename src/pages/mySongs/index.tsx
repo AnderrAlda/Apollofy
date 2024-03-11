@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 import { NavBar } from "../../components/navbar";
 
-import { HeartIconBtn } from "../../common/icons/heartIconBtn";
 import { useAuth } from "../../contexts/AuthContext";
-import {
-  addSongToUserLikedSongs,
-  deleteSongFromUserLikedSongs,
-} from "../../utils";
+import { deleteSongFromUserLikedSongs } from "../../utils";
 import IndividualSong from "../../components/individualSong";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
 import VerticalScrollLayout from "../../layouts/verticalScroll";
+import { SmallShowPlaySong } from "../../components/SmallShowPlaySong";
+import IndividualMySong from "../../components/individualMySong";
 
 interface Song {
   id: number;
@@ -23,7 +21,7 @@ interface Song {
 export function MySongs() {
   const { user, updateUser } = useAuth();
 
-  const { songs } = usePlayer();
+  const { songs, setUsingLiked, setSongs, setCurrentSongIndex } = usePlayer();
   const [likedSongs, setLikedSongs] = useState<Song[]>();
 
   useEffect(() => {
@@ -31,46 +29,50 @@ export function MySongs() {
       user.likedSongs.includes(song.id)
     );
     setLikedSongs(filteredSongs);
-    console.log("hola");
   }, [songs, user]);
 
-  const handleAddSongClick = () => {
-    /* addSongToUserLikedSongs(user.id, 4); */
-    deleteSongFromUserLikedSongs(user.id, 3);
-  };
+  const [selectedSongId, setSelectedSongId] = useState<number | null>(null);
 
   return (
     <div className="bg-black h-screen w-screen relative">
-      <div>
-        {/* Button triggering the function */}
-        <button className="bg-white" onClick={handleAddSongClick}>
-          Add Song
-        </button>
-      </div>
-      <div>
+      <div className="pt-10 pl-20 lg:ml-3/12">
         <img
-          src="src/assets/album1.png"
+          src="src/assets/images/liked.jpeg"
           alt=""
           className="w-52  top-20 left-20 rounded-xl"
         />
       </div>
 
-      <div className=" top-80 left-6">
-        <p className="text-white text-3xl">Album name</p>
+      <div className=" pt-10 pl-5 pb-5  lg:ml-20">
+        <p className="text-white text-3xl">My songs</p>
       </div>
 
-      <VerticalScrollLayout height="50rem">
-        {likedSongs?.map((song) => (
-          <IndividualSong
-            key={song.id}
-            songName={song.name}
-            groupName={song.artist}
-          />
-        ))}
+      <VerticalScrollLayout height="30rem">
+        <div className="ml-5">
+          {likedSongs?.map((song) => {
+            const isSelected = song.id === selectedSongId;
+            const handleSongClick = () => {
+              setSelectedSongId(song.id);
+              setUsingLiked(true);
+              setCurrentSongIndex(0);
+              setSongs(likedSongs);
+            };
+            return (
+              <IndividualMySong
+                key={song.id}
+                songName={song.name}
+                groupName={song.artist}
+                isSelected={isSelected}
+                onClick={handleSongClick}
+              />
+            );
+          })}
+        </div>
       </VerticalScrollLayout>
 
-      <IndividualSong songName="asdf" groupName="asdf"></IndividualSong>
-
+      <div className="absolute bottom-14 w-screen">
+        <SmallShowPlaySong selectedSongId={selectedSongId} />
+      </div>
       <div className="absolute bottom-0 w-screen">
         <NavBar />
       </div>

@@ -2,17 +2,21 @@ import { Link, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { NavBar } from "../../components/navbar";
 import { useFilter } from "../../contexts/FilterContext";
-//import { songs } from "../../data/data";
 
-// import { Song } from "../../components/audioPlayer";
-// import { getSongs } from "../../contexts/GetTrack";
 import { PublicRoutes } from "../../types/routes";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
+import { Album, Artist } from "../../utils";
+import { getAlbums, getArtists } from "../../contexts/GetTrack";
+import { Song } from "../../utils";
+import { SmallShowPlaySong } from "../../components/SmallShowPlaySong";
 
 export default function SearchBarPage() {
   const { filter, handleSetFilter } = useFilter();
   const [searchParams, setSearchParams] = useSearchParams();
   const { songs } = usePlayer();
+  const [albums, setAlbums] = useState<Album[]>([]);
+  const [artists, setArtists] = useState<Artist[]>([]);
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleFilter = (e: any) => {
     const newFilter = e.target.value;
@@ -23,31 +27,65 @@ export default function SearchBarPage() {
   useEffect(() => {
     handleSetFilter("");
   }, []);
-  //console.log(filter);
 
-  const songsMatchingFilter = songs.filter((song) => {
-    const title = song.name.toLowerCase();
-    const artist = song.artist.toLowerCase();
-    return (
-      title.includes(filter.toLowerCase()) ||
-      artist.includes(filter.toLowerCase())
-    );
-  });
+  useEffect(() => {
+    const fetchAlbums = async () => {
+      try {
+        const albumsData = await getAlbums();
+        setAlbums(albumsData);
+      } catch (error) {
+        console.error("Error getting albums:", error);
+      }
+    };
 
-  const songResults = [];
-  const artistResults = [];
-  songsMatchingFilter.forEach((song) => {
-    if (song.name.toLowerCase().includes(filter.toLowerCase())) {
+    fetchAlbums();
+  }, []);
+
+  useEffect(() => {
+    const fetchArtists = async () => {
+      try {
+        const artistsData = await getArtists();
+        setArtists(artistsData);
+      } catch (error) {
+        console.error("Error getting artists:", error);
+      }
+    };
+
+    fetchArtists();
+  }, []);
+
+  const songResults: Song[] = [];
+  const artistResults: Artist[] = [];
+  const albumResults: Album[] = [];
+
+  songs.filter((song) => {
+    if (
+      song.name.toLowerCase().includes(filter.toLowerCase()) ||
+      song.artist.toLowerCase().includes(filter.toLowerCase())
+    ) {
       songResults.push(song);
     }
-    if (song.artist.toLowerCase().includes(filter.toLowerCase())) {
-      artistResults.push(song);
+  });
+
+  artists.filter((artist) => {
+    if (artist.name.toLowerCase().includes(filter.toLowerCase())) {
+      artistResults.push(artist);
     }
   });
+  albums.filter((album) => {
+    if (
+      album.name.toLowerCase().includes(filter.toLowerCase()) ||
+      album.artist.toLowerCase().includes(filter.toLowerCase())
+    ) {
+      albumResults.push(album);
+    }
+  });
+
+  const [selectedSongId, setSelectedSongId] = useState<number | null>(null);
 
   return (
     <div className="flex flex-col bg-black h-screen">
-      <form className="mt-10 ml-10">
+      <form className="mt-10 ml-10 lg:ml-20">
         <label className="text-white text-4xl ">Search</label>
         <br />
         <input
@@ -61,27 +99,42 @@ export default function SearchBarPage() {
       <button className="search-btn">Search</button>
 
       {!filter || filter.length < 4 ? (
-        <p className="text-white text-2xl ml-12">Top songs</p>
+        <p className="text-white text-2xl ml-12 lg:ml-20">Top songs</p>
       ) : (
         <>
           {songResults.length > 0 && (
             <div>
               <h3 className="text-white text-lg ml-5">Songs</h3>
               {songResults.map((song) => (
-                <SearchResultInfo song={song} key={song.id} />
+                <SearchResultSong
+                  song={song}
+                  key={song.id}
+                  setSelectedSongId={setSelectedSongId}
+                />
               ))}
             </div>
           )}
           {artistResults.length > 0 && (
             <div>
               <h3 className="text-white text-lg ml-5 ">Artists</h3>
-              {artistResults.map((song) => (
-                <SearchResultInfo song={song} key={song.id} />
+              {artistResults.map((artist) => (
+                <SearchResultArtist artist={artist} key={artist.id} />
+              ))}
+            </div>
+          )}
+          {albumResults.length > 0 && (
+            <div>
+              <h3 className="text-white text-lg ml-5 ">Albums</h3>
+              {albumResults.map((album) => (
+                <SearchResultAlbum album={album} key={album.id} />
               ))}
             </div>
           )}
         </>
       )}
+      <div className="absolute bottom-14 w-screen">
+        <SmallShowPlaySong selectedSongId={selectedSongId} />
+      </div>
 
       <div className="absolute bottom-0 w-screen">
         <NavBar />
@@ -90,12 +143,50 @@ export default function SearchBarPage() {
   );
 }
 
-export function SearchResultInfo({ song }: { song: Song }) {
+export function SearchResultSong({
+  song,
+  setSelectedSongId,
+}: {
+  song: Song;
+  setSelectedSongId: (id: number | null) => void;
+}) {
+  const handleClick = () => {
+    setSelectedSongId(song.id);
+  };
+
+  return (
+    <div
+      onClick={handleClick}
+      className="bg-yellow-400 my-2 mx-5 rounded flex cursor-pointer"
+    >
+      <img className="w-8 h-8 m-2" src={song.thumbnail} />
+      <div>
+        <p className="text-black ml-5">{song.name}</p>
+        <p className="text-black ml-5">{song.artist}</p>
+      </div>
+    </div>
+  );
+}
+export function SearchResultArtist({ artist }: { artist: Artist }) {
   return (
     <Link to={PublicRoutes.SONG}>
-      <div className="bg-yellow-400 my-2 mx-5 rounded">
-        <p className="text-black ml-5">{song.name}</p>
-        <p className="text-black ml-5 text-sm">{song.artist}</p>
+      <div className="bg-yellow-400 my-2 mx-5 rounded flex">
+        <img className="w-8 h-8 m-2" src={artist.photoUrl} />
+        <p className="text-black ml-5">{artist.name}</p>
+      </div>
+    </Link>
+  );
+}
+
+export function SearchResultAlbum({ album }: { album: Album }) {
+  return (
+    <Link to={PublicRoutes.SONG}>
+      <div className="bg-yellow-400 my-2 mx-5 rounded flex">
+        <img src={album.imageUrl} className="w-8 h-8 m-2" />
+        <div>
+          <p className="text-black ml-5">{album.name}</p>
+          <p className="text-black ml-5">{album.artist}</p>
+        </div>
       </div>
     </Link>
   );

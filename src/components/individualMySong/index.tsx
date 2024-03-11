@@ -1,8 +1,3 @@
-import React from "react";
-import { HeartIconBtn } from "../../common/icons/heartIconBtn";
-import { addSongToUserLikedSongs } from "../../utils";
-import { useAuth } from "../../contexts/AuthContext";
-import { usePlayer } from "../../contexts/AudioPlayerContext";
 import { IoHeart } from "react-icons/io5";
 
 interface props {
@@ -12,7 +7,7 @@ interface props {
   onClick: () => void;
 }
 
-const IndividualSong = ({
+const IndividualMySong = ({
   songName,
   groupName,
   isSelected,
@@ -27,17 +22,14 @@ const IndividualSong = ({
         <p className="text-xl">{songName}</p>
         <p className="text-xs">{groupName}</p>
         <div className="absolute right-10 top-1">
-          {/* Button triggering the function */}
-          <button>
-            <IoHeart
-              className="text-white hover:text-green-600"
-              style={{ fontSize: "2em", cursor: "pointer" }}
-            />
-          </button>
+          <IoHeart
+            className="text-white text-green-600"
+            style={{ fontSize: "2em", cursor: "pointer" }}
+          />
         </div>
       </div>
     </div>
   );
 };
 
-export default IndividualSong;
+export default IndividualMySong;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { PublicRoutes } from "../../types/routes";
-import { getAlbums } from "../../contexts/GetTrack";
+import { getAlbums, getArtists, getPlaylists } from "../../contexts/GetTrack";
 
 interface Albums {
   id: number;
@@ -17,7 +17,7 @@ export function TopAlbums() {
     const fetchAlbums = async () => {
       try {
         const albumsData = await getAlbums();
-        setAlbums(albumsData.albums);
+        setAlbums(albumsData);
       } catch (error) {
         console.error("Error al obtener los álbumes:", error);
       }
@@ -30,13 +30,13 @@ export function TopAlbums() {
     <div className="flex gap-8">
       {albums.map((album) => (
         <div key={album.id} className="w-40">
-          <NavLink to={`${PublicRoutes.MYSONGS}/${album.id}`}>
+          <Link to={`/album/${album.id}`}>
             <img
               className="rounded-2xl"
               src={album.imageUrl}
               alt={album.name}
             />
-          </NavLink>
+          </Link>
           <p className="text-white">{album.name}</p>
           <p className="text-gray-500">{album.artist}</p>
         </div>
@@ -46,9 +46,9 @@ export function TopAlbums() {
 }
 
 interface Artists {
-  id: number,
-  name: string,
-  photoUrl: string,
+  id: number;
+  name: string;
+  photoUrl: string;
 }
 
 export function TopArtist() {
@@ -57,8 +57,8 @@ export function TopArtist() {
   useEffect(() => {
     const fetchArtists = async () => {
       try {
-        const artistsData = await getAlbums();
-        setArtists(artistsData.artists);
+        const artistsData = await getArtists();
+        setArtists(artistsData);
       } catch (error) {
         console.error("Error al obtener los artistas:", error);
       }
@@ -69,19 +69,19 @@ export function TopArtist() {
 
   return (
     <div className="flex gap-8">
-      {artists.length > 0 && artists.map((artist) => (
-        <div key={artist.id} className="w-40">
-          <NavLink to={`${PublicRoutes.MYSONGS}/${artist.id}`}>
+      {artists.length > 0 &&
+        artists.map((artist) => (
+          <div key={artist.id} className="w-40">
             <img
               className="rounded-2xl"
               src={artist.photoUrl}
               alt={artist.name}
             />
-          </NavLink>
-          <p className="text-white">{artist.name}</p>
-          {/* <p className="text-gray-500">{artist.artist}</p> */}
-        </div>
-      ))}
+
+            <p className="text-white">{artist.name}</p>
+            {/* <p className="text-gray-500">{artist.artist}</p> */}
+          </div>
+        ))}
     </div>
   );
 }
@@ -98,8 +98,8 @@ export function TopPlaylist() {
   useEffect(() => {
     const fetchPlaylists = async () => {
       try {
-        const playlistsData = await getAlbums(); // Obtiene los datos de las listas de reproducción
-        setPlaylists(playlistsData.playlists); // Actualiza el estado con los datos de las listas de reproducción
+        const playlistsData = await getPlaylists(); // Obtiene los datos de las listas de reproducción
+        setPlaylists(playlistsData); // Actualiza el estado con los datos de las listas de reproducción
       } catch (error) {
         console.error("Error al obtener las listas de reproducción:", error);
       }
@@ -110,18 +110,18 @@ export function TopPlaylist() {
 
   return (
     <div className="flex gap-8">
-      {playlists.length > 0 && playlists.map((playlist) => (
-        <div key={playlist.id} className="w-40">
-          <NavLink to={`${PublicRoutes.MYSONGS}/${playlist.id}`}>
+      {playlists.length > 0 &&
+        playlists.map((playlist) => (
+          <div key={playlist.id} className="w-40">
             <img
               className="rounded-2xl"
               src={playlist.thumbnail}
               alt={playlist.name}
             />
-          </NavLink>
-          <p className="text-white">{playlist.name}</p>
-        </div>
-      ))}
+
+            <p className="text-white">{playlist.name}</p>
+          </div>
+        ))}
     </div>
   );
 }

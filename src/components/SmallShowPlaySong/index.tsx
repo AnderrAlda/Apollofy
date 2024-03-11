@@ -6,15 +6,21 @@ import { IoPlayCircleOutline, IoPauseCircleOutline } from "react-icons/io5";
 import "../audioPlayer/audioPlayer.css";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
 
-export function SmallShowPlaySong() {
+interface props {
+  selectedSongId: number | null;
+}
+export function SmallShowPlaySong({ selectedSongId }: props) {
   const {
     playing,
     setPlaying,
     currentTime,
     setCurrentTime,
     currentSongIndex,
+    setCurrentSongIndex,
     volume,
     songs,
+    usingLiked,
+    setUsingLiked,
   } = usePlayer();
 
   //played represent the progress in the input range
@@ -26,6 +32,17 @@ export function SmallShowPlaySong() {
 
   //playerRef reference to the ReactPlayer component
   const playerRef = useRef<ReactPlayer>(null);
+
+  useEffect(() => {
+    if (selectedSongId !== null && selectedSongId !== undefined) {
+      const newSongIndex = songs.findIndex(
+        (song) => song.id === selectedSongId
+      );
+      if (newSongIndex !== -1) {
+        setCurrentSongIndex(newSongIndex);
+      }
+    }
+  }, [selectedSongId, setCurrentSongIndex, songs]);
 
   //this useEffect updates the currentTime state while the audio is playing. It updates every second and does it if the song is playing so if playing state is changed. the return is to clear the interval when the component unmounts.
   useEffect(() => {
@@ -82,7 +99,7 @@ export function SmallShowPlaySong() {
   };
 
   return (
-    <section>
+    <section className="lg:bottom-0 lg:mt-10">
       <ReactPlayer
         width="1px"
         height="1px"

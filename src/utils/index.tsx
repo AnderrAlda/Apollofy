@@ -1,28 +1,31 @@
 export interface Artist {
-  id: Int16Array;
+  id: number;
   name: string;
-  genres: string[];
-  popularity: Int16Array;
+  genres: string;
+  popularity: number;
   photoUrl: string;
+  songs: number[];
+  album: string;
 }
 
 export interface Playlist {
-  id: Int16Array;
+  id: number;
   name: string;
-  isFollowed: boolean;
   thumbnail: string;
   description: string;
+  publicAccessible: boolean;
   primaryColor: string;
+  songs: number[];
 }
 
-export interface Tracks {
-  id: Int16Array;
+export interface Song {
+  id: number;
   name: string;
   artist: string;
-  url: boolean;
-  img: string;
+  url: string;
+  thumbnail: string;
   genre: string;
-  liked: string;
+  liked: boolean;
 }
 
 export interface User {
@@ -40,13 +43,14 @@ export interface User {
 }
 
 export interface Album {
-  id: Int16Array;
+  id: number;
   name: string;
   imageUrl: string;
   artist: boolean;
+  songs: number[];
 }
 
 export interface Genre {
-  id: Int16Array;
+  id: string;
   name: string;
 }

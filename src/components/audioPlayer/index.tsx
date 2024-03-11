@@ -33,9 +33,16 @@ const AudioPlayer = () => {
 
   const { user, updateUser } = useAuth();
 
-  const handleAddSongClick = () => {
-    /* addSongToUserLikedSongs(user.id, 4); */
-    addSongToUserLikedSongs(user.id, songs[currentSongIndex].id);
+  const handleAddSongClick = async () => {
+    try {
+      const updatedUser = await addSongToUserLikedSongs(
+        user.id,
+        songs[currentSongIndex].id
+      );
+      updateUser(updatedUser); // Update user context
+    } catch (error) {
+      console.error("Error adding song:", error);
+    }
   };
 
   //played represent the progress in the input range

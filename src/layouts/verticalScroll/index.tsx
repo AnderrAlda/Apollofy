@@ -13,11 +13,11 @@ const VerticalScrollLayout = ({ children, height }: Props) => {
 
   return (
     <div
-      className="overflow-y-scroll scrollbar-hide-hidden"
+      className="overflow-y-scroll scrollbar-hide"
       style={{ maxHeight: height, height: "100%" }}
     >
       <ul
-        className={`flex flex-col no-scrollbar gap-3 `}
+        className={`flex flex-col no-scrollbar gap-3`}
         style={{ height: `calc(100% + 3rem)` }}
       >
         {React.Children.map(children, (child, index) => (

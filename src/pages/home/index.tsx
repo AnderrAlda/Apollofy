@@ -4,17 +4,49 @@ import VerticalScrollLayout from "../../layouts/verticalScroll";
 import { NavBar } from "../../components/navbar";
 import { TopAlbums, TopArtist, TopPlaylist } from "../../common/musicProfile";
 import { SmallShowPlaySong } from "../../components/SmallShowPlaySong";
-// import { usePlayer } from "../../contexts/AudioPlayerContext";
-
+import { useEffect, useState } from "react";
+import { usePlayer } from "../../contexts/AudioPlayerContext";
+import { getSongs } from "../../contexts/GetTrack";
 
 const HomePage = () => {
-  const generator = new AvatarGenerator();
+  const [avatarUrl, setAvatarUrl] = useState("");
+  const { setSongs } = usePlayer(); // Access setSongs from the player context
+
+  //this fetch is to reload the sonsgs state to the fetch after coming back from the page mysongs
+  useEffect(() => {
+    // Fetch songs when the component mounts
+    const fetchData = async () => {
+      try {
+        const songsData = await getSongs(); // Implement getSongs according to your API or data source
+        setSongs(songsData); // Set the songs in the context
+      } catch (error) {
+        console.error("Error fetching songs:", error);
+      }
+    };
+
+    fetchData(); // Call the fetchData function
+  }, [setSongs]); // Include setSongs in the dependency array to trigger the effect when it changes
+
+  useEffect(() => {
+    // Verifica si hay un avatar almacenado en localStorage
+    const storedAvatarUrl = localStorage.getItem("avatar");
+    if (storedAvatarUrl) {
+      setAvatarUrl(storedAvatarUrl);
+    } else {
+      // Si no hay un avatar almacenado, genera uno aleatoriamente
+      const generator = new AvatarGenerator();
+      const randomAvatarUrl = generator.generateRandomAvatar();
+      setAvatarUrl(randomAvatarUrl);
+      // Almacena el avatar generado aleatoriamente en localStorage para futuras visitas
+      localStorage.setItem("avatar", randomAvatarUrl);
+    }
+  }, []);
 
   return (
     <div className="relative h-screen bg-black">
-      <div className="lg:ml-40">
+      <div className="lg:ml-12">
         <div className="relative">
-          <img className="h-20" src={generator.generateRandomAvatar()} alt="" />
+          <img className="h-20" src={avatarUrl} alt="Avatar" />
           <svg
             className="h-12 absolute top-5 right-5"
             data-slot="icon"
@@ -48,11 +80,10 @@ const HomePage = () => {
             </HorizontalScrollLayout>
           </div>
         </VerticalScrollLayout>
-        <div className="absolute bottom-14 w-screen">
-          <SmallShowPlaySong />
-        </div>
       </div>
-      
+      <div className="absolute bottom-14 w-screen">
+        <SmallShowPlaySong selectedSongId={null} />
+      </div>
       <div className="absolute bottom-0 w-screen">
         <NavBar />
       </div>

@@ -8,9 +8,10 @@ import { AvatarGenerator } from "random-avatar-generator";
 
 export default function SignUp() {
   const generator = new AvatarGenerator();
+  const [showModal, setShowModal] = useState(false);
 
   const [newUser, setNewUser] = useState<User>({
-    id: "", // Asumint que id s'assignarà d'alguna altra manera ja que això és només un exemple
+    id: "",
     name: "",
     last_name: "",
     email: "",
@@ -19,8 +20,8 @@ export default function SignUp() {
     gender: "",
     profilePicture: generator.generateRandomAvatar(),
     country: "",
-    dateOfBirth: 0, // Asumiràs que aquest camp s'actualitza d'alguna altra manera
-    likedSongs: [], // Asumiràs que aquest camp s'actualitza d'alguna altra manera
+    dateOfBirth: 0,
+    likedSongs: [],
   });
 
   const updateUser = (key, value) => {
@@ -30,6 +31,7 @@ export default function SignUp() {
   async function handleSubmit(event) {
     event.preventDefault();
     const users = await getUsers();
+    setShowModal(true);
     const lastID = users.reduce(
       (max, user) => Math.max(max, parseInt(user.id, 10)),
       0
@@ -65,6 +67,7 @@ export default function SignUp() {
           <CancelButton />
           <SignUpButton />
         </div>
+        {showModal ? <SignUpModal onModal={setShowModal} /> : null}
       </form>
     </div>
   );
@@ -72,7 +75,7 @@ export default function SignUp() {
 
 function Name({ updateUser }) {
   const [name, setName] = useState("");
-  //console.log(name)
+  
 
   const handleChanges = (e) => {
     const newName = e.target.value;
@@ -201,7 +204,7 @@ function Birthday({ updateUser }) {
 
   return (
     <div className="text-white flex justify-between mx-8">
-      <label className="text-xl">Country * </label>
+      <label>Country * </label>
       <input
         type="date"
         className="rounded p-1 m-1 text-black"
@@ -214,7 +217,6 @@ function Birthday({ updateUser }) {
 
 function Password({ updateUser }) {
   const [password, setPassword] = useState("");
-  //const [confirmedPassword, setConfirmedPassword] = useState("");
 
   const handleChanges = (e) => {
     const newPassword = e.target.value;
@@ -225,7 +227,7 @@ function Password({ updateUser }) {
   return (
     <div className="text-white flex flex-col gap-2 ">
       <div className="flex justify-between mx-8">
-        <label className="text-xl">Create password * </label>
+        <label>Password * </label>
         <input
           type="password"
           className="rounded p-1 m-1 text-black"
@@ -233,15 +235,6 @@ function Password({ updateUser }) {
           onChange={handleChanges}
         />
       </div>
-      {/* <div className="flex justify-between mx-8">
-        <label>Confirm password * </label>
-        <input
-          type="password"
-          className="rounded"
-          value={confirmedPassword}
-          onChange={(e) => setConfirmedPassword(e.target.value)}
-        />
-      </div> */}
     </div>
   );
 }
@@ -250,6 +243,7 @@ function CancelButton() {
   return (
     <Link to={PublicRoutes.LOGIN}>
       <button className="w-15 bg-white rounded p-2 mt-5 ml-5 hover:bg-accent">
+      <button className="w-15 bg-accent rounded p-2 mt-5 ml-5">
         Back to login
       </button>
     </Link>
@@ -260,8 +254,26 @@ function SignUpButton() {
   return (
     <input
       type="submit"
-      className="w-15 hover:bg-accent bg-white rounded p-2 mt-5 ml-5"
+      className="w-15 bg-accent rounded p-2 mt-5 ml-5"
       value="Sign up"
     />
+  );
+}
+
+function SignUpModal({ onModal }) {
+  return (
+    <div className="bg-yellow-500 w-2/3 h-1/4 absolute inset-0 m-auto flex flex-col justify-center items-center">
+      <p className="items-center text-center">
+        Your data has been successfully saved!
+      </p>
+      <Link to={PublicRoutes.LOGIN}>
+        <button
+          onClick={onModal}
+          className="mt-5 border border-black p-2 rounded"
+        >
+          Log in now
+        </button>
+      </Link>
+    </div>
   );
 }
