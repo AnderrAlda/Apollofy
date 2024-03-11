@@ -2,10 +2,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { NavBar } from "../../components/navbar";
 import { useFilter } from "../../contexts/FilterContext";
-//import { songs } from "../../data/data";
 
-// import { Song } from "../../components/audioPlayer";
-// import { getSongs } from "../../contexts/GetTrack";
 import { PublicRoutes } from "../../types/routes";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
 import { Album, Artist } from "../../utils";
@@ -29,7 +26,7 @@ export default function SearchBarPage() {
   useEffect(() => {
     handleSetFilter("");
   }, []);
-  //console.log(filter);
+  
 
   useEffect(() => {
     const fetchAlbums = async () => {
@@ -67,13 +64,7 @@ export default function SearchBarPage() {
       song.artist.toLowerCase().includes(filter.toLowerCase())
     ) {
       songResults.push(song);
-      // const name = song.name.toLowerCase();
-      // const artist = song.artist.toLowerCase();
-      // return (
 
-      // title.includes(filter.toLowerCase()) ||
-      // artist.includes(filter.toLowerCase())
-      // );
     }
   });
 
@@ -91,14 +82,7 @@ export default function SearchBarPage() {
     }
   });
 
-  // songsMatchingFilter.forEach((song) => {
-  //   if (song.name.toLowerCase().includes(filter.toLowerCase())) {
-  //     songResults.push(song);
-  //   }
-  //   if (song.artist.toLowerCase().includes(filter.toLowerCase())) {
-  //     artistResults.push(song);
-  //   }
-  // });
+
 
   return (
     <div className="flex flex-col bg-black h-screen">
