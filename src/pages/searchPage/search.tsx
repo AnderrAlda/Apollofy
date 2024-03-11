@@ -58,7 +58,7 @@ export default function SearchBarPage() {
           onChange={handleFilter}
         />
       </form>
-      <button className="search-btn">Search</button>
+      <button className="search-btn lg:ml-20">Search</button>
 
       {!filter || filter.length < 4 ? (
         <p className="text-white text-2xl ml-12 lg:ml-20">Top songs</p>
@@ -66,7 +66,7 @@ export default function SearchBarPage() {
         <>
           {songResults.length > 0 && (
             <div>
-              <h3 className="text-white text-lg ml-5">Songs</h3>
+              <h3 className="text-white text-lg ml-5 lg:ml-20">Songs</h3>
               {songResults.map((song) => (
                 <SearchResultInfo song={song} key={song.id} />
               ))}
@@ -74,7 +74,7 @@ export default function SearchBarPage() {
           )}
           {artistResults.length > 0 && (
             <div>
-              <h3 className="text-white text-lg ml-5 ">Artists</h3>
+              <h3 className="text-white text-lg ml-5 lg:ml-20">Artists</h3>
               {artistResults.map((song) => (
                 <SearchResultInfo song={song} key={song.id} />
               ))}
@@ -93,7 +93,7 @@ export default function SearchBarPage() {
 export function SearchResultInfo({ song }: { song: Song }) {
   return (
     <Link to={PublicRoutes.SONG}>
-      <div className="bg-yellow-400 my-2 mx-5 rounded">
+      <div className="bg-yellow-400 my-2 mx-5 rounded max-w-80 lg:ml-20 lg:max-w-80">
         <p className="text-black ml-5">{song.name}</p>
         <p className="text-black ml-5 text-sm">{song.artist}</p>
       </div>

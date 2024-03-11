@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { NavBar } from "../../components/navbar";
-import { CgLayoutGrid } from "react-icons/cg";
+// import { CgLayoutGrid } from "react-icons/cg";
 import { useAuth } from "../../contexts/AuthContext";
-import { IoPencil, IoEye } from "react-icons/io5";
+import { IoPencil, IoEye, IoChevronBackSharp } from "react-icons/io5";
 //import frm modal
 import { Modal } from "../../components/modalEditprofile";
+import { Link } from "react-router-dom";
 export const EditProfile = () => {
   const { user, updateUser } = useAuth();
 
@@ -33,6 +34,7 @@ export const EditProfile = () => {
     }
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
@@ -79,6 +81,9 @@ export const EditProfile = () => {
     <>
       <div className="bg-slate-900 h-screen">
         <div className="lg:pl-56 lg:pr-56">
+          <Link to="/">    
+            <button><IoChevronBackSharp className="text-2xl text-white ml-3 mt-3 hover:text-green-500"/></button>
+          </Link>
           <div className="flex flex-col p-5 gap-5 lg:gap-9 ">
             <div className="flex flex-row lg:mt-12">
               <h2 className="text-white text-5xl">Edit profile</h2>

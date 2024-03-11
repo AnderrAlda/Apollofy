@@ -45,16 +45,16 @@ export function MySongs() {
           Add Song
         </button>
       </div>
-      <div className="lg:ml-3/12">
+      <div className="ml-20 lg:ml-5/12">
         <img
           src="src/assets/album1.png"
           alt=""
-          className="w-52  top-20 left-20 rounded-xl"
+          className="w-52 ml-10 rounded-xl"
         />
       </div>
 
-      <div className=" top-80 left-6 lg:ml-20">
-        <p className="text-white text-3xl">Album name</p>
+      <div className=" top-80 left-6 ml-20 lg:ml-20">
+        <p className="text-white text-3xl ml-10 lg:ml-5/12">Album name</p>
       </div>
 
       <VerticalScrollLayout height="50rem">
