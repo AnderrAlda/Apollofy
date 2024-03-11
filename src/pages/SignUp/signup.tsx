@@ -3,14 +3,12 @@ import "./signup.css";
 import { User, getUsers } from "../../utils";
 import { Link } from "react-router-dom";
 import { PublicRoutes } from "../../types/routes";
+import { AvatarGenerator } from "random-avatar-generator";
 //import { AvatarGenerator } from "random-avatar-generator";
 
-
-
 export default function SignUp() {
-  
-  //const generator = new AvatarGenerator();
-  
+  const generator = new AvatarGenerator();
+
   const [newUser, setNewUser] = useState<User>({
     id: "", // Asumint que id s'assignarà d'alguna altra manera ja que això és només un exemple
     name: "",
@@ -19,12 +17,11 @@ export default function SignUp() {
     password: "",
     city: "",
     gender: "",
-    profilePicture: "",
+    profilePicture: generator.generateRandomAvatar(),
     country: "",
     dateOfBirth: 0, // Asumiràs que aquest camp s'actualitza d'alguna altra manera
     likedSongs: [], // Asumiràs que aquest camp s'actualitza d'alguna altra manera
   });
-  
 
   const updateUser = (key, value) => {
     setNewUser((prev) => ({ ...prev, [key]: value }));

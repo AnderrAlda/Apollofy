@@ -34,12 +34,12 @@ export const UserPage = () => {
           </p>
 
           <div className="flex ml-48 mt-2 lg:mt-8">
-            <Link to={PublicRoutes.LOGIN}>
+            <button onClick={logout}>
               <IoLogOutOutline
                 size={30}
                 className="text-white mr-1 cursor-pointer"
               />
-            </Link>
+            </button>
             <Link to={PublicRoutes.EDITPROFILE}>
               <IoEllipsisVerticalOutline
                 size={30}

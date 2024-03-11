@@ -77,6 +77,32 @@
       "country": "Spain",
       "dateOfBirth": "2020-04-27",
       "likedSongs": []
+    },
+    {
+      "id": "7",
+      "name": "Jose",
+      "last_name": "Enrique",
+      "email": "enrique@enrique.com",
+      "password": "enriqueenrique",
+      "city": "malos aires",
+      "gender": "tiburon",
+      "profilePicture": "",
+      "country": "Spain",
+      "dateOfBirth": "2024-03-10",
+      "likedSongs": []
+    },
+    {
+      "id": "8",
+      "name": "mikel",
+      "last_name": "mikel",
+      "email": "mikel@mikel.com",
+      "password": "mikelmikel",
+      "city": "mikel",
+      "gender": "raton",
+      "profilePicture": "https://avataaars.io/?accessoriesType=Prescription01&avatarStyle=Circle&clotheColor=PastelYellow&clotheType=Overall&eyeType=WinkWacky&eyebrowType=Default&facialHairColor=Blonde&facialHairType=BeardLight&hairColor=Auburn&hatColor=Black&mouthType=Disbelief&skinColor=Pale&topType=Hijab",
+      "country": "mikel",
+      "dateOfBirth": "2024-03-12",
+      "likedSongs": []
     }
   ]
 }
