@@ -2,12 +2,11 @@ import { useEffect, useState } from "react";
 import { NavBar } from "../../components/navbar";
 
 import { useAuth } from "../../contexts/AuthContext";
-import {
-  deleteSongFromUserLikedSongs,
-} from "../../utils";
+import { deleteSongFromUserLikedSongs } from "../../utils";
 import IndividualSong from "../../components/individualSong";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
 import VerticalScrollLayout from "../../layouts/verticalScroll";
+import { SmallShowPlaySong } from "../../components/SmallShowPlaySong";
 
 interface Song {
   id: number;
@@ -36,6 +35,7 @@ export function MySongs() {
     /* addSongToUserLikedSongs(user.id, 4); */
     deleteSongFromUserLikedSongs(user.id, 3);
   };
+  const [selectedSongId, setSelectedSongId] = useState<number | null>(null);
 
   return (
     <div className="bg-black h-screen w-screen relative">
@@ -57,18 +57,25 @@ export function MySongs() {
         <p className="text-white text-3xl">Album name</p>
       </div>
 
-      <VerticalScrollLayout height="50rem">
-        {likedSongs?.map((song) => (
-          <IndividualSong
-            key={song.id}
-            songName={song.name}
-            groupName={song.artist}
-          />
-        ))}
+      <VerticalScrollLayout height="30rem">
+        {likedSongs?.map((song) => {
+          const isSelected = song.id === selectedSongId;
+          const handleSongClick = () => setSelectedSongId(song.id);
+          return (
+            <IndividualSong
+              key={song.id}
+              songName={song.name}
+              groupName={song.artist}
+              isSelected={isSelected}
+              onClick={handleSongClick}
+            />
+          );
+        })}
       </VerticalScrollLayout>
 
-      <IndividualSong songName="asdf" groupName="asdf"></IndividualSong>
-
+      <div className="absolute bottom-14 w-screen">
+        <SmallShowPlaySong selectedSongId={selectedSongId} />
+      </div>
       <div className="absolute bottom-0 w-screen">
         <NavBar />
       </div>

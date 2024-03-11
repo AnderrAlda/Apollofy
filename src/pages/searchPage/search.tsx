@@ -8,6 +8,7 @@ import { usePlayer } from "../../contexts/AudioPlayerContext";
 import { Album, Artist } from "../../utils";
 import { getAlbums, getArtists } from "../../contexts/GetTrack";
 import { Song } from "../../utils";
+import { SmallShowPlaySong } from "../../components/SmallShowPlaySong";
 
 export default function SearchBarPage() {
   const { filter, handleSetFilter } = useFilter();
@@ -26,7 +27,6 @@ export default function SearchBarPage() {
   useEffect(() => {
     handleSetFilter("");
   }, []);
-  
 
   useEffect(() => {
     const fetchAlbums = async () => {
@@ -64,7 +64,6 @@ export default function SearchBarPage() {
       song.artist.toLowerCase().includes(filter.toLowerCase())
     ) {
       songResults.push(song);
-
     }
   });
 
@@ -82,7 +81,7 @@ export default function SearchBarPage() {
     }
   });
 
-
+  const [selectedSongId, setSelectedSongId] = useState<number | null>(null);
 
   return (
     <div className="flex flex-col bg-black h-screen">
@@ -107,7 +106,11 @@ export default function SearchBarPage() {
             <div>
               <h3 className="text-white text-lg ml-5">Songs</h3>
               {songResults.map((song) => (
-                <SearchResultSong song={song} key={song.id} />
+                <SearchResultSong
+                  song={song}
+                  key={song.id}
+                  setSelectedSongId={setSelectedSongId}
+                />
               ))}
             </div>
           )}
@@ -129,6 +132,9 @@ export default function SearchBarPage() {
           )}
         </>
       )}
+      <div className="absolute bottom-14 w-screen">
+        <SmallShowPlaySong selectedSongId={selectedSongId} />
+      </div>
 
       <div className="absolute bottom-0 w-screen">
         <NavBar />
@@ -137,17 +143,28 @@ export default function SearchBarPage() {
   );
 }
 
-export function SearchResultSong({ song }: { song: Song }) {
+export function SearchResultSong({
+  song,
+  setSelectedSongId,
+}: {
+  song: Song;
+  setSelectedSongId: (id: number | null) => void;
+}) {
+  const handleClick = () => {
+    setSelectedSongId(song.id);
+  };
+
   return (
-    <Link to={PublicRoutes.SONG}>
-      <div className="bg-yellow-400 my-2 mx-5 rounded flex ">
-        <img className="w-8 h-8 m-2" src={song.thumbnail} />
-        <div>
-          <p className="text-black ml-5">{song.name}</p>
-          <p className="text-black ml-5">{song.artist}</p>
-        </div>
+    <div
+      onClick={handleClick}
+      className="bg-yellow-400 my-2 mx-5 rounded flex cursor-pointer"
+    >
+      <img className="w-8 h-8 m-2" src={song.thumbnail} />
+      <div>
+        <p className="text-black ml-5">{song.name}</p>
+        <p className="text-black ml-5">{song.artist}</p>
       </div>
-    </Link>
+    </div>
   );
 }
 export function SearchResultArtist({ artist }: { artist: Artist }) {

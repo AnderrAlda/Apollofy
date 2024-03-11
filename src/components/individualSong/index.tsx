@@ -4,19 +4,24 @@ import { HeartIconBtn } from "../../common/icons/heartIconBtn";
 interface props {
   songName: string;
   groupName: string;
+  isSelected: boolean;
+  onClick: () => void;
 }
 
-const IndividualSong = ({ songName, groupName }: props) => {
+const IndividualSong = ({
+  songName,
+  groupName,
+  isSelected,
+  onClick,
+}: props) => {
   return (
     <div>
-      <div className="">
-        <div className="mb-20  w-screen relative">
-          <p className="text-white text-xl">{songName}</p>
-          <p className="text-white text-xs">{groupName}</p>
-          <div className="absolute right-32 top-2">
-            <HeartIconBtn />
-          </div>
-        </div>
+      <div
+        className={`mb-20  w-screen relative ${isSelected ? "text-green-500" : "text-white"}`}
+        onClick={onClick}
+      >
+        <p className="text-xl">{songName}</p>
+        <p className="text-xs">{groupName}</p>
       </div>
     </div>
   );

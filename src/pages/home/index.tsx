@@ -7,13 +7,12 @@ import { SmallShowPlaySong } from "../../components/SmallShowPlaySong";
 import { useEffect, useState } from "react";
 // import { usePlayer } from "../../contexts/AudioPlayerContext";
 
-
 const HomePage = () => {
-  const [avatarUrl, setAvatarUrl] = useState('');
+  const [avatarUrl, setAvatarUrl] = useState("");
 
   useEffect(() => {
     // Verifica si hay un avatar almacenado en localStorage
-    const storedAvatarUrl = localStorage.getItem('avatar');
+    const storedAvatarUrl = localStorage.getItem("avatar");
     if (storedAvatarUrl) {
       setAvatarUrl(storedAvatarUrl);
     } else {
@@ -22,7 +21,7 @@ const HomePage = () => {
       const randomAvatarUrl = generator.generateRandomAvatar();
       setAvatarUrl(randomAvatarUrl);
       // Almacena el avatar generado aleatoriamente en localStorage para futuras visitas
-      localStorage.setItem('avatar', randomAvatarUrl);
+      localStorage.setItem("avatar", randomAvatarUrl);
     }
   }, []);
 
@@ -30,7 +29,7 @@ const HomePage = () => {
     <div className="relative h-screen bg-black">
       <div className="lg:ml-12">
         <div className="relative">
-        <img className="h-20" src={avatarUrl} alt="Avatar" />
+          <img className="h-20" src={avatarUrl} alt="Avatar" />
           <svg
             className="h-12 absolute top-5 right-5"
             data-slot="icon"
@@ -64,11 +63,10 @@ const HomePage = () => {
             </HorizontalScrollLayout>
           </div>
         </VerticalScrollLayout>
-        <div className="absolute bottom-14 w-screen">
-          <SmallShowPlaySong />
-        </div>
       </div>
-      
+      <div className="absolute bottom-14 w-screen">
+        <SmallShowPlaySong selectedSongId={null} />
+      </div>
       <div className="absolute bottom-0 w-screen">
         <NavBar />
       </div>

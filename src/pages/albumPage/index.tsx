@@ -12,6 +12,7 @@ import { usePlayer } from "../../contexts/AudioPlayerContext";
 import VerticalScrollLayout from "../../layouts/verticalScroll";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { SmallShowPlaySong } from "../../components/SmallShowPlaySong";
 interface Song {
   id: number;
   name: string;
@@ -84,41 +85,44 @@ export default function AlbumComponents() {
     });
   }
 
+  const [selectedSongId, setSelectedSongId] = useState<number | null>(null);
+
   return (
     <div className="bg-black h-screen w-screen relative">
       <div>
-        {/* Button triggering the function */}
-        <button className="bg-white" onClick={handleAddSongClick}>
-          Add Song
-        </button>
-      </div>
-      <div>
         <img
-          src="src/assets/album1.png"
+          src={selectedAlbum?.imageUrl}
           alt=""
           className="w-52  top-20 left-20 rounded-xl"
         />
       </div>
 
       <div className=" top-80 left-6">
-        <p className="text-white text-3xl">Album name</p>
+        <p className="text-white text-3xl">{selectedAlbum?.name}</p>
+      </div>
+      <div className=" top-80 left-6">
+        <p className="text-white text-3xl">{selectedAlbum?.artist}</p>
       </div>
 
-      <VerticalScrollLayout height="50rem">
+      <VerticalScrollLayout height="30rem">
         {Object.keys(albumSongs).map((songId) => {
           const song = albumSongs[parseInt(songId)];
+          const isSelected = parseInt(songId) === selectedSongId;
+          const handleSongClick = () => setSelectedSongId(parseInt(songId));
           return (
             <IndividualSong
               key={song.id}
               songName={song.name}
               groupName={song.artist}
+              isSelected={isSelected}
+              onClick={handleSongClick}
             />
           );
         })}
       </VerticalScrollLayout>
-
-      <IndividualSong songName="asdf" groupName="asdf"></IndividualSong>
-
+      <div className="absolute bottom-14 w-screen">
+        <SmallShowPlaySong selectedSongId={selectedSongId} />
+      </div>
       <div className="absolute bottom-0 w-screen">
         <NavBar />
       </div>
