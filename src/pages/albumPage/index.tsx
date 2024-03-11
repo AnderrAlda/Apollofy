@@ -22,6 +22,10 @@ interface Song {
   liked: boolean;
 }
 
+interface AlbumSongs {
+  [key: number]: Song;
+}
+
 export default function AlbumComponents() {
   const { user, updateUser } = useAuth();
 
@@ -40,8 +44,7 @@ export default function AlbumComponents() {
     deleteSongFromUserLikedSongs(user.id, 3);
   };
 
-  const { albums } = usePlayer();
-
+  const { albums, songs: Song } = usePlayer();
   console.log(albums);
 
   const { albumid } = useParams<{ albumid?: string }>(); // Specify the type of useParams object
@@ -54,6 +57,31 @@ export default function AlbumComponents() {
     console.log(selectedAlbum.songs);
   } else {
     console.log("Album not found");
+  }
+
+  console.log("song:" + songs[1].id);
+
+  const albumSongs: AlbumSongs = {};
+
+  // Check if selectedAlbum exists
+  if (selectedAlbum) {
+    // Filter songs array to include only those whose IDs are in selectedAlbum.songs
+    const selectedAlbumSongs = songs.filter((song) =>
+      selectedAlbum.songs.includes(song.id)
+    );
+
+    // Iterate through filtered songs and add them to albumSongs object
+    selectedAlbumSongs.forEach((song) => {
+      albumSongs[song.id] = {
+        id: song.id,
+        name: song.name,
+        artist: song.artist,
+        url: song.url,
+        thumbnail: song.thumbnail,
+        genre: song.genre,
+        liked: song.liked,
+      };
+    });
   }
 
   return (
@@ -77,13 +105,16 @@ export default function AlbumComponents() {
       </div>
 
       <VerticalScrollLayout height="50rem">
-        {likedSongs?.map((song) => (
-          <IndividualSong
-            key={song.id}
-            songName={song.name}
-            groupName={song.artist}
-          />
-        ))}
+        {Object.keys(albumSongs).map((songId) => {
+          const song = albumSongs[parseInt(songId)];
+          return (
+            <IndividualSong
+              key={song.id}
+              songName={song.name}
+              groupName={song.artist}
+            />
+          );
+        })}
       </VerticalScrollLayout>
 
       <IndividualSong songName="asdf" groupName="asdf"></IndividualSong>
