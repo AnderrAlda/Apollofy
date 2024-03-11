@@ -28,7 +28,7 @@ export async function getArtists() {
 }
 export async function getPlaylists() {
   try {
-    const response = await fetch("src/assets/data/getPlaylists.json");
+    const response = await fetch("src/assets/data/playlists.json");
     const JSONResponsee = await response.json();
     return JSONResponsee;
   } catch (error) {
