@@ -12,9 +12,9 @@ export const UserPage = () => {
 
   return (
     <>
-      <div className="bg-black h-screen">
-        <div className="flex flex-row lg:border lg:border-solid lg:border-slate-900 lg:bg-zinc-700 ">
-          <div className="flex justify-center items-center rounded-full border-2 border-solid shadow-2xl shadow-black bg-gray-800 border-white h-28 w-28 m-8 lg:size-48">
+      <div className="bg-black h-screen ">
+        <div className="flex flex-row lg:border lg:border-solid lg:border-slate-900 lg:bg-zinc-700 lg:ml-20">
+          <div className="flex justify-center items-center rounded-full border-2 border-solid shadow-2xl shadow-black bg-gray-800 border-white h-28 w-28 m-8 lg:size-48 ">
             <FaUserAstronaut size={32} className="text-white lg:size-20 " />
           </div>
           <div className="flex mt-4">
@@ -28,12 +28,12 @@ export const UserPage = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-row ">
+        <div className="flex flex-row lg:ml-20">
           <p className="text-white ml-7 text-xl lg:mt-6 lg:text-3xl ">
             Public List
           </p>
 
-          <div className="flex ml-48 mt-2 lg:mt-8">
+          <div className="flex ml-48 mt-2 lg:mt-8 ">
             <button onClick={logout}>
               <IoLogOutOutline
                 size={30}
@@ -48,7 +48,7 @@ export const UserPage = () => {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col m-6  ">
+        <div className="flex flex-col m-6 lg:ml-20">
           <div className="flex flex-row">
             <div className="border-solid border-white border rounded-md bg-slate-900 shadow-slate-400 shadow-md h-32 w-32"></div>
             <div className="flex flex-col"></div>

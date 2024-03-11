@@ -4,17 +4,33 @@ import VerticalScrollLayout from "../../layouts/verticalScroll";
 import { NavBar } from "../../components/navbar";
 import { TopAlbums, TopArtist, TopPlaylist } from "../../common/musicProfile";
 import { SmallShowPlaySong } from "../../components/SmallShowPlaySong";
+import { useEffect, useState } from "react";
 // import { usePlayer } from "../../contexts/AudioPlayerContext";
 
 
 const HomePage = () => {
-  const generator = new AvatarGenerator();
+  const [avatarUrl, setAvatarUrl] = useState('');
+
+  useEffect(() => {
+    // Verifica si hay un avatar almacenado en localStorage
+    const storedAvatarUrl = localStorage.getItem('avatar');
+    if (storedAvatarUrl) {
+      setAvatarUrl(storedAvatarUrl);
+    } else {
+      // Si no hay un avatar almacenado, genera uno aleatoriamente
+      const generator = new AvatarGenerator();
+      const randomAvatarUrl = generator.generateRandomAvatar();
+      setAvatarUrl(randomAvatarUrl);
+      // Almacena el avatar generado aleatoriamente en localStorage para futuras visitas
+      localStorage.setItem('avatar', randomAvatarUrl);
+    }
+  }, []);
 
   return (
     <div className="relative h-screen bg-black">
-      <div className="lg:ml-40">
+      <div className="lg:ml-12">
         <div className="relative">
-          <img className="h-20" src={generator.generateRandomAvatar()} alt="" />
+        <img className="h-20" src={avatarUrl} alt="Avatar" />
           <svg
             className="h-12 absolute top-5 right-5"
             data-slot="icon"

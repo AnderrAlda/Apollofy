@@ -13,19 +13,19 @@ import { PublicRoutes } from "../../types/routes";
 
 export function NavBar(): ReactNode {
   return (
-    <section className=" flex justify-between items-center p-4 text-2xl bg-black w-full lg:left-0 lg:w-40 lg:h-100 lg:bg-slate-500 lg:block">
+    <section className=" flex justify-between items-center p-4 text-2xl bg-black w-full lg:left-0 lg:w-12 lg:bg-slate-500 lg:block lg:h-screen lg:text-3xl lg:p-2 ">
       <Link to={PublicRoutes.HOME}>
-        <IoHomeOutline className="text-white hover:text-green-500 lg:mt-4" />
+        <IoHomeOutline className="text-white hover:text-green-500 lg:mt-20" />
       </Link>
       <Link to={PublicRoutes.SEARCH}>
-        <CiSearch className="text-white hover:text-green-500 lg:mt-8" />
+        <CiSearch className="text-white hover:text-green-500 lg:mt-40" />
       </Link>
 
       <Link to={PublicRoutes.MYSONGS}>
-        <IoLibraryOutline className="text-white hover:text-green-500" />
+        <IoLibraryOutline className="text-white hover:text-green-500 lg:mt-40" />
       </Link>
       <Link to={PublicRoutes.USER}>
-        <IoPersonOutline className="text-white hover:text-green-500 lg:hidden" />
+        <IoPersonOutline className="text-white hover:text-green-500 lg:mt-40" />
       </Link>
     </section>
   );

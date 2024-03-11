@@ -82,7 +82,7 @@ export function SmallShowPlaySong() {
   };
 
   return (
-    <section>
+    <section className="lg:bottom-0 lg:mt-10">
       <ReactPlayer
         width="1px"
         height="1px"

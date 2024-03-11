@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { NavBar } from "../../components/navbar";
 
-import { HeartIconBtn } from "../../common/icons/heartIconBtn";
 import { useAuth } from "../../contexts/AuthContext";
 import {
-  addSongToUserLikedSongs,
   deleteSongFromUserLikedSongs,
 } from "../../utils";
 import IndividualSong from "../../components/individualSong";
@@ -41,13 +39,13 @@ export function MySongs() {
 
   return (
     <div className="bg-black h-screen w-screen relative">
-      <div>
+      <div className="lg:ml-20">
         {/* Button triggering the function */}
         <button className="bg-white" onClick={handleAddSongClick}>
           Add Song
         </button>
       </div>
-      <div>
+      <div className="lg:ml-3/12">
         <img
           src="src/assets/album1.png"
           alt=""
@@ -55,7 +53,7 @@ export function MySongs() {
         />
       </div>
 
-      <div className=" top-80 left-6">
+      <div className=" top-80 left-6 lg:ml-20">
         <p className="text-white text-3xl">Album name</p>
       </div>
 
