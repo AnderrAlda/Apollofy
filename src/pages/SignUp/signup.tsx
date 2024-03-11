@@ -8,9 +8,10 @@ import { AvatarGenerator } from "random-avatar-generator";
 
 export default function SignUp() {
   const generator = new AvatarGenerator();
+  const [showModal, setShowModal] = useState(false);
 
   const [newUser, setNewUser] = useState<User>({
-    id: "", // Asumint que id s'assignarà d'alguna altra manera ja que això és només un exemple
+    id: "",
     name: "",
     last_name: "",
     email: "",
@@ -19,8 +20,8 @@ export default function SignUp() {
     gender: "",
     profilePicture: generator.generateRandomAvatar(),
     country: "",
-    dateOfBirth: 0, // Asumiràs que aquest camp s'actualitza d'alguna altra manera
-    likedSongs: [], // Asumiràs que aquest camp s'actualitza d'alguna altra manera
+    dateOfBirth: 0,
+    likedSongs: [],
   });
 
   const updateUser = (key, value) => {
@@ -30,6 +31,7 @@ export default function SignUp() {
   async function handleSubmit(event) {
     event.preventDefault();
     const users = await getUsers();
+    setShowModal(true);
     const lastID = users.reduce(
       (max, user) => Math.max(max, parseInt(user.id, 10)),
       0
@@ -65,6 +67,7 @@ export default function SignUp() {
           <CancelButton />
           <SignUpButton />
         </div>
+        <SignUpModal onModal={setShowModal} />
       </form>
     </div>
   );
@@ -214,7 +217,6 @@ function Birthday({ updateUser }) {
 
 function Password({ updateUser }) {
   const [password, setPassword] = useState("");
-  //const [confirmedPassword, setConfirmedPassword] = useState("");
 
   const handleChanges = (e) => {
     const newPassword = e.target.value;
@@ -233,15 +235,6 @@ function Password({ updateUser }) {
           onChange={handleChanges}
         />
       </div>
-      {/* <div className="flex justify-between mx-8">
-        <label>Confirm password * </label>
-        <input
-          type="password"
-          className="rounded"
-          value={confirmedPassword}
-          onChange={(e) => setConfirmedPassword(e.target.value)}
-        />
-      </div> */}
     </div>
   );
 }
@@ -263,5 +256,16 @@ function SignUpButton() {
       className="w-15 bg-white rounded p-2 mt-5 ml-5"
       value="Sign up"
     />
+  );
+}
+
+function SignUpModal({onModal}) {
+  return (
+    <div className="bg-yellow-500 w-2/3 h-1/4 absolute inset-0 m-auto flex flex-col justify-center items-center">
+      <p className="items-center text-center">Your data has been successfully saved!</p>
+      <Link to={PublicRoutes.LOGIN}>
+        <button  onClick={onModal} className="mt-5 border border-black p-2 rounded">Log in now</button>
+      </Link>
+    </div>
   );
 }
