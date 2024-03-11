@@ -48,7 +48,7 @@ export default function SignUp() {
 
   return (
     <div className="bg-black h-screen">
-      <h1 className="text-white flex justify-center py-10 text-xl">Apollofy</h1>
+       <img src="src/assets/apollofyremovebg.png" className="flex size-40" />
       <p className="text-white flex justify-center py-5">
         Sign up and start listening to the best music
       </p>
