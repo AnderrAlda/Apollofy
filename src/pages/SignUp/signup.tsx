@@ -67,7 +67,7 @@ export default function SignUp() {
           <CancelButton />
           <SignUpButton />
         </div>
-        <SignUpModal onModal={setShowModal} />
+        {showModal ? <SignUpModal onModal={setShowModal} /> : null}
       </form>
     </div>
   );
@@ -75,7 +75,7 @@ export default function SignUp() {
 
 function Name({ updateUser }) {
   const [name, setName] = useState("");
-  //console.log(name)
+  
 
   const handleChanges = (e) => {
     const newName = e.target.value;
@@ -204,7 +204,7 @@ function Birthday({ updateUser }) {
 
   return (
     <div className="text-white flex justify-between mx-8">
-      <label>Country * </label>
+      <label>Date of birth * </label>
       <input
         type="date"
         className="rounded text-black"
@@ -242,7 +242,7 @@ function Password({ updateUser }) {
 function CancelButton() {
   return (
     <Link to={PublicRoutes.LOGIN}>
-      <button className="w-15 bg-white rounded p-2 mt-5 ml-5">
+      <button className="w-15 bg-accent rounded p-2 mt-5 ml-5">
         Back to login
       </button>
     </Link>
@@ -253,18 +253,25 @@ function SignUpButton() {
   return (
     <input
       type="submit"
-      className="w-15 bg-white rounded p-2 mt-5 ml-5"
+      className="w-15 bg-accent rounded p-2 mt-5 ml-5"
       value="Sign up"
     />
   );
 }
 
-function SignUpModal({onModal}) {
+function SignUpModal({ onModal }) {
   return (
     <div className="bg-yellow-500 w-2/3 h-1/4 absolute inset-0 m-auto flex flex-col justify-center items-center">
-      <p className="items-center text-center">Your data has been successfully saved!</p>
+      <p className="items-center text-center">
+        Your data has been successfully saved!
+      </p>
       <Link to={PublicRoutes.LOGIN}>
-        <button  onClick={onModal} className="mt-5 border border-black p-2 rounded">Log in now</button>
+        <button
+          onClick={onModal}
+          className="mt-5 border border-black p-2 rounded"
+        >
+          Log in now
+        </button>
       </Link>
     </div>
   );

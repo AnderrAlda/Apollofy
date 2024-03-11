@@ -36,7 +36,7 @@ export const EditProfile = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    console.log("💪💪");
+  
     const updatedUserData = {};
 
     if (newEmail !== "" && newEmail !== user.email) {
@@ -116,13 +116,7 @@ export const EditProfile = () => {
               />
             ) : null}
 
-            {/* <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto">
-  <div className="fixed inset-0 bg-black opacity-50"></div>
-  <div className="relative z-50 bg-white p-8 max-w-md mx-auto">
 
-    <button className="absolute top-0 right-0 m-4" onclick="cerrarModal()">Cerrar</button>
-  </div>
-</div> */}
 
             <div className="text-white">
               <p className="text-2xl">Country: {user?.country}</p>

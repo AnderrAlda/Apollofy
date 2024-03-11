@@ -19,6 +19,7 @@ export const theme = {
     colors: {
       background: `#0D0D0D`,
       player: `#4D4B4B`,
+      accent: `#dfcc89`,
     },
     height: {
       96: "15rem",
@@ -29,8 +30,7 @@ export const theme = {
     },
     ml: {
       96: "10px",
-    }
- 
+    },
   },
 };
 export const plugins = [];
