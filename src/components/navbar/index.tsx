@@ -21,7 +21,7 @@ export function NavBar(): ReactNode {
         <CiSearch className="text-white hover:text-green-500" />
       </Link>
 
-      <Link to={PublicRoutes.ALBUM}>
+      <Link to={PublicRoutes.MYSONGS}>
         <IoLibraryOutline className="text-white hover:text-green-500" />
       </Link>
       <Link to={PublicRoutes.USER}>

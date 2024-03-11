@@ -1,37 +1,75 @@
 import { NavBar } from "../../components/navbar";
-import { SmallShowPlaySong } from "./SmallShowPlaySong";
-import { IoChevronBackOutline } from "react-icons/io5";
 
+import { HeartIconBtn } from "../../common/icons/heartIconBtn";
+import { useAuth } from "../../contexts/AuthContext";
+import {
+  addSongToUserLikedSongs,
+  deleteSongFromUserLikedSongs,
+} from "../../utils";
+import IndividualSong from "../../components/individualSong";
+import { usePlayer } from "../../contexts/AudioPlayerContext";
+import VerticalScrollLayout from "../../layouts/verticalScroll";
+import { useEffect, useState } from "react";
+interface Song {
+  id: number;
+  name: string;
+  artist: string;
+  url: string;
+  thumbnail: string;
+  genre: string;
+  liked: boolean;
+}
 export function MySongs() {
+  const { user, updateUser } = useAuth();
+
+  const { songs } = usePlayer();
+  const [likedSongs, setLikedSongs] = useState<Song[]>();
+
+  useEffect(() => {
+    const filteredSongs = songs.filter((song) =>
+      user.likedSongs.includes(song.id)
+    );
+    setLikedSongs(filteredSongs);
+    console.log("hola");
+  }, [songs, user]);
+
+  const handleAddSongClick = () => {
+    /* addSongToUserLikedSongs(user.id, 4); */
+    deleteSongFromUserLikedSongs(user.id, 3);
+  };
+
   return (
-    <div className="bg-black h-screen">
+    <div className="bg-black h-screen w-screen relative">
       <div>
-        <IoChevronBackOutline className="text-4xl text-white" />
+        {/* Button triggering the function */}
+        <button className="bg-white" onClick={handleAddSongClick}>
+          Add Song
+        </button>
+      </div>
+      <div>
+        <img
+          src="src/assets/album1.png"
+          alt=""
+          className="w-52  top-20 left-20 rounded-xl"
+        />
       </div>
 
-      <div className=" mt-5">
-        <section>
-          <div className="ml-24 w-52 h-56 bg-gray-800 rounded-lg">
-            <img src="" alt="" />
-          </div>
-          <p className="ml-7 mt-5 text-3xl text-white">My Songs</p>
-        </section>
+      <div className=" top-80 left-6">
+        <p className="text-white text-3xl">Album name</p>
       </div>
 
-      <div className="relative">
-        <div className="ml-5">
-          <p className="text-white">Song name</p>
-          <p className="text-white">Group name</p>
-        </div>
+      <VerticalScrollLayout height="50rem">
+        {likedSongs?.map((song) => (
+          <IndividualSong
+            key={song.id}
+            songName={song.name}
+            groupName={song.artist}
+          />
+        ))}
+      </VerticalScrollLayout>
 
-        {/* <div>
-          <IoHeart className="text-4xl text-white hover:text-green-500 absolute right-5 top-0" />
-        </div> */}
-      </div>
+      <IndividualSong songName="asdf" groupName="asdf"></IndividualSong>
 
-      <div className="absolute bottom-14 w-screen">
-        <SmallShowPlaySong />
-      </div>
       <div className="absolute bottom-0 w-screen">
         <NavBar />
       </div>
