@@ -122,11 +122,11 @@ export const EditProfile = () => {
               />
             ) : null}
 
-            <div className="text-white">
-              <div className="text-2xl ">
+            <div className="text-white ">
+              <div className="text-2xl flex justify-between">
                 Password: {displayPassword ? user?.password : "*****"}
                 <button onClick={handleDisplayPassword}>
-                  <IoEye className="ml-36 lg:ml-12" />
+                  <IoEye className=" lg:ml-12" />
                 </button>
               </div>
             </div>
