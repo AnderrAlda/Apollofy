@@ -4,13 +4,14 @@ import VerticalScrollLayout from "../../layouts/verticalScroll";
 import { NavBar } from "../../components/navbar";
 import { TopAlbums, TopArtist, TopPlaylist } from "../../common/musicProfile";
 import { SmallShowPlaySong } from "../../components/SmallShowPlaySong";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
 import { getSongs } from "../../contexts/GetTrack";
+import { useAuth } from "../../contexts/AuthContext";
 
 const HomePage = () => {
-  const [avatarUrl, setAvatarUrl] = useState("");
   const { setSongs } = usePlayer();
+  const { user } = useAuth();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,24 +26,11 @@ const HomePage = () => {
     fetchData();
   }, [setSongs]);
 
-  useEffect(() => {
-    const storedAvatarUrl = localStorage.getItem("avatar");
-    if (storedAvatarUrl) {
-      setAvatarUrl(storedAvatarUrl);
-    } else {
-      const generator = new AvatarGenerator();
-      const randomAvatarUrl = generator.generateRandomAvatar();
-      setAvatarUrl(randomAvatarUrl);
-
-      localStorage.setItem("avatar", randomAvatarUrl);
-    }
-  }, []);
-
   return (
     <div className="relative h-screen bg-black">
       <div className="lg:ml-12">
         <div className="relative">
-          <img className="h-20" src={avatarUrl} alt="Avatar" />
+          <img className="h-20" src={user.profilePicture} alt="Avatar" />
           <svg
             className="h-12 absolute top-5 right-5"
             data-slot="icon"

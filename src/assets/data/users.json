@@ -8,7 +8,7 @@
       "password": "javi",
       "city": "Almeria",
       "gender": "Mal",
-      "profilePicture": "",
+      "profilePicture": "https://avataaars.io/?accessoriesType=Wayfarers&avatarStyle=Circle&clotheColor=Blue01&clotheType=Overall&eyeType=Close&eyebrowType=UpDownNatural&facialHairColor=Blonde&facialHairType=BeardMagestic&hairColor=Blonde&hatColor=Gray01&mouthType=Grimace&skinColor=Light&topType=ShortHairShaggyMullet",
       "country": "Spain",
       "dateOfBirth": "1997-11-12",
       "likedSongs": []
@@ -21,7 +21,7 @@
       "password": "lucialucia",
       "city": "Barcelona",
       "gender": "Female",
-      "profilePicture": "",
+      "profilePicture": "https://avataaars.io/?accessoriesType=Wayfarers&avatarStyle=Circle&clotheColor=Pink&clotheType=ShirtScoopNeck&eyeType=Side&eyebrowType=SadConcerned&facialHairColor=Auburn&facialHairType=Blank&hairColor=Black&hatColor=PastelOrange&mouthType=ScreamOpen&skinColor=Yellow&topType=ShortHairTheCaesarSidePart",
       "country": "Spain",
       "dateOfBirth": "1982-12-16",
       "likedSongs": []
@@ -29,12 +29,12 @@
     {
       "id": "3",
       "name": "Eira",
-      "last_name": "Melè",
+      "last_name": "Melé",
       "email": "eira@eira.com",
       "password": "eiraeira",
       "city": "Barcelona",
       "gender": "Female",
-      "profilePicture": "",
+      "profilePicture": "https://avataaars.io/?accessoriesType=Wayfarers&avatarStyle=Circle&clotheColor=PastelRed&clotheType=BlazerSweater&eyeType=EyeRoll&eyebrowType=DefaultNatural&facialHairColor=Brown&facialHairType=BeardMagestic&hairColor=Platinum&hatColor=Gray02&mouthType=Eating&skinColor=Brown&topType=LongHairFro",
       "country": "Spain",
       "dateOfBirth": "1986-06-25",
       "likedSongs": [
@@ -50,7 +50,7 @@
       "password": "alvaroalvaro",
       "city": "Valencia",
       "gender": "Male",
-      "profilePicture": "",
+      "profilePicture": "https://avataaars.io/?accessoriesType=Prescription02&avatarStyle=Circle&clotheColor=Blue02&clotheType=BlazerSweater&eyeType=WinkWacky&eyebrowType=UnibrowNatural&facialHairColor=Platinum&facialHairType=BeardMedium&hairColor=Red&hatColor=Blue02&mouthType=Concerned&skinColor=Pale&topType=LongHairShavedSides",
       "country": "Spain",
       "dateOfBirth": "1999-11-18",
       "likedSongs": []
@@ -63,7 +63,7 @@
       "password": "anderander",
       "city": "Orio",
       "gender": "tiburon",
-      "profilePicture": "",
+      "profilePicture": "https://avataaars.io/?accessoriesType=Prescription01&avatarStyle=Circle&clotheColor=PastelGreen&clotheType=ShirtVNeck&eyeType=Happy&eyebrowType=Default&facialHairColor=Brown&facialHairType=BeardLight&hairColor=Platinum&hatColor=PastelOrange&mouthType=Disbelief&skinColor=Brown&topType=ShortHairShortCurly",
       "country": "Spain",
       "dateOfBirth": "1987-07-03",
       "likedSongs": [
@@ -83,7 +83,7 @@
       "password": "ariadnaariadna",
       "city": "Barcelona",
       "gender": "Female",
-      "profilePicture": "",
+      "profilePicture": "https://avataaars.io/?accessoriesType=Kurt&avatarStyle=Circle&clotheColor=PastelBlue&clotheType=BlazerSweater&eyeType=Hearts&eyebrowType=AngryNatural&facialHairColor=Platinum&facialHairType=BeardLight&hairColor=Blonde&hatColor=Heather&mouthType=Grimace&skinColor=Pale&topType=ShortHairDreads02",
       "country": "Spain",
       "dateOfBirth": "2020-04-27",
       "likedSongs": []
