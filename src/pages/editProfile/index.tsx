@@ -74,47 +74,49 @@ export const EditProfile = () => {
   };
 
   console.log(newEmail);
+
   return (
     <>
       <div className="bg-slate-900 h-screen">
-        <div className="flex flex-col p-5 gap-4">
-          <div className="flex flex-row">
-            <h2 className="text-white text-5xl">Edit profile</h2>
-            <button
-              onClick={handleChangeProfile}
-              className=" flex justify-center items-center bg-gray-800 border border-s-white ml-20 rounded-xl h-12 w-12 hover:bg-green-500"
-            >
-              <IoPencil className="text-white text-2xl" />
-            </button>
-          </div>
+        <div className="lg:pl-56 lg:pr-56">
+          <div className="flex flex-col p-5 gap-5 lg:gap-9 ">
+            <div className="flex flex-row lg:mt-12">
+              <h2 className="text-white text-5xl">Edit profile</h2>
+              <button
+                onClick={handleChangeProfile}
+                className=" flex justify-center items-center bg-gray-800 border border-s-white ml-20 rounded-xl h-12 w-12 hover:bg-green-500"
+              >
+                <IoPencil className="text-white text-2xl" />
+              </button>
+            </div>
 
-          <div className="flex flex-row text-white">
-            <p className="text-2xl">Email: {user?.email}</p>
-          </div>
-          {changeProfile ? (
-            <input
-              type="text"
-              value={newEmail}
-              onChange={(e) => setNewEmail(e.target.value)}
-              placeholder="New email"
-              className=" p-1.5 pl-4 rounded-full"
-            />
-          ) : null}
+            <div className="flex flex-row text-white">
+              <p className="text-2xl">Email: {user?.email}</p>
+            </div>
+            {changeProfile ? (
+              <input
+                type="text"
+                value={newEmail}
+                onChange={(e) => setNewEmail(e.target.value)}
+                placeholder="New email"
+                className=" p-1.5 pl-4 rounded-full"
+              />
+            ) : null}
 
-          <div className="text-white">
-            <p className="text-2xl">Gender: {user?.gender}</p>
-          </div>
-          {changeProfile ? (
-            <input
-              type="text"
-              value={newGender}
-              onChange={(e) => setNewGender(e.target.value)}
-              placeholder="New gender"
-              className="p-1.5 pl-4 rounded-full"
-            />
-          ) : null}
+            <div className="text-white">
+              <p className="text-2xl">Gender: {user?.gender}</p>
+            </div>
+            {changeProfile ? (
+              <input
+                type="text"
+                value={newGender}
+                onChange={(e) => setNewGender(e.target.value)}
+                placeholder="New gender"
+                className="p-1.5 pl-4 rounded-full"
+              />
+            ) : null}
 
-          {/* <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto">
+            {/* <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto">
   <div className="fixed inset-0 bg-black opacity-50"></div>
   <div className="relative z-50 bg-white p-8 max-w-md mx-auto">
 
@@ -122,59 +124,59 @@ export const EditProfile = () => {
   </div>
 </div> */}
 
-          <div className="text-white">
-            <p className="text-2xl">Country: {user?.country}</p>
-          </div>
-          {changeProfile ? (
-            <input
-              type="text"
-              value={newCountry}
-              onChange={(e) => setNewCountry(e.target.value)}
-              placeholder="New country"
-              className=" p-1.5 pl-4 rounded-full"
-            />
-          ) : null}
+            <div className="text-white">
+              <p className="text-2xl">Country: {user?.country}</p>
+            </div>
+            {changeProfile ? (
+              <input
+                type="text"
+                value={newCountry}
+                onChange={(e) => setNewCountry(e.target.value)}
+                placeholder="New country"
+                className=" p-1.5 pl-4 rounded-full"
+              />
+            ) : null}
 
-          <div className="text-white">
-            <div className="text-2xl flex justify-between">
-              Password: {displayPassword ? user?.password : "*****"}
-              <button onClick={handleDisplayPassword}>
-                <IoEye />
+            <div className="text-white">
+              <div className="text-2xl flex justify-between">
+                Password: {displayPassword ? user?.password : "*****"}
+                <button onClick={handleDisplayPassword}>
+                  <IoEye />
+                </button>
+              </div>
+            </div>
+            {changeProfile ? (
+              <input
+                type="password"
+                value={newPassword}
+                onChange={(e) => setNewPassaword(e.target.value)}
+                placeholder="New password"
+                className="p-1.5 pl-4 rounded-full"
+              />
+            ) : null}
+
+            {changeProfile ? (
+              <button
+                type="submit"
+                onClick={handleSubmit}
+                className="text-white text-2xl mt-6 p-1.5 rounded-full border border-s w-18"
+              >
+                Save changes
               </button>
-            </div>
-          </div>
-          {changeProfile ? (
-            <input
-              type="password"
-              value={newPassword}
-              onChange={(e) => setNewPassaword(e.target.value)}
-              placeholder="New password"
-              className="p-1.5 pl-4 rounded-full"
-            />
-          ) : null}
-
-          {changeProfile ? (
-            <button
-              type="submit"
-              onClick={handleSubmit}
-              className="text-white text-2xl mt-6 p-1.5 rounded-full border border-s w-18"
+            ) : null}
+            {/* //import modal */}
+            <Modal
+              isOpen={isConfirmationModalOpen}
+              onClose={() => setConfirmationModalOpen(false)}
             >
-              Save changes
-            </button>
-          ) : null}
-          {/* //import modal */}
-          <Modal
-            isOpen={isConfirmationModalOpen}
-            onClose={() => setConfirmationModalOpen(false)}
-          >
-            <div className="text-center">
-              <p className="text-2xl text-white">
-                Your changes have been saved!
-              </p>
-            </div>
-          </Modal>
+              <div className="text-center">
+                <p className="text-2xl text-white lg:text-5xl">
+                  Your changes have been saved !
+                </p>
+              </div>
+            </Modal>
+          </div>
         </div>
-
         <div className="absolute bottom-0 w-screen">
           <NavBar />
         </div>
