@@ -75,11 +75,17 @@ export const EditProfile = () => {
   };
 
   console.log(newEmail);
+
+
   return (
     <>
+
       <div className="bg-slate-900 h-screen">
-        <div className="flex flex-col p-5 gap-4">
-          <div className="flex flex-row">
+      <div className="lg:pl-56 lg:pr-56">
+        <div className="flex flex-col p-5 gap-5 lg:gap-9 ">
+          
+          <div className="flex flex-row lg:mt-12">
+            
             <h2 className="text-white text-5xl">Edit profile</h2>
             <button
               onClick={handleChangeProfile}
@@ -165,15 +171,16 @@ export const EditProfile = () => {
           {/* //import modal */}
           <Modal isOpen={isConfirmationModalOpen} onClose={() => setConfirmationModalOpen(false)}>
           <div className="text-center">
-            <p className="text-2xl text-white">Your changes have been saved !</p>
+            <p className="text-2xl text-white lg:text-5xl">Your changes have been saved !</p>
           </div>
         </Modal>
         </div>
-        
+        </div>
         <div className="absolute bottom-0 w-screen">
           <NavBar />
         </div>
       </div>
+
     </>
   );
 };
