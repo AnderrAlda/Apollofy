@@ -48,12 +48,14 @@ export default function SignUp() {
   }
 
   return (
-    <div className="bg-black h-screen">
-      <img src="src/assets/apollofyremovebg.png" className="flex size-40" />
+    <div className="bg-black h-screen   ">
+      <div className="flex justify-center">
+        <img src="src/assets/apollofyremovebg.png" className=" size-40" />
+      </div>
       <p className="text-white flex justify-center py-5">
         Sign up and start listening to the best music
       </p>
-      <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
+      <form className="flex flex-col gap-4 " onSubmit={handleSubmit}>
         <Name updateUser={updateUser} />
         <Lastname updateUser={updateUser} />
         <Gender updateUser={updateUser} />
@@ -83,7 +85,7 @@ function Name({ updateUser }) {
 
   return (
     <form className="text-white flex justify-between mx-8 ">
-      <label>Your name * </label>
+      <label>Name * </label>
       <input
         type="text"
         className="rounded text-black"
@@ -102,7 +104,7 @@ function Lastname({ updateUser }) {
   };
   return (
     <div className="text-white flex justify-between mx-8">
-      <label>Your lastname * </label>
+      <label>Lastname * </label>
       <input
         type="text"
         className="rounded text-black"
