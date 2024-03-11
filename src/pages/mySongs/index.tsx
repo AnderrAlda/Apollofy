@@ -7,6 +7,7 @@ import IndividualSong from "../../components/individualSong";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
 import VerticalScrollLayout from "../../layouts/verticalScroll";
 import { SmallShowPlaySong } from "../../components/SmallShowPlaySong";
+import IndividualMySong from "../../components/individualMySong";
 
 interface Song {
   id: number;
@@ -57,7 +58,7 @@ export function MySongs() {
               setSongs(likedSongs);
             };
             return (
-              <IndividualSong
+              <IndividualMySong
                 key={song.id}
                 songName={song.name}
                 groupName={song.artist}
