@@ -156,7 +156,7 @@ export function SearchResultSong({
   return (
     <div
       onClick={handleClick}
-      className="bg-yellow-400 my-2 mx-5 rounded flex cursor-pointer"
+      className="bg-accent my-2 mx-5 rounded flex cursor-pointer"
     >
       <img className="w-8 h-8 m-2" src={song.thumbnail} />
       <div>
@@ -169,7 +169,7 @@ export function SearchResultSong({
 export function SearchResultArtist({ artist }: { artist: Artist }) {
   return (
     <Link to={PublicRoutes.SONG}>
-      <div className="bg-yellow-400 my-2 mx-5 rounded flex">
+      <div className="bg-accent my-2 mx-5 rounded flex">
         <img className="w-8 h-8 m-2" src={artist.photoUrl} />
         <p className="text-black ml-5">{artist.name}</p>
       </div>
@@ -180,7 +180,7 @@ export function SearchResultArtist({ artist }: { artist: Artist }) {
 export function SearchResultAlbum({ album }: { album: Album }) {
   return (
     <Link to={PublicRoutes.SONG}>
-      <div className="bg-yellow-400 my-2 mx-5 rounded flex">
+      <div className="bg-accent my-2 mx-5 rounded flex">
         <img src={album.imageUrl} className="w-8 h-8 m-2" />
         <div>
           <p className="text-black ml-5">{album.name}</p>

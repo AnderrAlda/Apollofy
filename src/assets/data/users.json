@@ -86,7 +86,9 @@
       "profilePicture": "https://avataaars.io/?accessoriesType=Kurt&avatarStyle=Circle&clotheColor=PastelBlue&clotheType=BlazerSweater&eyeType=Hearts&eyebrowType=AngryNatural&facialHairColor=Platinum&facialHairType=BeardLight&hairColor=Blonde&hatColor=Heather&mouthType=Grimace&skinColor=Pale&topType=ShortHairDreads02",
       "country": "Spain",
       "dateOfBirth": "2020-04-27",
-      "likedSongs": []
+      "likedSongs": [
+        5
+      ]
     },
     {
       "id": "7",

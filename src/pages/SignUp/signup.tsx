@@ -259,7 +259,7 @@ function SignUpButton() {
 
 function SignUpModal({ onModal }) {
   return (
-    <div className="bg-yellow-500 w-2/3 h-1/4 absolute inset-0 m-auto flex flex-col justify-center items-center">
+    <div className="bg-accent w-2/3 h-1/4 absolute inset-0 m-auto flex flex-col justify-center items-center">
       <p className="items-center text-center">
         Your data has been successfully saved!
       </p>
