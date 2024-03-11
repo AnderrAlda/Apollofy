@@ -48,8 +48,8 @@ export default function SignUp() {
 
   return (
     <div className="bg-black h-screen">
-       <img src="src/assets/apollofyremovebg.png" className="flex size-40" />
-      <p className="text-white flex justify-center py-5">
+       <img src="src/assets/apollofyremovebg.png" className="size-40 ml-28" />
+      <p className="text-white flex justify-center py-5 lg:ml-32">
         Sign up and start listening to the best music
       </p>
       <form className="form-container" onSubmit={handleSubmit}>
@@ -82,10 +82,10 @@ function Name({ updateUser }) {
 
   return (
     <form className="text-white flex justify-between mx-8 ">
-      <label>Your name * </label>
+      <label className="text-xl">Name * </label>
       <input
         type="text"
-        className="rounded text-black"
+        className="rounded p-1 m-1 text-black"
         value={name}
         onChange={handleChanges}
       />
@@ -101,10 +101,10 @@ function Lastname({ updateUser }) {
   };
   return (
     <div className="text-white flex justify-between mx-8">
-      <label>Your lastname * </label>
+      <label className="text-xl">Lastname * </label>
       <input
         type="text"
-        className="rounded text-black"
+        className="rounded p-1 m-1 text-black"
         value={lastName}
         onChange={handleChanges}
       />
@@ -121,10 +121,10 @@ function Email({ updateUser }) {
   };
   return (
     <div className="text-white flex justify-between mx-8">
-      <label>Email * </label>
+      <label className="text-xl">Email * </label>
       <input
         type="email"
-        className="rounded text-black"
+        className="rounded p-1 m-1 text-black"
         value={email}
         onChange={handleChanges}
       />
@@ -140,10 +140,10 @@ function Gender({ updateUser }) {
   };
   return (
     <div className="text-white flex justify-between mx-8">
-      <label>Gender * </label>
+      <label className="text-xl">Gender * </label>
       <input
         type="text"
-        className="rounded text-black"
+        className="rounded p-1 m-1 text-black"
         value={gender}
         onChange={handleChanges}
       />
@@ -160,10 +160,10 @@ function City({ updateUser }) {
 
   return (
     <div className="text-white flex justify-between mx-8">
-      <label>City * </label>
+      <label className="text-xl">City * </label>
       <input
         type="text"
-        className="rounded text-black"
+        className="rounded p-1 m-1 text-black"
         value={city}
         onChange={handleChanges}
       />
@@ -180,10 +180,10 @@ function Country({ updateUser }) {
 
   return (
     <div className="text-white flex justify-between mx-8">
-      <label>Country * </label>
+      <label className="text-xl">Country * </label>
       <input
         type="text"
-        className="rounded text-black"
+        className="rounded p-1 m-1 text-black"
         value={country}
         onChange={handleChanges}
       />
@@ -201,10 +201,10 @@ function Birthday({ updateUser }) {
 
   return (
     <div className="text-white flex justify-between mx-8">
-      <label>Country * </label>
+      <label className="text-xl">Country * </label>
       <input
         type="date"
-        className="rounded text-black"
+        className="rounded p-1 m-1 text-black"
         value={birthday}
         onChange={handleChanges}
       />
@@ -225,10 +225,10 @@ function Password({ updateUser }) {
   return (
     <div className="text-white flex flex-col gap-2 ">
       <div className="flex justify-between mx-8">
-        <label>Create password * </label>
+        <label className="text-xl">Create password * </label>
         <input
           type="password"
-          className="rounded text-black"
+          className="rounded p-1 m-1 text-black"
           value={password}
           onChange={handleChanges}
         />
@@ -249,7 +249,7 @@ function Password({ updateUser }) {
 function CancelButton() {
   return (
     <Link to={PublicRoutes.LOGIN}>
-      <button className="w-15 bg-white rounded p-2 mt-5 ml-5">
+      <button className="w-15 bg-white rounded p-2 mt-5 ml-5 hover:bg-accent">
         Back to login
       </button>
     </Link>
@@ -260,7 +260,7 @@ function SignUpButton() {
   return (
     <input
       type="submit"
-      className="w-15 bg-white rounded p-2 mt-5 ml-5"
+      className="w-15 hover:bg-accent bg-white rounded p-2 mt-5 ml-5"
       value="Sign up"
     />
   );
