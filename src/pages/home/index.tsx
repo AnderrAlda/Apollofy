@@ -10,34 +10,30 @@ import { getSongs } from "../../contexts/GetTrack";
 
 const HomePage = () => {
   const [avatarUrl, setAvatarUrl] = useState("");
-  const { setSongs } = usePlayer(); // Access setSongs from the player context
+  const { setSongs } = usePlayer();
 
-  //this fetch is to reload the sonsgs state to the fetch after coming back from the page mysongs
   useEffect(() => {
-    // Fetch songs when the component mounts
     const fetchData = async () => {
       try {
-        const songsData = await getSongs(); // Implement getSongs according to your API or data source
-        setSongs(songsData); // Set the songs in the context
+        const songsData = await getSongs();
+        setSongs(songsData);
       } catch (error) {
         console.error("Error fetching songs:", error);
       }
     };
 
-    fetchData(); // Call the fetchData function
-  }, [setSongs]); // Include setSongs in the dependency array to trigger the effect when it changes
+    fetchData();
+  }, [setSongs]);
 
   useEffect(() => {
-    // Verifica si hay un avatar almacenado en localStorage
     const storedAvatarUrl = localStorage.getItem("avatar");
     if (storedAvatarUrl) {
       setAvatarUrl(storedAvatarUrl);
     } else {
-      // Si no hay un avatar almacenado, genera uno aleatoriamente
       const generator = new AvatarGenerator();
       const randomAvatarUrl = generator.generateRandomAvatar();
       setAvatarUrl(randomAvatarUrl);
-      // Almacena el avatar generado aleatoriamente en localStorage para futuras visitas
+
       localStorage.setItem("avatar", randomAvatarUrl);
     }
   }, []);

@@ -1,10 +1,9 @@
 import { useState } from "react";
-import "./signup.css";
+
 import { User, getUsers } from "../../utils";
 import { Link } from "react-router-dom";
 import { PublicRoutes } from "../../types/routes";
 import { AvatarGenerator } from "random-avatar-generator";
-//import { AvatarGenerator } from "random-avatar-generator";
 
 export default function SignUp() {
   const generator = new AvatarGenerator();
@@ -54,7 +53,7 @@ export default function SignUp() {
       <p className="text-white flex justify-center py-5">
         Sign up and start listening to the best music
       </p>
-      <form className="form-container" onSubmit={handleSubmit}>
+      <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
         <Name updateUser={updateUser} />
         <Lastname updateUser={updateUser} />
         <Gender updateUser={updateUser} />
@@ -75,7 +74,6 @@ export default function SignUp() {
 
 function Name({ updateUser }) {
   const [name, setName] = useState("");
-  
 
   const handleChanges = (e) => {
     const newName = e.target.value;

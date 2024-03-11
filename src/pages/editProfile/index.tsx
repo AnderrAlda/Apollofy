@@ -1,21 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { NavBar } from "../../components/navbar";
-import { CgLayoutGrid } from "react-icons/cg";
 import { useAuth } from "../../contexts/AuthContext";
 import { IoPencil, IoEye } from "react-icons/io5";
-//import frm modal
 import { Modal } from "../../components/modalEditprofile";
 export const EditProfile = () => {
   const { user, updateUser } = useAuth();
-
   const [newEmail, setNewEmail] = useState("");
   const [newGender, setNewGender] = useState("");
   const [newCountry, setNewCountry] = useState("");
   const [newPassword, setNewPassaword] = useState("");
-
   const [changeProfile, setChangeProfile] = useState(false);
   const [displayPassword, setDisplayPassword] = useState(false);
-  //state of modal
   const [isConfirmationModalOpen, setConfirmationModalOpen] = useState(false);
 
   const handleChangeProfile = () => {
@@ -65,7 +60,6 @@ export const EditProfile = () => {
       const data = await response.json();
       console.log(data);
       updateUser(data);
-      //used of modal
       setConfirmationModalOpen(true);
     } catch (error) {
       console.error(error);
@@ -162,7 +156,7 @@ export const EditProfile = () => {
             >
               <div className="text-center">
                 <p className="text-2xl text-white lg:text-5xl">
-                  Your changes have been saved !
+                  Your changes have been saved!
                 </p>
               </div>
             </Modal>

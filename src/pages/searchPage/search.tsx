@@ -2,7 +2,6 @@ import { Link, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { NavBar } from "../../components/navbar";
 import { useFilter } from "../../contexts/FilterContext";
-
 import { PublicRoutes } from "../../types/routes";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
 import { Album, Artist } from "../../utils";

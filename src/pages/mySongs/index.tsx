@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavBar } from "../../components/navbar";
-
 import { useAuth } from "../../contexts/AuthContext";
-import { deleteSongFromUserLikedSongs } from "../../utils";
-import IndividualSong from "../../components/individualSong";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
 import VerticalScrollLayout from "../../layouts/verticalScroll";
 import { SmallShowPlaySong } from "../../components/SmallShowPlaySong";
@@ -18,8 +15,9 @@ interface Song {
   genre: string;
   liked: boolean;
 }
+
 export function MySongs() {
-  const { user, updateUser } = useAuth();
+  const { user } = useAuth();
 
   const { songs, setUsingLiked, setSongs, setCurrentSongIndex } = usePlayer();
   const [likedSongs, setLikedSongs] = useState<Song[]>();

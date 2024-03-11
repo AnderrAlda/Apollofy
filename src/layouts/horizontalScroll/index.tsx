@@ -5,7 +5,7 @@ type Props = {
 };
 
 const HorizontalScrollLayout = ({ children }: Props) => {
-  // Calculate width to ensure each child has the same size
+  
   const childWidth = `calc((100% - 3px * (${React.Children.count(
     children
   )} - 1)) / ${React.Children.count(children)})`;

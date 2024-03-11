@@ -1,10 +1,8 @@
 import { NavBar } from "../../components/navbar";
-// import { getAlbums } from "./GetTrack";
 
-// import { HeartIconBtn } from "../../common/icons/heartIconBtn";
 import { useAuth } from "../../contexts/AuthContext";
 import {
-  // addSongToUserLikedSongs,
+
   deleteSongFromUserLikedSongs,
 } from "../../utils";
 import IndividualSong from "../../components/individualSong";
@@ -42,15 +40,15 @@ export default function AlbumComponents() {
   }, [songs, user]);
 
   const handleAddSongClick = () => {
-    /* addSongToUserLikedSongs(user.id, 4); */
+    
     deleteSongFromUserLikedSongs(user.id, 3);
   };
 
   const { albums, songs: Song } = usePlayer();
   console.log(albums);
 
-  const { albumid } = useParams<{ albumid?: string }>(); // Specify the type of useParams object
-  const number = parseInt(albumid || ""); // Provide a default value or handle undefined
+  const { albumid } = useParams<{ albumid?: string }>(); 
+  const number = parseInt(albumid || ""); 
 
   console.log(number);
 
@@ -65,14 +63,13 @@ export default function AlbumComponents() {
 
   const albumSongs: AlbumSongs = {};
 
-  // Check if selectedAlbum exists
+
   if (selectedAlbum) {
-    // Filter songs array to include only those whose IDs are in selectedAlbum.songs
+    
     const selectedAlbumSongs = songs.filter((song) =>
       selectedAlbum.songs.includes(song.id)
     );
 
-    // Iterate through filtered songs and add them to albumSongs object
     selectedAlbumSongs.forEach((song) => {
       albumSongs[song.id] = {
         id: song.id,
@@ -91,7 +88,7 @@ export default function AlbumComponents() {
   const navigate = useNavigate();
 
   const goBack = () => {
-    navigate(-1); // Go back one step in history
+    navigate(-1); 
   };
 
   return (

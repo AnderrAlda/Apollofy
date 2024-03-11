@@ -1,6 +1,6 @@
 import { GoBackPageBtn } from './GoBackPage'
 import { MusicShowPage } from './MusicShowPage'
- import  "./isongPage.css"
+
 import AudioPlayer from '../../components/audioPlayer'
 
 export function SongPage() {

@@ -1,17 +1,7 @@
 import { usePlayer } from "../../../contexts/AudioPlayerContext";
 
 export function MusicShowPage() {
-  const {
-    // playing,
-    // setPlaying,
-    // currentTime,
-    // setCurrentTime,
-    currentSongIndex,
-    // setCurrentSongIndex,
-    // volume,
-    // setVolume,
-    songs,
-  } = usePlayer();
+  const { currentSongIndex, songs } = usePlayer();
 
   return (
     <section>

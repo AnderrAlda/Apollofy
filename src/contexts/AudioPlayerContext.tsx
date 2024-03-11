@@ -7,14 +7,7 @@ import {
 } from "react";
 import { getSongs } from "./GetTrack";
 import { getAlbums } from "../utils";
-// import { getAlbums } from "./GetTrack";
 
-// Define the Song type
-// interface Song {
-//   // Define your song properties here
-// }
-
-// Create the context with a default value including songs
 interface PlayerContextType {
   playing: boolean;
   setPlaying: (value: boolean) => void;
@@ -46,7 +39,7 @@ interface Albums {
   name: string;
   imageUrl: string;
   artist: string;
-  songs: Number[];
+  songs: number[];
 }
 
 const PlayerContext = createContext<PlayerContextType>({
@@ -74,23 +67,20 @@ interface PlayerProviderProps {
 }
 
 export const PlayerProvider = ({ children }: PlayerProviderProps) => {
-  // State for songs
+ 
   const [songs, setSongs] = useState<Song[]>([]);
-
   const [albums, setAlbums] = useState<Albums[]>([]);
-
-  // Other player states
   const [playing, setPlaying] = useState(false);
   const [usingLiked, setUsingLiked] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [currentSongIndex, setCurrentSongIndex] = useState(1);
   const [volume, setVolume] = useState(0.5);
 
-  // Fetch songs on component mount
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const songsData = await getSongs(); // Implement getSongs according to your API or data source
+        const songsData = await getSongs(); 
         setSongs(songsData);
       } catch (error) {
         console.error("Error fetching songs:", error);
@@ -103,7 +93,7 @@ export const PlayerProvider = ({ children }: PlayerProviderProps) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const albumsData = await getAlbums(); // Implement getSongs according to your API or data source
+        const albumsData = await getAlbums(); 
         setAlbums(albumsData);
       } catch (error) {
         console.error("Error fetching songs:", error);

@@ -1,8 +1,4 @@
-import React from "react";
-import { HeartIconBtn } from "../../common/icons/heartIconBtn";
-import { addSongToUserLikedSongs } from "../../utils";
-import { useAuth } from "../../contexts/AuthContext";
-import { usePlayer } from "../../contexts/AudioPlayerContext";
+
 import { IoHeart } from "react-icons/io5";
 
 interface props {

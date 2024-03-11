@@ -6,12 +6,12 @@ export function GoBackPageBtn() {
   const navigate = useNavigate();
 
   const goBack = () => {
-    navigate(-1); // Go back one step in history
+    navigate(-1); 
   };
 
   return (
     <button onClick={goBack}>
-      <IoChevronBackSharp className="text-2xl text-white ml-3 mt-3 hover:text-green-500" />
+      <IoChevronBackSharp className="text-2xl text-white ml-3 mt-3 hover:text-accent" />
     </button>
   );
 }

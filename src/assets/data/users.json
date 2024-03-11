@@ -37,7 +37,9 @@
       "profilePicture": "",
       "country": "Spain",
       "dateOfBirth": "1986-06-25",
-      "likedSongs": []
+      "likedSongs": [
+        2
+      ]
     },
     {
       "id": "4",

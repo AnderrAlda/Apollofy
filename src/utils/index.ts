@@ -37,34 +37,26 @@ export async function addSongToUserLikedSongs(
   newSongId: number
 ): Promise<User> {
   try {
-    // Fetch users data
     let users = await getUsers();
 
-    // Find the user with the specified ID
     const userIndex = users.findIndex((user) => user.id === userId);
 
-    // If user is found
     if (userIndex !== -1) {
-      // Get the user object
       const user = users[userIndex];
 
-      // Check if the user already has a likedSongs array, if not, create one
       if (!user.likedSongs) {
         user.likedSongs = [];
       }
 
-      // Check if the new song ID already exists in the likedSongs array
       const existingSongIndex = user.likedSongs.findIndex(
         (song) => song === newSongId
       );
 
-      // If the song doesn't exist, add it to the likedSongs array
       if (existingSongIndex === -1) {
         user.likedSongs.push(newSongId);
 
-        // Update the user's data on the server
         await fetch(`http://localhost:3000/users/${userId}`, {
-          method: "PATCH", // Use PATCH method to update the user data
+          method: "PATCH",
           headers: {
             "Content-Type": "application/json",
           },
@@ -73,7 +65,6 @@ export async function addSongToUserLikedSongs(
 
         console.log("Song added to user's likedSongs:", newSongId);
 
-        // Return the updated user object
         return user;
       } else {
         console.log("Song already exists in likedSongs.");
@@ -93,37 +84,23 @@ export async function deleteSongFromUserLikedSongs(
   songIdToDelete: number
 ): Promise<void> {
   try {
-    // Fetch users data
     const users = await getUsers();
-
-    // Find the user with the specified ID
     const userIndex = users.findIndex((user) => user.id === userId);
-
-    // If user is found
     if (userIndex !== -1) {
-      // Get the user object
       const user = users[userIndex];
-
-      // Check if the user has a likedSongs array
       if (user.likedSongs) {
-        // Find the index of the song to delete in the likedSongs array
         const songIndexToDelete = user.likedSongs.findIndex(
           (songId) => songId === songIdToDelete
         );
-
-        // If the song exists in the likedSongs array, delete it
         if (songIndexToDelete !== -1) {
           user.likedSongs.splice(songIndexToDelete, 1);
-
-          // Update the user's data on the server
           await fetch(`http://localhost:3000/users/${userId}`, {
-            method: "PATCH", // Use PATCH method to update the user data
+            method: "PATCH",
             headers: {
               "Content-Type": "application/json",
             },
             body: JSON.stringify(user),
           });
-
           console.log("Song deleted from user's likedSongs:", songIdToDelete);
         } else {
           console.log("Song not found in likedSongs.");

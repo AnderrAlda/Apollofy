@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { PublicRoutes } from "../../types/routes";
+import { Link } from "react-router-dom";
+
 import { getAlbums, getArtists, getPlaylists } from "../../contexts/GetTrack";
 
 interface Albums {
@@ -79,7 +79,7 @@ export function TopArtist() {
             />
 
             <p className="text-white">{artist.name}</p>
-            {/* <p className="text-gray-500">{artist.artist}</p> */}
+            
           </div>
         ))}
     </div>
@@ -98,15 +98,15 @@ export function TopPlaylist() {
   useEffect(() => {
     const fetchPlaylists = async () => {
       try {
-        const playlistsData = await getPlaylists(); // Obtiene los datos de las listas de reproducción
-        setPlaylists(playlistsData); // Actualiza el estado con los datos de las listas de reproducción
+        const playlistsData = await getPlaylists(); 
+        setPlaylists(playlistsData); 
       } catch (error) {
         console.error("Error al obtener las listas de reproducción:", error);
       }
     };
 
-    fetchPlaylists(); // Llama a la función para obtener las listas de reproducción
-  }, []); // Ejecuta este efecto solo una vez al montar el componente
+    fetchPlaylists(); 
+  }, []); 
 
   return (
     <div className="flex gap-8">

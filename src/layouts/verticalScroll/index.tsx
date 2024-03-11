@@ -2,11 +2,11 @@ import React, { ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
-  height: string; // Height parameter
+  height: string; 
 };
 
 const VerticalScrollLayout = ({ children, height }: Props) => {
-  // Calculate height to ensure each child has the same size
+  
   const childHeight = `calc((100% - 3px * (${React.Children.count(
     children
   )} - 1)) / ${React.Children.count(children)})`;

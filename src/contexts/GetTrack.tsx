@@ -14,7 +14,7 @@ export async function getAlbums() {
     const JSONResponsee = await response.json();
     return JSONResponsee;
   } catch (error) {
-    //throw new Error(`Something is wrong in f APIFetch: ${error}`);
+    throw new Error(`Something is wrong in f APIFetch: ${error}`);
   }
 }
 export async function getArtists() {
