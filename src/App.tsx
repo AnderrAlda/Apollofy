@@ -14,6 +14,7 @@ import { EditProfile } from "./pages/editProfile";
 import { PrivateRoute } from "./routes";
 import { PlayerProvider } from "./contexts/AudioPlayerContext";
 import SignUp from "./pages/SignUp/signup";
+import { MySongs } from "./pages/mySongs";
 
 function App() {
   return (
@@ -71,6 +72,14 @@ function App() {
                   element={
                     <PrivateRoute>
                       <EditProfile />
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path={PublicRoutes.MYSONGS}
+                  element={
+                    <PrivateRoute>
+                      <MySongs />
                     </PrivateRoute>
                   }
                 />
