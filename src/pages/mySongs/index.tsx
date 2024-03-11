@@ -28,23 +28,12 @@ export function MySongs() {
       user.likedSongs.includes(song.id)
     );
     setLikedSongs(filteredSongs);
-    console.log("hola");
   }, [songs, user]);
 
-  const handleAddSongClick = () => {
-    /* addSongToUserLikedSongs(user.id, 4); */
-    deleteSongFromUserLikedSongs(user.id, 3);
-  };
   const [selectedSongId, setSelectedSongId] = useState<number | null>(null);
 
   return (
     <div className="bg-black h-screen w-screen relative">
-      <div className="lg:ml-20">
-        {/* Button triggering the function */}
-        <button className="bg-white" onClick={handleAddSongClick}>
-          Add Song
-        </button>
-      </div>
       <div className="lg:ml-3/12">
         <img
           src="src/assets/album1.png"

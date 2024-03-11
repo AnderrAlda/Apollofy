@@ -35,10 +35,10 @@ export async function getUsers(): Promise<User[]> {
 export async function addSongToUserLikedSongs(
   userId: number,
   newSongId: number
-): Promise<void> {
+): Promise<User> {
   try {
     // Fetch users data
-    const users = await getUsers();
+    let users = await getUsers();
 
     // Find the user with the specified ID
     const userIndex = users.findIndex((user) => user.id === userId);
@@ -72,17 +72,22 @@ export async function addSongToUserLikedSongs(
         });
 
         console.log("Song added to user's likedSongs:", newSongId);
+
+        // Return the updated user object
+        return user;
       } else {
         console.log("Song already exists in likedSongs.");
+        return user;
       }
     } else {
       console.log("User not found with ID:", userId);
+      throw new Error("User not found");
     }
   } catch (error) {
     console.error("Error adding song to user's likedSongs:", error);
+    throw error;
   }
 }
-
 export async function deleteSongFromUserLikedSongs(
   userId: number,
   songIdToDelete: number
