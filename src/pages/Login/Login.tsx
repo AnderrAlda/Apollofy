@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { PublicRoutes } from "../../types/routes";
 import { useAuth } from "../../contexts/AuthContext";
+import { IoRadioOutline } from "react-icons/io5";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -24,9 +25,12 @@ export default function Login() {
   );
 
   return (
-    <div className="h-screen bg-black flex flex-col gap-3 justify-center items-center p-5">
-      <div className="lg:w-2/4 lg:h-2/4 h-72 w-72  bg-slate-900 rounded-lg border border-solid border-slate-500">
-        <img className="lg:h-28 lg:w-28 lg:ml-48 lg:m-12 h-14 w-14 ml-28 m-8 border-solid border border-slate-200 rounded-full" />
+<>
+    
+  
+    <div className="h-screen bg-black flex flex-col  justify-center items-center p-1">
+      <div className="lg:p-7 p-5  bg-gray-700 rounded-lg border border-solid border-slate-500">
+        <img className=" lg:ml-6 lg:m-1 h-46 w-44 ml-6 mr-6 border-solid border border-transparent rounded-full" src="src/assets/apollofyremovebg.png" />
 
         <form
           className="flex flex-col gap-2 items-center"
@@ -35,7 +39,7 @@ export default function Login() {
           <input
             type="text"
             placeholder="Email"
-            className="rounded p-1 m-1 lg:w-2/4 lg:m-2"
+            className="rounded p-1 m-2  lg:m-2"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -45,17 +49,18 @@ export default function Login() {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="rounded p-1 m-1 lg:w-2/4 lg:m-2"
+            className="rounded p-1 m-2  lg:m-2"
           />
 
-          <button className="bg-blue-600 text-white mt-4 w-20 h-8 rounded">
+          <button className="bg-accent text-slate-600 mt-4 w-20 h-8 rounded">
             Log in
           </button>
           <Link to={PublicRoutes.SIGNUP}>
-            <p className="text-white">Don't have an account? Create one</p>
+            <p className="text-white text-sm">Don't have an account? Create one</p>
           </Link>
         </form>
       </div>
     </div>
+    </>
   );
 }

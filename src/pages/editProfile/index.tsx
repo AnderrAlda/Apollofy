@@ -77,16 +77,16 @@ export const EditProfile = () => {
 
   return (
     <>
-      <div className="bg-slate-900 h-screen">
-        <div className="lg:pl-56 lg:pr-56">
-          <div className="flex flex-col p-5 gap-5 lg:gap-9 ">
+      <div className="bg-gray-800 h-screen">
+        <div className="lg:pl-80 lg:pr-56">
+          <div className="flex flex-col p-5 gap-3 ">
             <div className="flex flex-row lg:mt-12">
               <h2 className="text-white text-5xl">Edit profile</h2>
               <button
                 onClick={handleChangeProfile}
-                className=" flex justify-center items-center bg-gray-800 border border-s-white ml-20 rounded-xl h-12 w-12 hover:bg-green-500"
+                className=" flex justify-center items-center bg-gray-800 border border-s-white ml-12 rounded-xl h-12 w-12 hover:bg-accent"
               >
-                <IoPencil className="text-white text-2xl" />
+                <IoPencil className="text-white text-2xl hover:text-black" />
               </button>
             </div>
 
@@ -99,12 +99,12 @@ export const EditProfile = () => {
                 value={newEmail}
                 onChange={(e) => setNewEmail(e.target.value)}
                 placeholder="New email"
-                className=" p-1.5 pl-4 rounded-full"
+                className="lg:w-60 p-1.5 pl-4 rounded-full"
               />
             ) : null}
 
             <div className="text-white">
-              <p className="text-2xl">Gender: {user?.gender}</p>
+              <p className=" text-2xl">Gender: {user?.gender}</p>
             </div>
             {changeProfile ? (
               <input
@@ -112,17 +112,11 @@ export const EditProfile = () => {
                 value={newGender}
                 onChange={(e) => setNewGender(e.target.value)}
                 placeholder="New gender"
-                className="p-1.5 pl-4 rounded-full"
+                className="lg:w-60 p-1.5 pl-4 rounded-full"
               />
             ) : null}
 
-            {/* <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto">
-  <div className="fixed inset-0 bg-black opacity-50"></div>
-  <div className="relative z-50 bg-white p-8 max-w-md mx-auto">
-
-    <button className="absolute top-0 right-0 m-4" onclick="cerrarModal()">Cerrar</button>
-  </div>
-</div> */}
+        
 
             <div className="text-white">
               <p className="text-2xl">Country: {user?.country}</p>
@@ -133,15 +127,15 @@ export const EditProfile = () => {
                 value={newCountry}
                 onChange={(e) => setNewCountry(e.target.value)}
                 placeholder="New country"
-                className=" p-1.5 pl-4 rounded-full"
+                className="lg:w-60 p-1.5 pl-4 rounded-full"
               />
             ) : null}
 
             <div className="text-white">
-              <div className="text-2xl flex justify-between">
+              <div className="text-2xl ">
                 Password: {displayPassword ? user?.password : "*****"}
                 <button onClick={handleDisplayPassword}>
-                  <IoEye />
+                  <IoEye className="ml-36 lg:ml-12"/>
                 </button>
               </div>
             </div>
@@ -151,7 +145,7 @@ export const EditProfile = () => {
                 value={newPassword}
                 onChange={(e) => setNewPassaword(e.target.value)}
                 placeholder="New password"
-                className="p-1.5 pl-4 rounded-full"
+                className=" lg:w-60 p-1.5 pl-4 rounded-full"
               />
             ) : null}
 
@@ -159,12 +153,12 @@ export const EditProfile = () => {
               <button
                 type="submit"
                 onClick={handleSubmit}
-                className="text-white text-2xl mt-6 p-1.5 rounded-full border border-s w-18"
+                className="bg-accent lg:w-60 text-gray-700 text-2xl mt-6 p-1.5 rounded-full border border-s w-18"
               >
                 Save changes
               </button>
             ) : null}
-            {/* //import modal */}
+
             <Modal
               isOpen={isConfirmationModalOpen}
               onClose={() => setConfirmationModalOpen(false)}

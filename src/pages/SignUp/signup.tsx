@@ -48,7 +48,7 @@ export default function SignUp() {
 
   return (
     <div className="bg-black h-screen">
-      <h1 className="text-white flex justify-center py-10 text-xl">Apollofy</h1>
+      <img src="src/assets/apollofyremovebg.png" className="flex size-40" />
       <p className="text-white flex justify-center py-5">
         Sign up and start listening to the best music
       </p>
@@ -201,7 +201,7 @@ function Birthday({ updateUser }) {
 
   return (
     <div className="text-white flex justify-between mx-8">
-      <label>Country * </label>
+      <label>Date of birth * </label>
       <input
         type="date"
         className="rounded text-black"
@@ -225,7 +225,7 @@ function Password({ updateUser }) {
   return (
     <div className="text-white flex flex-col gap-2 ">
       <div className="flex justify-between mx-8">
-        <label>Create password * </label>
+        <label>Password * </label>
         <input
           type="password"
           className="rounded text-black"
@@ -249,7 +249,7 @@ function Password({ updateUser }) {
 function CancelButton() {
   return (
     <Link to={PublicRoutes.LOGIN}>
-      <button className="w-15 bg-white rounded p-2 mt-5 ml-5">
+      <button className="w-15 bg-accent rounded p-2 mt-5 ml-5">
         Back to login
       </button>
     </Link>
@@ -260,7 +260,7 @@ function SignUpButton() {
   return (
     <input
       type="submit"
-      className="w-15 bg-white rounded p-2 mt-5 ml-5"
+      className="w-15 bg-accent rounded p-2 mt-5 ml-5"
       value="Sign up"
     />
   );

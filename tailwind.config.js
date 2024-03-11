@@ -19,6 +19,8 @@ export const theme = {
     colors: {
       background: `#0D0D0D`,
       player: `#4D4B4B`,
+      accent:`#dfcc89`,
+      
     },
     margin: { 
       '1/12': '18%',

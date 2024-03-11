@@ -59,13 +59,17 @@
       "email": "ander@ander.com",
       "password": "anderander",
       "city": "Orio",
-      "gender": "malote",
+      "gender": "tiburon",
       "profilePicture": "",
       "country": "Spain",
       "dateOfBirth": "1987-07-03",
       "likedSongs": [
+        17,
         7,
-        2
+        14,
+        13,
+        18,
+        1
       ]
     },
     {
@@ -101,10 +105,23 @@
       "email": "mikel@mikel.com",
       "password": "mikelmikel",
       "city": "mikel",
-      "gender": "raton",
+      "gender": "gato",
       "profilePicture": "https://avataaars.io/?accessoriesType=Prescription01&avatarStyle=Circle&clotheColor=PastelYellow&clotheType=Overall&eyeType=WinkWacky&eyebrowType=Default&facialHairColor=Blonde&facialHairType=BeardLight&hairColor=Auburn&hatColor=Black&mouthType=Disbelief&skinColor=Pale&topType=Hijab",
       "country": "mikel",
       "dateOfBirth": "2024-03-12",
+      "likedSongs": []
+    },
+    {
+      "id": "9",
+      "name": "miren",
+      "last_name": "miren",
+      "email": "miren@miren.com",
+      "password": "mirenmiren",
+      "city": "miren",
+      "gender": "asdf",
+      "profilePicture": "https://avataaars.io/?accessoriesType=Kurt&avatarStyle=Circle&clotheColor=Black&clotheType=CollarSweater&eyeType=Wink&eyebrowType=Angry&facialHairColor=Brown&facialHairType=MoustacheMagnum&hairColor=Black&hatColor=Pink&mouthType=Vomit&skinColor=DarkBrown&topType=ShortHairFrizzle",
+      "country": "miren",
+      "dateOfBirth": "2024-03-04",
       "likedSongs": []
     }
   ]
