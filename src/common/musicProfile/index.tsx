@@ -72,13 +72,12 @@ export function TopArtist() {
       {artists.length > 0 &&
         artists.map((artist) => (
           <div key={artist.id} className="w-40">
-            <NavLink to={`${PublicRoutes.MYSONGS}/${artist.id}`}>
-              <img
-                className="rounded-2xl"
-                src={artist.photoUrl}
-                alt={artist.name}
-              />
-            </NavLink>
+            <img
+              className="rounded-2xl"
+              src={artist.photoUrl}
+              alt={artist.name}
+            />
+
             <p className="text-white">{artist.name}</p>
             {/* <p className="text-gray-500">{artist.artist}</p> */}
           </div>
@@ -114,13 +113,12 @@ export function TopPlaylist() {
       {playlists.length > 0 &&
         playlists.map((playlist) => (
           <div key={playlist.id} className="w-40">
-            <NavLink to={`${PublicRoutes.MYSONGS}/${playlist.id}`}>
-              <img
-                className="rounded-2xl"
-                src={playlist.thumbnail}
-                alt={playlist.name}
-              />
-            </NavLink>
+            <img
+              className="rounded-2xl"
+              src={playlist.thumbnail}
+              alt={playlist.name}
+            />
+
             <p className="text-white">{playlist.name}</p>
           </div>
         ))}
