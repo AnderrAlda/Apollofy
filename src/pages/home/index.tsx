@@ -12,6 +12,7 @@ const HomePage = () => {
   const [avatarUrl, setAvatarUrl] = useState("");
   const { setSongs } = usePlayer(); // Access setSongs from the player context
 
+  //this fetch is to reload the sonsgs state to the fetch after coming back from the page mysongs
   useEffect(() => {
     // Fetch songs when the component mounts
     const fetchData = async () => {

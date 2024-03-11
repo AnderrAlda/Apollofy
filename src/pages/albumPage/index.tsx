@@ -11,8 +11,9 @@ import IndividualSong from "../../components/individualSong";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
 import VerticalScrollLayout from "../../layouts/verticalScroll";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { SmallShowPlaySong } from "../../components/SmallShowPlaySong";
+import { IoChevronBackSharp } from "react-icons/io5";
 interface Song {
   id: number;
   name: string;
@@ -87,9 +88,18 @@ export default function AlbumComponents() {
 
   const [selectedSongId, setSelectedSongId] = useState<number | null>(null);
 
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate(-1); // Go back one step in history
+  };
+
   return (
     <div className="bg-black h-screen w-screen relative">
-      <div>
+      <button onClick={goBack}>
+        <IoChevronBackSharp className="text-2xl text-white ml-3 mt-3 hover:text-green-500" />
+      </button>
+      <div className="pt-10 pl-20">
         <img
           src={selectedAlbum?.imageUrl}
           alt=""
@@ -97,28 +107,30 @@ export default function AlbumComponents() {
         />
       </div>
 
-      <div className=" top-80 left-6">
+      <div className="pt-10 pl-5 ">
         <p className="text-white text-3xl">{selectedAlbum?.name}</p>
       </div>
-      <div className=" top-80 left-6">
-        <p className="text-white text-3xl">{selectedAlbum?.artist}</p>
+      <div className="  pl-5 pb-10">
+        <p className="text-white text-xl">{selectedAlbum?.artist}</p>
       </div>
 
-      <VerticalScrollLayout height="30rem">
-        {Object.keys(albumSongs).map((songId) => {
-          const song = albumSongs[parseInt(songId)];
-          const isSelected = parseInt(songId) === selectedSongId;
-          const handleSongClick = () => setSelectedSongId(parseInt(songId));
-          return (
-            <IndividualSong
-              key={song.id}
-              songName={song.name}
-              groupName={song.artist}
-              isSelected={isSelected}
-              onClick={handleSongClick}
-            />
-          );
-        })}
+      <VerticalScrollLayout height="25rem">
+        <div className="pl-5">
+          {Object.keys(albumSongs).map((songId) => {
+            const song = albumSongs[parseInt(songId)];
+            const isSelected = parseInt(songId) === selectedSongId;
+            const handleSongClick = () => setSelectedSongId(parseInt(songId));
+            return (
+              <IndividualSong
+                key={song.id}
+                songName={song.name}
+                groupName={song.artist}
+                isSelected={isSelected}
+                onClick={handleSongClick}
+              />
+            );
+          })}
+        </div>
       </VerticalScrollLayout>
       <div className="absolute bottom-14 w-screen">
         <SmallShowPlaySong selectedSongId={selectedSongId} />

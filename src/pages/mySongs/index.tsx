@@ -34,37 +34,39 @@ export function MySongs() {
 
   return (
     <div className="bg-black h-screen w-screen relative">
-      <div className="lg:ml-3/12">
+      <div className="pt-10 pl-20 lg:ml-3/12">
         <img
-          src="src/assets/album1.png"
+          src="src/assets/images/liked.jpeg"
           alt=""
           className="w-52  top-20 left-20 rounded-xl"
         />
       </div>
 
-      <div className=" top-80 left-6 lg:ml-20">
-        <p className="text-white text-3xl">Album name</p>
+      <div className=" pt-10 pl-5 pb-5  lg:ml-20">
+        <p className="text-white text-3xl">My songs</p>
       </div>
 
       <VerticalScrollLayout height="30rem">
-        {likedSongs?.map((song) => {
-          const isSelected = song.id === selectedSongId;
-          const handleSongClick = () => {
-            setSelectedSongId(song.id);
-            setUsingLiked(true);
-            setCurrentSongIndex(0);
-            setSongs(likedSongs);
-          };
-          return (
-            <IndividualSong
-              key={song.id}
-              songName={song.name}
-              groupName={song.artist}
-              isSelected={isSelected}
-              onClick={handleSongClick}
-            />
-          );
-        })}
+        <div className="ml-5">
+          {likedSongs?.map((song) => {
+            const isSelected = song.id === selectedSongId;
+            const handleSongClick = () => {
+              setSelectedSongId(song.id);
+              setUsingLiked(true);
+              setCurrentSongIndex(0);
+              setSongs(likedSongs);
+            };
+            return (
+              <IndividualSong
+                key={song.id}
+                songName={song.name}
+                groupName={song.artist}
+                isSelected={isSelected}
+                onClick={handleSongClick}
+              />
+            );
+          })}
+        </div>
       </VerticalScrollLayout>
 
       <div className="absolute bottom-14 w-screen">
