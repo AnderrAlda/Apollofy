@@ -156,9 +156,12 @@ export default function SearchBarPage() {
 export function SearchResultSong({ song }: { song: Song }) {
   return (
     <Link to={PublicRoutes.SONG}>
-      <div className="bg-yellow-400 my-2 mx-5 rounded">
-        <p className="text-black ml-5">{song.name}</p>
-        <p className="text-black ml-5">{song.artist}</p>
+      <div className="bg-yellow-400 my-2 mx-5 rounded flex ">
+        <img className="w-8 h-8 m-2" src={song.thumbnail} />
+        <div>
+          <p className="text-black ml-5">{song.name}</p>
+          <p className="text-black ml-5">{song.artist}</p>
+        </div>
       </div>
     </Link>
   );
@@ -166,7 +169,8 @@ export function SearchResultSong({ song }: { song: Song }) {
 export function SearchResultArtist({ artist }: { artist: Artist }) {
   return (
     <Link to={PublicRoutes.SONG}>
-      <div className="bg-yellow-400 my-2 mx-5 rounded">
+      <div className="bg-yellow-400 my-2 mx-5 rounded flex">
+        <img className="w-8 h-8 m-2" src={artist.photoUrl} />
         <p className="text-black ml-5">{artist.name}</p>
       </div>
     </Link>
@@ -176,9 +180,12 @@ export function SearchResultArtist({ artist }: { artist: Artist }) {
 export function SearchResultAlbum({ album }: { album: Album }) {
   return (
     <Link to={PublicRoutes.SONG}>
-      <div className="bg-yellow-400 my-2 mx-5 rounded">
-        <p className="text-black ml-5">{album.name}</p>
-        <p className="text-black ml-5">{album.artist}</p>
+      <div className="bg-yellow-400 my-2 mx-5 rounded flex">
+        <img src={album.imageUrl} className="w-8 h-8 m-2" />
+        <div>
+          <p className="text-black ml-5">{album.name}</p>
+          <p className="text-black ml-5">{album.artist}</p>
+        </div>
       </div>
     </Link>
   );
