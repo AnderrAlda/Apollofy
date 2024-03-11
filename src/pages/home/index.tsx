@@ -5,10 +5,26 @@ import { NavBar } from "../../components/navbar";
 import { TopAlbums, TopArtist, TopPlaylist } from "../../common/musicProfile";
 import { SmallShowPlaySong } from "../../components/SmallShowPlaySong";
 import { useEffect, useState } from "react";
-// import { usePlayer } from "../../contexts/AudioPlayerContext";
+import { usePlayer } from "../../contexts/AudioPlayerContext";
+import { getSongs } from "../../contexts/GetTrack";
 
 const HomePage = () => {
   const [avatarUrl, setAvatarUrl] = useState("");
+  const { setSongs } = usePlayer(); // Access setSongs from the player context
+
+  useEffect(() => {
+    // Fetch songs when the component mounts
+    const fetchData = async () => {
+      try {
+        const songsData = await getSongs(); // Implement getSongs according to your API or data source
+        setSongs(songsData); // Set the songs in the context
+      } catch (error) {
+        console.error("Error fetching songs:", error);
+      }
+    };
+
+    fetchData(); // Call the fetchData function
+  }, [setSongs]); // Include setSongs in the dependency array to trigger the effect when it changes
 
   useEffect(() => {
     // Verifica si hay un avatar almacenado en localStorage

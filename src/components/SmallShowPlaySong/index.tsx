@@ -19,6 +19,8 @@ export function SmallShowPlaySong({ selectedSongId }: props) {
     setCurrentSongIndex,
     volume,
     songs,
+    usingLiked,
+    setUsingLiked,
   } = usePlayer();
 
   //played represent the progress in the input range

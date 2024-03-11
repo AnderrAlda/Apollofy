@@ -6,7 +6,7 @@ import {
   ReactNode,
 } from "react";
 import { getSongs } from "./GetTrack";
-import { Song, getAlbums } from "../utils";
+import { getAlbums } from "../utils";
 // import { getAlbums } from "./GetTrack";
 
 // Define the Song type
@@ -25,7 +25,10 @@ interface PlayerContextType {
   volume: number;
   setVolume: (value: number) => void;
   songs: Song[];
+  setSongs: (value: Song[]) => void;
   albums: Albums[];
+  usingLiked: boolean;
+  setUsingLiked: (value: boolean) => void;
 }
 
 interface Song {
@@ -56,7 +59,10 @@ const PlayerContext = createContext<PlayerContextType>({
   volume: 0.5,
   setVolume: (value: number) => {},
   songs: [],
+  setSongs: (value: Song[]) => {},
   albums: [],
+  usingLiked: false,
+  setUsingLiked: (value: boolean) => {},
 });
 
 export const usePlayer = () => {
@@ -75,6 +81,7 @@ export const PlayerProvider = ({ children }: PlayerProviderProps) => {
 
   // Other player states
   const [playing, setPlaying] = useState(false);
+  const [usingLiked, setUsingLiked] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [currentSongIndex, setCurrentSongIndex] = useState(1);
   const [volume, setVolume] = useState(0.5);
@@ -118,7 +125,10 @@ export const PlayerProvider = ({ children }: PlayerProviderProps) => {
         volume,
         setVolume,
         songs,
+        setSongs,
         albums,
+        usingLiked,
+        setUsingLiked,
       }}
     >
       {children}
