@@ -26,7 +26,7 @@ export default function Login() {
   return (
     <div className="h-screen bg-black flex flex-col gap-3 justify-center items-center p-5">
       <div className="lg:w-2/4 lg:h-2/4 h-72 w-72  bg-slate-900 rounded-lg border border-solid border-slate-500">
-        <img className="lg:h-28 lg:w-28 lg:ml-48 lg:m-12 h-14 w-14 ml-28 m-8 border-solid border border-slate-200 rounded-full" />
+        <img className="lg:h-28 lg:w-28 lg:ml-48 lg:m-12 h-44 w-14 ml-28 m-8 border-solid border border-slate-200 rounded-full" src="src/assets/Apollofy.jpg" />
 
         <form
           className="flex flex-col gap-2 items-center"
