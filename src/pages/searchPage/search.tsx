@@ -8,11 +8,17 @@ import { useFilter } from "../../contexts/FilterContext";
 // import { getSongs } from "../../contexts/GetTrack";
 import { PublicRoutes } from "../../types/routes";
 import { usePlayer } from "../../contexts/AudioPlayerContext";
+import { Album, Artist } from "../../utils";
+import { getAlbums, getArtists } from "../../contexts/GetTrack";
+import { Song } from "../../utils";
 
 export default function SearchBarPage() {
   const { filter, handleSetFilter } = useFilter();
   const [searchParams, setSearchParams] = useSearchParams();
   const { songs } = usePlayer();
+  const [albums, setAlbums] = useState<Album[]>([]);
+  const [artists, setArtists] = useState<Artist[]>([]);
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleFilter = (e: any) => {
     const newFilter = e.target.value;
@@ -25,25 +31,74 @@ export default function SearchBarPage() {
   }, []);
   //console.log(filter);
 
-  const songsMatchingFilter = songs.filter((song) => {
-    const title = song.name.toLowerCase();
-    const artist = song.artist.toLowerCase();
-    return (
-      title.includes(filter.toLowerCase()) ||
-      artist.includes(filter.toLowerCase())
-    );
+  useEffect(() => {
+    const fetchAlbums = async () => {
+      try {
+        const albumsData = await getAlbums();
+        setAlbums(albumsData);
+      } catch (error) {
+        console.error("Error getting albums:", error);
+      }
+    };
+
+    fetchAlbums();
+  }, []);
+
+  useEffect(() => {
+    const fetchArtists = async () => {
+      try {
+        const artistsData = await getArtists();
+        setArtists(artistsData);
+      } catch (error) {
+        console.error("Error getting artists:", error);
+      }
+    };
+
+    fetchArtists();
+  }, []);
+
+  const songResults: Song[] = [];
+  const artistResults: Artist[] = [];
+  const albumResults: Album[] = [];
+
+  songs.filter((song) => {
+    if (
+      song.name.toLowerCase().includes(filter.toLowerCase()) ||
+      song.artist.toLowerCase().includes(filter.toLowerCase())
+    ) {
+      songResults.push(song);
+      // const name = song.name.toLowerCase();
+      // const artist = song.artist.toLowerCase();
+      // return (
+
+      // title.includes(filter.toLowerCase()) ||
+      // artist.includes(filter.toLowerCase())
+      // );
+    }
   });
 
-  const songResults = [];
-  const artistResults = [];
-  songsMatchingFilter.forEach((song) => {
-    if (song.name.toLowerCase().includes(filter.toLowerCase())) {
-      songResults.push(song);
-    }
-    if (song.artist.toLowerCase().includes(filter.toLowerCase())) {
-      artistResults.push(song);
+  artists.filter((artist) => {
+    if (artist.name.toLowerCase().includes(filter.toLowerCase())) {
+      artistResults.push(artist);
     }
   });
+  albums.filter((album) => {
+    if (
+      album.name.toLowerCase().includes(filter.toLowerCase()) ||
+      album.artist.toLowerCase().includes(filter.toLowerCase())
+    ) {
+      albumResults.push(album);
+    }
+  });
+
+  // songsMatchingFilter.forEach((song) => {
+  //   if (song.name.toLowerCase().includes(filter.toLowerCase())) {
+  //     songResults.push(song);
+  //   }
+  //   if (song.artist.toLowerCase().includes(filter.toLowerCase())) {
+  //     artistResults.push(song);
+  //   }
+  // });
 
   return (
     <div className="flex flex-col bg-black h-screen">
@@ -68,15 +123,23 @@ export default function SearchBarPage() {
             <div>
               <h3 className="text-white text-lg ml-5">Songs</h3>
               {songResults.map((song) => (
-                <SearchResultInfo song={song} key={song.id} />
+                <SearchResultSong song={song} key={song.id} />
               ))}
             </div>
           )}
           {artistResults.length > 0 && (
             <div>
               <h3 className="text-white text-lg ml-5 ">Artists</h3>
-              {artistResults.map((song) => (
-                <SearchResultInfo song={song} key={song.id} />
+              {artistResults.map((artist) => (
+                <SearchResultArtist artist={artist} key={artist.id} />
+              ))}
+            </div>
+          )}
+          {albumResults.length > 0 && (
+            <div>
+              <h3 className="text-white text-lg ml-5 ">Albums</h3>
+              {albumResults.map((album) => (
+                <SearchResultAlbum album={album} key={album.id} />
               ))}
             </div>
           )}
@@ -90,12 +153,32 @@ export default function SearchBarPage() {
   );
 }
 
-export function SearchResultInfo({ song }: { song: Song }) {
+export function SearchResultSong({ song }: { song: Song }) {
   return (
     <Link to={PublicRoutes.SONG}>
       <div className="bg-yellow-400 my-2 mx-5 rounded">
         <p className="text-black ml-5">{song.name}</p>
-        <p className="text-black ml-5 text-sm">{song.artist}</p>
+        <p className="text-black ml-5">{song.artist}</p>
+      </div>
+    </Link>
+  );
+}
+export function SearchResultArtist({ artist }: { artist: Artist }) {
+  return (
+    <Link to={PublicRoutes.SONG}>
+      <div className="bg-yellow-400 my-2 mx-5 rounded">
+        <p className="text-black ml-5">{artist.name}</p>
+      </div>
+    </Link>
+  );
+}
+
+export function SearchResultAlbum({ album }: { album: Album }) {
+  return (
+    <Link to={PublicRoutes.SONG}>
+      <div className="bg-yellow-400 my-2 mx-5 rounded">
+        <p className="text-black ml-5">{album.name}</p>
+        <p className="text-black ml-5">{album.artist}</p>
       </div>
     </Link>
   );
