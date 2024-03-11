@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { PublicRoutes } from "../../types/routes";
-import { getAlbums } from "../../contexts/GetTrack";
+import { getAlbums, getArtists, getPlaylists } from "../../contexts/GetTrack";
 
 interface Albums {
   id: number;
@@ -17,7 +17,7 @@ export function TopAlbums() {
     const fetchAlbums = async () => {
       try {
         const albumsData = await getAlbums();
-        setAlbums(albumsData.albums);
+        setAlbums(albumsData);
       } catch (error) {
         console.error("Error al obtener los álbumes:", error);
       }
@@ -57,8 +57,8 @@ export function TopArtist() {
   useEffect(() => {
     const fetchArtists = async () => {
       try {
-        const artistsData = await getAlbums();
-        setArtists(artistsData.artists);
+        const artistsData = await getArtists();
+        setArtists(artistsData);
       } catch (error) {
         console.error("Error al obtener los artistas:", error);
       }
@@ -98,8 +98,8 @@ export function TopPlaylist() {
   useEffect(() => {
     const fetchPlaylists = async () => {
       try {
-        const playlistsData = await getAlbums(); // Obtiene los datos de las listas de reproducción
-        setPlaylists(playlistsData.playlists); // Actualiza el estado con los datos de las listas de reproducción
+        const playlistsData = await getPlaylists(); // Obtiene los datos de las listas de reproducción
+        setPlaylists(playlistsData); // Actualiza el estado con los datos de las listas de reproducción
       } catch (error) {
         console.error("Error al obtener las listas de reproducción:", error);
       }

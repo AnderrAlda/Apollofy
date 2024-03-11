@@ -6,6 +6,7 @@ import{
   ReactNode,
 } from "react";
 import { getSongs } from "./GetTrack";
+import { Song } from "../utils";
 // import { getAlbums } from "./GetTrack";
 
 // Define the Song type

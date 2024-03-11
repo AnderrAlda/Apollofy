@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Road trip! All the masters I need!",
+
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710091885/Road_trip_sdyxro.jpg",
+    "description": "Get your mic on with this beats. You are going to sing all the way down",
+    "publicAccessible": true,
+    "primaryColor": "#fbdc00",
+    "songs": [1, 5, 8, 15, 23]
+  },
+  {
+    "id": 2,
+    "name": "Motorcycle Mama!",
+
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710092173/Motorcycle_kcqnxh.jpg",
+    "description": "Take it easy on the wheels with this hits",
+    "publicAccessible": true,
+    "primaryColor": "#fbdc00",
+    "songs": [2, 7, 11, 18, 21]
+  },
+  {
+    "id": 3,
+    "name": "Chillout with the beats",
+
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710092349/bqhmkcgdfrsuandcnfwo.jpg",
+    "description": "Stressed? Don´t worry the final project will soon be over. Relax in the meantime with this hits.",
+    "publicAccessible": true,
+    "primaryColor": "#fbdc00",
+    "songs": [3, 4, 12, 18, 20]
+  },
+  {
+    "id": 4,
+    "name": "Boogie with the beats",
+
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710092456/hwmt17pzukymdmqa0zgg.jpg",
+    "description": "Take the dance floor and try to get your groove on with this beats",
+    "publicAccessible": false,
+    "primaryColor": "#fbdc00",
+    "songs": [2, 18, 17, 8, 22]
+  },
+  {
+    "id": 5,
+    "name": "Smile. You are beautiful",
+
+    "thumbnail": "https://res.cloudinary.com/dmnyizy0f/image/upload/v1710092560/d76vdiskl93tfhrake6b.jpg",
+    "description": "For those times when you are feeling down.",
+    "publicAccessible": false,
+    "primaryColor": "#fbdc00",
+    "songs": [18, 14, 4, 6, 20]
+  }
+]
