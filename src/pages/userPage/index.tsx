@@ -15,12 +15,12 @@ export const UserPage = () => {
         <div className="flex flex-col lg:border lg:border-solid lg:border-slate-900 lg:bg-zinc-700 ">
           <div className="flex justify-between gap-72 mx-5 mt-8 lg:mt-8">
             <Link to={PublicRoutes.EDITPROFILE}>
-              <IoSettingsOutline size={30} className="text-white " />
+              <IoSettingsOutline size={30} className="text-white hover:text-yellow-300" />
             </Link>
             <button onClick={logout}>
               <IoLogOutOutline
                 size={30}
-                className="text-white mr-1 cursor-pointer"
+                className="text-white mr-1 cursor-pointer hover:text-yellow-300"
               />
             </button>
           </div>
@@ -30,7 +30,7 @@ export const UserPage = () => {
             </div>
             <div className="flex mt-4">
               <div className="flex flex-col">
-                <p className="m-2  text-3xl text-white  lg:text-4xl">
+                <p className="m-2  text-3xl text-white hover:text-yellow-300 lg:text-4xl">
                   {user.name}
                 </p>
               </div>
