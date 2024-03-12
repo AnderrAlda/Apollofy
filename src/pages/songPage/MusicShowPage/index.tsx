@@ -5,7 +5,7 @@ export function MusicShowPage() {
 
   return (
     <section>
-      <div className="ml-20 mt-20">
+      <div className=" mt-20 ml-3/12 lg:ml-5/12">
         <img src={songs[currentSongIndex].thumbnail} alt="" />
       </div>
       <p className="mt-9 text-2xl space-x-6 text-center text-white">
